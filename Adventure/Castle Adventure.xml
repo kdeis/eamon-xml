@@ -1,0 +1,855 @@
+<DungeonData xmlns="http://schemas.datacontract.org/2004/07/Adventure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <RoomList>
+    <Room>
+      <Name>Entrance</Name>
+      <Title>Maingate</Title>
+      <Description>
+        You are at the main gate of the castle. The stares streak the sky.
+        You can only go north into the castle.
+      </Description>
+      <ShortDescription>You are at the main gate of the castle. You may go north or south.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>Entrance</roomName>
+          <toMainHall>true</toMainHall>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Courtyard</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Courtyard</Name>
+      <Title>Courtyard</Title>
+      <Description>You are in a large courtyard. You may go east north, south, east, or west.</Description>
+      <ShortDescription>You are in a large courtyard.</ShortDescription>
+      <Light>true</Light>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>room</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>Entrance</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Banquet hall</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Barracks</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>1001</Item>
+        <Item>1</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>room</Name>
+      <Title></Title>
+      <Description>You are in a small crowded room, with stairs to one side. You may go west, or down.</Description>
+      <ShortDescription>You are in a small crowded room.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Courtyard</roomName>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>d</direction>
+          <roomName>Dungeon</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>2</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>2</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Banquet hall</Name>
+      <Title>Banquet hall</Title>
+      <Description>You are in a large banquet hall. You may go south</Description>
+      <ShortDescription>You are in a large banquet hall.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>Courtyard</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>2</Item>
+        <Item>12</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Barracks</Name>
+      <Title>Barracks</Title>
+      <Description>You are in a large room full of wepons racks, and sleeping quarters. You may go east or up.</Description>
+      <ShortDescription>You are in a large room with wepons racks. There are stairs going up, to the West.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>Courtyard</roomName>
+        </Exit>
+        <Exit>
+          <direction>u</direction>
+          <roomName>West wall</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>4</Item>
+        <Item>5</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>West wall</Name>
+      <Title>West wall</Title>
+      <Description>You are on a wall. You may go north down or south.</Description>
+      <ShortDescription>You are on a deserted wall. </ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>South West corner</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>North West corner</roomName>
+        </Exit>
+        <Exit>
+          <direction>d</direction>
+          <roomName>Barracks</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>1</CreatureID>
+      </Creatures>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>North West corner</Name>
+      <Title>North West corner</Title>
+      <Description>You are in a large-ish dusty room. You may go south, North, or up.</Description>
+      <ShortDescription>You are in a large-ish dusty room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>West wall</roomName>
+        </Exit>
+        <Exit>
+		  <direction>e</direction>
+		  <roomName>North wall</roomName>
+		</Exit>
+		<Exit>
+		  <direction>u</direction>
+		  <roomName>North West tower</roomName>
+		</Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>2</CreatureID>
+        <CreatureID>3</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>6</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>South West corner</Name>
+      <Title>South West corner</Title>
+      <Description>You are in a deserted room. up, north, or east.</Description>
+      <ShortDescription>You are on a deserted wall.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+		  <direction>u</direction>
+		  <roomName>South West tower</roomName>
+	    </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>West wall</roomName>
+        </Exit>
+        <Exit>
+		  <direction>e</direction>
+		  <roomName>South wall</roomName>
+		</Exit>
+      </Exits>
+      <Creatures>
+        <!--CreatureID>4</CreatureID-->
+      </Creatures>
+      <Items>
+        <Item>8</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>South West tower</Name>
+      <Title>South West tower</Title>
+      <Description>You are in a large dusty room. you may go down.</Description>
+      <ShortDescription>You are in a large dusty room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>d</direction>
+          <roomName>South West corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>South wall</Name>
+      <Title>South wall</Title>
+      <Description>You are on an abandond wall. You may go east or west.</Description>
+      <ShortDescription>You are on an abandond wall.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>South West corner</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>South East corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>South East corner</Name>
+      <Title>South East corner</Title>
+      <Description>You are in a roughly hewn room. You may go North, up, or west.</Description>
+      <ShortDescription>You are in a roughly hewn room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>u</direction>
+          <roomName>South East tower</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>South wall</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>East wall</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>South East tower</Name>
+      <Title>South East tower</Title>
+      <Description>You are in a fairly big room. You may go down.</Description>
+      <ShortDescription>You are in a fairly big room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>d</direction>
+          <roomName>South East corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>East wall</Name>
+      <Title>East wall</Title>
+      <Description>You are on a narrow wall looking at the sunrise. You may go Noth or South.</Description>
+      <ShortDescription>You are on a narrow wall.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>South East corner</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>North East corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>North East corner</Name> 
+      <Title>North East corner</Title>
+      <Description>You are in a musty, dark, room. You may go south or west.</Description>
+      <ShortDescription>You are in a musty, dark, room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>East wall</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>North wall</roomName>
+        </Exit>
+        <Exit>
+          <direction>u</direction>
+          <roomName>North East tower</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>North wall</Name>
+      <Title>North wall</Title>
+      <Description>You are on a high crumbling wall. You may go east or west.</Description>
+      <ShortDescription>You are on a high crumbling wall.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>North East corner</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>North West corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>North West tower</Name>
+      <Title>North West tower</Title>
+      <Description>You are in a large room. You may go down.</Description>
+      <ShortDescription>You are in a large room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>d</direction>
+          <roomName>North West corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>North East tower</Name>
+      <Title>North East tower</Title>
+      <Description>You are in a dark room. You may go down></Description>
+      <ShortDescription>You are in a dark room.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>d</direction>
+          <roomName>North East corner</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Dungeon</Name>
+      <Title>Dungeon</Title>
+      <Description>You are in a dark dirty room with a door leading to a hallway to the cells. you may go up or north.</Description>
+      <ShortDescription>>You are in a dark dirty room with a dorr leading to a hallway to the cells.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>u</direction>
+          <roomName>room</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>3</CreatureID>
+      </Creatures>
+      <Items></Items>
+    </Room>
+    <Room>
+      <Name>Hallway</Name>
+      <Title>Hallway</Title>
+      <Description>You are in a hallway with heavy iron doors in every direction,(eccept south.) You may go south, south/east, east, north/east, north, north/west, west, or south/west.</Description>
+      <ShortDescription>You are in a hallway with heavy iron doors in every direction,(eccept south.)</ShortDescription>
+      <Light>true</Light>
+      <Exits>
+        <Exit i:type="lockableDoorType">
+          <direction>s</direction>
+          <roomName>Dungeon</roomName>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>se</direction>
+          <roomName>Cell 1</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>e</direction>
+          <roomName>Cell 2</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>ne</direction>
+          <roomName>Cell 3</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>n</direction>
+          <roomName>Cell 4</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+        <!--Exit i:type="lockableDoorType">
+          <direction>nw</direction>
+          <roomName>Cell 5</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>w</direction>
+          <roomName>Cell 6</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>se</direction>
+          <roomName>Cell 7</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>9</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit-->
+      </Exits>
+      <Creatures>
+        <CreatureID>1</CreatureID>
+        <CreatureID>1</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>9</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Cell 1</Name>
+      <Title>Cell 1</Title>
+      <Description>You are in a dimly lit cell with a small barred window in one wall. you may go south/west.</Description>
+      <ShortDescription>You are in a dimly lit cell with a small barred window in one wall.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>sw</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures></Creatures>
+      <Items></Items>
+    </Room>
+    <Room>
+      <Name>Cell 2</Name>
+      <Title>Cell 2</Title>
+      <Description>You are in a dimly lit cell with a small barred window in one wall. You may go east.</Description>
+      <ShortDescription>You are in a dimly lit cell with a small bared window in one wall.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures></Creatures>
+      <Items>
+        <Item>10</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Cell 3</Name>
+      <Title>Cell 3</Title>
+      <Description>You are in a dimly lit cell with a small barred window in one wall. You may Go south/west.</Description>
+      <shortDescription>You are in a dimly lit cell with a small barred window in one wall.</shortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>sw</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures></Creatures>
+      <Items></Items>
+    </Room>
+    <Room>
+      <Name>Cell 4</Name>
+      <Title>Cell 4</Title>
+      <Description>You are in a dimly lit cell with a small barred window in one wall. You may go south.</Description>
+      <shortDescription>You are in a dimly lit cell with a small barred window in one wall.</shortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Cell 5</Name>
+      <Title>Cell 5</Title>
+      <Description>You are in a dimly lit cell with a small barred window in one wall. you may go south/east.</Description>
+      <ShortDescription>You are in a dimly lit cell with a small barred window in one wall.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>se</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Cell 6</Name>
+      <Title>Cell 6</Title>
+      <Description>You are in a dimly lit cell with a small barred window in one wall. you may go west.</Description>
+      <ShortDescription>You are in a dimly lit cell with a small barred window in one wall.</ShortDescription>
+      <Light>true</Light>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Hallway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+  </RoomList>
+  <MonsterList>
+    <Monster>
+      <ID>1</ID>
+      <Name>Skeleton</Name>
+      <HP>20</HP>
+      <Hardiness>14</Hardiness>
+      <Agility>10</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+        <Item>4</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A live skeleton who looks like he has not eaten in 10,000 years notices you.</Description>
+      <Disposition>Friendly</Disposition>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>4</FavoredWeaponID>
+    </Monster>
+    <Monster>
+      <ID>2</ID>
+      <Name>Goblin</Name>
+      <HP>20</HP>
+      <Hardiness>18</Hardiness>
+      <Agility>10</Agility>
+      <ArmorClass>1</ArmorClass>
+      <Items/>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>5</Sides>
+          <Count>2</Count>
+          <Plus>1</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A nasty little Goblin looks you.</Description>
+      <Disposition>Friendly</Disposition>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Spear</WeaponType>
+        <WeaponType>Bow</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>5</FavoredWeaponID>
+    </Monster>
+    <Monster>
+      <ID>3</ID>
+      <Name>Warewolf</Name>
+      <HP>20</HP>
+      <Hardiness>10</Hardiness>
+      <Agility>18</Agility>
+      <ArmorClass>1</ArmorClass>
+      <Items></Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>2</Sides>
+          <Count>5</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>claws at</Phrase>
+          <Phrase>Snarels then bites at</Phrase>
+          <Phrase>Gores</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A nasty wolf stares at you from under a curtain of fur.</Description>
+      <Disposition>Friendly</Disposition>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Sword</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>3</FavoredWeaponID>
+    </Monster>
+    <Monster>
+      <ID>4</ID>
+      <Name>Giant</Name>
+      <HP>40</HP>
+      <Hardiness>20</Hardiness>
+      <Agility>25</Agility>
+      <ArmorClass>3</ArmorClass>
+      <Items>
+        <Item>7</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>3</Count>
+          <Plus>2</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>claws at</Phrase>
+          <Phrase>Slaps at</Phrase>
+          <Phrase>squeeses</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A Giant looks down at you.</Description>
+      <Disposition>Angry</Disposition>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Mace</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>7</FavoredWeaponID>
+    </Monster>
+  </MonsterList>
+  <ItemList>
+    <Item i:type="weaponData">
+      <id>1001</id>
+      <name>rusty sword</name>
+      <description>This is a plain, rusty sword.</description>
+      <baseValue>15</baseValue>
+      <Attack>
+        <AttackDice>
+          <Sides>2</Sides>
+          <Count>4</Count>
+          <Plus>2</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+          <Phrase>slices at</Phrase>
+        </AttackPhrases>
+        <Type>Sword</Type>
+      </Attack>
+    </Item>
+    <Item>
+      <id>1</id>
+      <name>Old leather armor</name>
+      <description>Its old leather armor with more than a few slashes in it, but may still be servicable</description>
+      <baseValue>10</baseValue>
+    </Item>
+    <Item>
+      <id>2</id>
+      <name>Gold key</name>
+      <description>Looks like it might unlock something</description>
+      <baseValue>1</baseValue>
+    </Item>
+    <Item i:type="weaponData">
+      <id>3</id>
+      <name>knife</name>
+      <description>This is a plain, old knife.</description>
+      <baseValue>5</baseValue>
+      <Attack>
+        <AttackDice>
+          <Sides>3</Sides>
+          <Count>2</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+          <Phrase>slices at</Phrase>
+        </AttackPhrases>
+        <Type>Sword</Type>
+      </Attack>
+    </Item>
+    <Item i:type="weaponData">
+      <id>4</id>
+      <name>javelin</name>
+      <description>This is a plain javelin.</description>
+      <baseValue>20</baseValue>
+      <Attack>
+        <AttackDice>
+          <Sides>5</Sides>
+          <Count>2</Count>
+          <Plus>3</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>Throws at</Phrase>
+        </AttackPhrases>
+        <Type>Spear</Type>
+      </Attack>
+    </Item>
+    <Item i:type="weaponData">
+      <id>5</id>
+      <name>bow</name>
+      <description>This is a plain bow.</description>
+      <baseValue>10</baseValue>
+      <Attack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>3</Count>
+          <Plus>4</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>shoots at</Phrase>
+        </AttackPhrases>
+        <Type>Bow</Type>
+      </Attack>
+    </Item>
+    <Item i:type="weaponData">
+      <id>6</id>
+      <name>Spear of blood</name>
+      <description>This is a plain Spear.</description>
+      <baseValue>20</baseValue>
+      <Attack>
+        <AttackDice>
+          <Sides>5</Sides>
+          <Count>2</Count>
+          <Plus>1</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>Throws at</Phrase>
+        </AttackPhrases>
+        <Type>Spear</Type>
+      </Attack>
+    </Item>
+    <Item i:type="weaponData">
+      <id>7</id>
+      <name>Spiked Club</name>
+      <description>This is a plain Spicked club.</description>
+      <baseValue>25</baseValue>
+      <Attack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>3</Count>
+          <Plus>4</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>swings at</Phrase>
+          <Phrase>thrusts at</Phrase>
+        </AttackPhrases>
+        <Type>Mace</Type>
+      </Attack>
+    </Item>
+    <Item>
+      <id>8</id>
+      <name>Ruby</name>
+      <description>It is large and surprisingly clear.</description>
+      <baseValue>60</baseValue>
+      <weight>5</weight>
+    </Item>
+    <Item>
+      <id>9</id>
+      <name>Bronze key</name>
+      <description>Looks like it might unlock something</description>
+      <baseValue>1</baseValue>
+    </Item>
+    <Item>
+      <id>10</id>
+      <name>Chest</name>
+      <description>Looks like there might be something inside.</description>
+      <baseValue>5</baseValue>
+      <weight>12</weight>
+      <storage>
+        <closable>true</closable>
+        <maxWeight>20</maxWeight>
+        <Contents>8</Contents>
+        <Contents>11</Contents>
+      </storage>
+    </Item>
+    <Item>
+      <id>11</id>
+      <name>Bones</name>
+      <description>Looks like they have ben in there for who knows how long.</description>
+      <baseValue>0</baseValue>
+      <weight>10</weight>
+  </Item>
+  <Item>
+    <id>12</id>
+    <name>Torch</name>
+    <description>It is large and looks like you might be able to light it.</description>
+    <baseValue>4</baseValue>
+    <weight>5</weight>
+    <canLight>true</canLight>
+  </Item>
+  </ItemList>
+</DungeonData>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:i="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Adventure" xmlns:Adv="http://schemas.datacontract.org/2004/07/Adventure" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CharacterList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="Character" type="Adv:CharacterType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CharacterType">
+    <xs:complexContent>
+      <xs:extension base="Adv:CreatureType">
+        <xs:sequence>
+          <xs:element name="ArmorExpertise" type="xs:unsignedByte" />
+          <xs:element name="Axe" type="xs:byte" />
+          <xs:element name="Bow" type="xs:byte" />
+          <xs:element name="Mace" type="xs:byte" />
+          <xs:element name="Spear" type="xs:byte" />
+          <xs:element name="Sword" type="xs:byte" />
+          <xs:element name="Charisma" type="xs:byte" />
+          <xs:element name="Heal" type="xs:byte" />
+          <xs:element name="Blast" type="xs:byte" />
+          <xs:element name="Power" type="xs:byte" />
+          <xs:element name="Speed" type="xs:byte" />
+          <xs:element name="Gold" type="xs:unsignedLong" />
+          <xs:element name="GoldInBank" type="xs:unsignedLong" />
+          <xs:element name="WeaponList">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="Weapon" type="Adv:weaponData" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

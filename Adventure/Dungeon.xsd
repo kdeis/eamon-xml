@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:i="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Adventure" xmlns:Adv="http://schemas.datacontract.org/2004/07/Adventure" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DungeonData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Intro" minOccurs="0" type="xs:string" />
+        <xs:element minOccurs="0" name="CantTakeItWithYou" type="Adv:cantTakeItWithYouType" />
+        <xs:element name="RoomList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Room" type="Adv:roomType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MonsterList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Monster" type="Adv:MonsterType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ItemList">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Item" type="Adv:itemType" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="cantTakeItWithYouType">
+    <xs:sequence>
+      <xs:element name="StartingArmorClass" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StartingItem" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="roomType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="Title" type="xs:string" />
+      <xs:element name="Description" type="xs:string" />
+      <xs:element name="ShortDescription" type="xs:string" />
+      <xs:element name="Light" minOccurs="0" type="xs:boolean" default="true"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Trigger" type="Adv:roomTriggerType" />
+      <xs:element name="Exits">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="Exit" type="Adv:doorType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Creatures">
+        <xs:complexType>
+          <xs:sequence minOccurs="0">
+            <xs:element maxOccurs="unbounded" name="CreatureID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Items">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="doorType">
+    <xs:sequence>
+      <xs:element name="direction" type="Adv:directionType" />
+      <xs:element name="roomName" type="xs:string" />
+      <xs:element name="toMainHall" minOccurs="0" type="xs:boolean" default="false" />
+      <xs:element name="visible" minOccurs="0" type="xs:boolean" default="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lockableDoorType">
+    <xs:complexContent>
+      <xs:extension base="Adv:doorType">
+        <xs:sequence>
+          <xs:element name="locked" type="xs:boolean" />
+          <xs:element name="LockedDescription" type="xs:string" />
+          <xs:element name="UnlockedDescription" type="xs:string" />
+          <xs:element name="UnlockPhrase" type="xs:string" />
+          <xs:element name="LockPhrase" type="xs:string" />
+          <xs:element minOccurs="0" name="keyItemId" type="xs:string" />
+          <xs:element minOccurs="0" name="keyItemAction" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="directionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="n" />
+      <xs:enumeration value="s" />
+      <xs:enumeration value="e" />
+      <xs:enumeration value="w" />
+      <xs:enumeration value="ne" />
+      <xs:enumeration value="se" />
+      <xs:enumeration value="nw" />
+      <xs:enumeration value="sw" />
+      <xs:enumeration value="u" />
+      <xs:enumeration value="d" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="roomTriggerType">
+    <xs:sequence>
+      <xs:element name="trigger" type="Adv:elementRoomTriggerNameType" />
+      <xs:element maxOccurs="unbounded" name="action" type="Adv:actionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="roomTriggerNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OnFirstEnter" />
+      <xs:enumeration value="OnEachEnter" />
+      <xs:enumeration value="OnExamine" />
+      <xs:enumeration value="OnMagicWord" />
+      <xs:enumeration value="OnPower" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="elementRoomTriggerNameType">
+    <xs:simpleContent>
+      <xs:extension base="Adv:roomTriggerNameType">
+        <xs:attribute name="arg" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CreatureType">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:int" />
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="Hardiness" type="xs:int" />
+      <xs:element name="Agility" type="xs:int" />
+      <xs:element name="ArmorClass" type="xs:int" />
+      <xs:element name="Items">
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="Item" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonsterType">
+    <xs:complexContent>
+      <xs:extension base="Adv:CreatureType">
+        <xs:sequence>
+          <xs:element name="NaturalAttack" type="Adv:AttackType" />
+          <xs:element name="Description" type="xs:string" />
+          <xs:element name="Disposition" type="Adv:DispositionType" />
+          <xs:element minOccurs="0" name="Friendliness" type="xs:int" />
+          <xs:element name="Courage" type="xs:int" />
+          <xs:element minOccurs="0" name="NoFollow" type="xs:boolean" default="false" />
+          <xs:element name="CanUseWeapons" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanUseWeaponTypes">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="WeaponType" type="Adv:weaponType" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="FavoredWeaponID" type="xs:int" />
+          <xs:element minOccurs="0" name="WeaponID" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Trigger" type="Adv:monsterTriggerType" />
+          <xs:element minOccurs="0" name="AutoCorpse" type="Adv:AutoCorpseType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AttackType">
+    <xs:sequence>
+      <xs:element name="AttackDice" type="Adv:diceType" />
+      <xs:element minOccurs="0" name="AttackPhrases">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Phrase" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="diceType">
+    <xs:sequence>
+      <xs:element name="Sides" type="xs:int" />
+      <xs:element name="Count" type="xs:int" />
+      <xs:element name="Plus" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DispositionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Angry" />
+      <xs:enumeration value="Friendly" />
+      <xs:enumeration value="Neutral" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="weaponType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Axe" />
+      <xs:enumeration value="Bow" />
+      <xs:enumeration value="Mace" />
+      <xs:enumeration value="Spear" />
+      <xs:enumeration value="Sword" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AutoCorpseType">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="monsterTriggerType">
+    <xs:sequence>
+      <xs:element name="trigger" type="Adv:elementMonsterTriggerNameType" />
+      <xs:element maxOccurs="unbounded" name="action" type="Adv:actionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="monsterTriggerNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OnBlast" />
+      <xs:enumeration value="OnKill" />
+      <xs:enumeration value="OnMagicWord" />
+      <xs:enumeration value="OnPower" />
+      <xs:enumeration value="OnWound" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="elementMonsterTriggerNameType">
+    <xs:simpleContent>
+      <xs:extension base="Adv:monsterTriggerNameType">
+        <xs:attribute name="arg" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="actionType" abstract="true">
+    <xs:sequence>
+      <xs:element name="text" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="destroyItemAction">
+    <xs:annotation>
+      <xs:documentation>The destroyItemAction takes an item ID and removes that item from the game. The item is removed from player inventory, any room, or any monster inventory.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="doorLockAction">
+    <xs:annotation>
+      <xs:documentation>The doorLockAction locks or unlocks a door.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="direction" type="Adv:directionType" />
+          <xs:element name="roomId" type="xs:string" />
+          <xs:element name="lockIt" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="executeIfAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name ="condition" type="Adv:conditionType" />
+          <xs:element maxOccurs="unbounded" name="action" type="Adv:actionType" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="elseAction" type="Adv:actionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="goToRoomAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="healPlayerAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="rangeLow" type="xs:int" />
+          <xs:element name="rangeHigh" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="hideExitAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="direction" type="Adv:directionType" />
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="openStorageAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="storageItemId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="modifyWeaponAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int" />
+          <xs:element name="damage" type="Adv:diceType" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="permaBoostPlayerStatAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="stat" type="xs:string" />
+          <xs:element name="value" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="readyWeaponAction">
+    <xs:annotation>
+      <xs:documentation>The readyWeaponAction readies a weapon. Use this to automatically ready a weapon when you don't want the user to have to use the "ready" command, for example, when the player wears a suit of powered armor with weapons built in, or is temporarily bestowed with a magical attack.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="weaponItemId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="revealExitAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="direction" type="Adv:directionType" />
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="revealItemAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="itemId" type="xs:int" />
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="showTextAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="setConstantAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="setTimerAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="duration" type="xs:int" />
+          <xs:element name="repeat"  minOccurs="0" type="xs:boolean" default="false" />
+          <xs:element maxOccurs="unbounded" name="action" type="Adv:actionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="toggleAction">
+    <xs:annotation>
+      <xs:documentation>The toggleAction contains one or more actions. It executes one at a time, beginning with the first. Each time it is triggerred, it will execute the next contained action in sequence, then wrap around to the first again.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="action" type="Adv:actionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="wakeCreatureAction">
+    <xs:complexContent>
+      <xs:extension base="Adv:actionType">
+        <xs:sequence>
+          <xs:element name="monsterId" type="xs:int" />
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="actionNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DestroyItem" />
+      <xs:enumeration value="ExecuteIf" />
+      <xs:enumeration value="GoToRoom" />
+      <xs:enumeration value="HealPlayer" />
+      <xs:enumeration value="HideExit" />
+      <xs:enumeration value="OpenStorage" />
+      <xs:enumeration value="PermaBoostPlayerStat" />
+      <xs:enumeration value="RevealExit" />
+      <xs:enumeration value="RevealItem" />
+      <xs:enumeration value="SetConstant" />
+      <xs:enumeration value="ShowText" />
+      <xs:enumeration value="Toggle" />
+      <xs:enumeration value="WakeCreature" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="conditionType" abstract="true" />
+  <xs:complexType name="andCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name ="condition" type="Adv:conditionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="orCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name ="condition" type="Adv:conditionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="notCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element name ="condition" type="Adv:conditionType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="itemInRoomCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element name="itemId" type="xs:int" />
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="monsterInRoomCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element name="monsterId" type="xs:int" />
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="playerInRoomCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element name="roomId" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="playerHoldingItemCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element name="itemId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="constantEqualsCondition">
+    <xs:complexContent>
+      <xs:extension base="Adv:conditionType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="storageType">
+    <xs:sequence>
+      <xs:element name="isOpen" type="xs:boolean" minOccurs="0" default="true">
+        <xs:annotation>
+          <xs:documentation>isOpen - true if the container is open and contents are accessible. Otherwise false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="closable" type="xs:boolean" minOccurs="0" default="false">
+        <xs:annotation>
+          <xs:documentation>closable - true if the player can close it with the simple "CLOSE" command. Otherwise false.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="openable" type="xs:boolean" minOccurs="0" default="false">
+        <xs:annotation>
+          <xs:documentation>openable - true if the player can open it with the simple "OPEN" command. Otherwise false. If opening requires using or holding a certain object, or any other condition, it is better to use a trigger and the "openStorage" action.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CantOpenPhrase" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>CantOpenPhrase - optional - if provided, this phrase will be displayed when the user attempts a simple "OPEN" command, instead of the default "you can't open that" message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="maxWeight" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>maxWeight - The maximum combined weight of contents this storage item can hold.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contents" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itemType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="baseValue" type="xs:int" />
+      <xs:element name="weight" type="xs:int" />
+      <xs:element name="canLight" type="xs:boolean" minOccurs="0" default="false" />
+      <xs:element name="isMoney" type="xs:boolean" minOccurs="0" default="false" />
+      <xs:element name="storage" type="Adv:storageType" minOccurs="0" />
+      <xs:element name="revealed" type="xs:boolean" minOccurs="0" default="true" />
+      <xs:element name="isWearable" type="xs:boolean" minOccurs="0" default="false" />
+      <xs:element name="isArmor" type="xs:boolean" minOccurs="0" default="false" />
+      <xs:element name="armorClass" type="xs:int" minOccurs="0" default="0" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Trigger" type="Adv:itemTriggerType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="weaponData">
+    <xs:complexContent>
+      <xs:extension base="Adv:itemType">
+        <xs:sequence>
+          <xs:element name="Attack" type="Adv:WeaponAttackType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WeaponAttackType">
+    <xs:complexContent>
+      <xs:extension base="Adv:AttackType">
+        <xs:sequence>
+          <xs:element name="Type" type="Adv:weaponType" />
+          <xs:element name="Complexity" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="itemTriggerType">
+    <xs:sequence>
+      <xs:element name="trigger" type="Adv:elementItemTriggerNameType" />
+      <xs:element maxOccurs="unbounded" name="action" type="Adv:actionType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="itemTriggerNameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OnBlast" />
+      <xs:enumeration value="OnDrink" />
+      <xs:enumeration value="OnExamine" />
+      <xs:enumeration value="OnGet" />
+      <xs:enumeration value="OnDrop" />
+      <xs:enumeration value="OnMagicWord" />
+      <xs:enumeration value="OnPower" />
+      <xs:enumeration value="OnRead" />
+      <xs:enumeration value="OnUse" />
+      <xs:enumeration value="OnOpen" />
+      <xs:enumeration value="OnClose" />
+      <xs:enumeration value="OnWear" />
+      <xs:enumeration value="OnRemove" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="elementItemTriggerNameType">
+    <xs:simpleContent>
+      <xs:extension base="Adv:itemTriggerNameType">
+        <xs:attribute name="arg" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

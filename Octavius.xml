@@ -1,0 +1,1017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonData xmlns="http://schemas.datacontract.org/2004/07/Adventure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Intro>
+    Well, she's done it again. Your dinner date, the beautiful Cynthia Luxom, has stood you up.
+    She probably didn't mean too; you recall she was quite excited that her nephew, Peter, was
+    expected to arrive this morning for a long visit. He's a nice young man, eager to prove
+    himself, and quite intelligent. Unlike his delightful but not-to-bright aunt.&#xA;&#xA;
+    Still, you can't help feel bitter about it. You finish off your meal and a second mug of ale,
+    then exit the tavern to contemplate whether you ought to call on her at the castle or go
+    about your business until she realizes her mistake.&#xA;
+    You are just passing the fountain in the village square when your stomach takes issue with
+    the Calimari-for-two you ate. You sit on the edge of the pool as you feel your face flush,
+    and a different kind of bitterness rises in your throat. Soon you are so occupied with the
+    tasks of breathing and keeping your insides from becoming your outsides, that you barely
+    notice the movement in the water.&#xA;
+    Suddenly, a tentacle lashes round your forehead and pulls you in! While the cool water is
+    soothing to your face and abdomen, it is decidedly unhelpful in the area of breathing.
+    Frantically, you feel for your weapons, but find nothing but... a ballpoint pen.
+
+    You descend helplessly into darkness...&#xA;
+    You awaken to the sound of your alarm clock. Today is the day. You've been working towards
+    this for your entire career. Today you justify all the research grants, silence all the
+    skeptics, and most importantly, introduce the world to a cleaner, brighter, safer future than
+    anyone else can imagine. So you'd better get to the convention center to finish preparations!
+
+    You quickly clean up, put on your favorite lab coat, and slip your pen into the pocket.
+  </Intro>
+  <CantTakeItWithYou>
+    <StartingArmorClass>0</StartingArmorClass>
+    <StartingItem>1</StartingItem>
+  </CantTakeItWithYou>
+  <RoomList>
+    <!-- BEGIN MAP CHAPTER 1: DEMONSTRATION -->
+    <Room>
+      <Name>Entrance</Name>
+      <Title>Apartment</Title>
+      <Description>
+        This is your home. It's a small, but comfortable ground-level apartment, filled with nick-knacks and pictures of you and Rosie. After this week's excitement, you've promised to take her on a short vacation to celebrate. The front door is to the east.
+      </Description>
+      <ShortDescription>You are in your apartment.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>FrontSteps</roomName>
+        </Exit>
+        <!-- TEMP Exit allows return to main hall for testng -->
+        <Exit>
+          <direction>w</direction>
+          <roomName>Entrance</roomName>
+          <toMainHall>true</toMainHall>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items>
+        <Item>2</Item>
+        <Item>3</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>FrontSteps</Name>
+      <Title>Outside your apartment</Title>
+      <Description>You are on the steps outside your apartment building. Cars are parked down both sides of the street. You see the coffee shop to the north, and the convention center is a few blocks to the south. Your apartment door is to the west.</Description>
+      <ShortDescription>You are on the front steps of your apartment.</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="setTimerAction">
+          <text>You have a little time yet to finish preparations before the event begins, but not much. You can just imagine the disaster it would be if the press arrived and you weren't ready! It could ruin you, and your investors. Better not dawdle.</text>
+          <name>DemoStartTimer</name>
+          <duration>30</duration>
+          <action i:type="healPlayerAction">
+            <text>You have kept your invited audience waiting too long. Government officials, titans of industry, eager investors, and skeptical competitors now see your extraordinary technology as a sham, and see you as a no-show. Your chief invester, young Mr. Osborne, is financially devastated and goes on a public vendetta against you. And all this before a voracious national press. But the deepest hurt is dissappointment in dear Rosie's eyes, who for the rest of your lives, can not understand why you therw it all away.</text>
+            <rangeLow>-999</rangeLow>
+            <rangeHigh>-999</rangeHigh>
+          </action>
+        </action>
+        <action i:type="setConstantAction">
+          <text />
+          <name>WakeHarryConst</name>
+          <value>True</value>
+        </action>
+        <action i:type="setConstantAction">
+          <text />
+          <name>WearingArmsConst</name>
+          <value>False</value>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Entrance</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>CoffeeStreet</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>NorthRoad</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>CoffeeStreet</Name>
+      <Title>In front of Coffee Shop</Title>
+      <Description>
+        The coffee shop street corner is bustling with activity. Cars stream past, people cross in
+        the crosswalk by the dozen. It's a picture of everyday life in the city.&#xA;
+        The coffee shop entrance is to the west You live down the street to the south.
+      </Description>
+      <ShortDescription>You are on a busy street corner outside the coffee shop.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>CoffeeShop</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>FrontSteps</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>CoffeeShop</Name>
+      <Title>Choc'n'Awe</Title>
+      <Description>
+        This is Rosie's favorite coffee shop, reknown for their mochas. You've spend many mornings here together, sitting on stools over a counter-height table discussing poetry. No time for that this morning, however! You have to prepare for the demonstration at the convention center.&#xA;
+        The line here is unusually long, anyway. The exit is to the east.
+      </Description>
+      <ShortDescription>You are in the Choc'n'Awe.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>CoffeeStreet</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>1</CreatureID>
+      </Creatures>
+      <Items />
+    </Room>
+    <Room>
+      <Name>NorthRoad</Name>
+      <Title>Oak St</Title>
+      <Description>You are crossing Oak street, where it intersects Jefferson between your home and the convention center.</Description>
+      <ShortDescription>You are crossing Oak street.</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="showTextAction">
+          <text>A little way ahead, you see your young lab assistant, Peter, emerge from an alley to the west. He checks his watch and heads south quickly, tucking in his shirt on the way.</text>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>FrontSteps</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>MiddleRoad</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Alley1</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>Alley1</Name>
+      <Title>Alley</Title>
+      <Description>You are in a narrow alley between storefronts with apartments above. There is a trash dumpster, and fire escape ladders on either side.</Description>
+      <ShortDescription>You are in a narrow alley.</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="showTextAction">
+          <text>&#xA;You arrive in time to see policemen arresting two men. They appear to be petty burglars, as the police search their pockets and produce tools like a hammer, screwdrivers, and lock picks. The robbers look a little battered and dazed, perhaps from a fight. Before you think to ask any questions, the policemen stuff the robbers in a squad car and drive away.</text>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>NorthRoad</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items>
+        <Item>6</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>MiddleRoad</Name>
+      <Title>Maple St</Title>
+      <Description>You are crossing Maple street, where it intersects Jefferson between your home and the convention center.</Description>
+      <ShortDescription>You are crossing Maple street.</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="showTextAction">
+          <text>&#xA;You see Peter ahead, struggling to tie his tie as he hurries off to the south.</text>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>NorthRoad</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>SouthRoad</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Alley2</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>Alley2</Name>
+      <Title>Alley</Title>
+      <Description>You are in a narrow alley between storefronts with apartments above. There is a trash dumpster, and fire escape ladders on either side.</Description>
+      <ShortDescription>You are in a narrow alley.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>MiddleRoad</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>SouthRoad</Name>
+      <Title>Birch St</Title>
+      <Description>You are crossing Birch street, where it intersects Jefferson. To the east is the expansive convention center. It is a landmark of modern architecture, playing host to everything from auto shows to concerts to comic book conventions. Today, among the locals and tourists will be fellow scientists, executives, legislators, financiers, and of course members of the press, all there to see your demonstration.</Description>
+      <ShortDescription>You are crossing Birch street, across from the convention center.</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="showTextAction">
+          <text>&#xA;You see Peter ahead. He trips over a loose shoelace before entering the Convention Center to the east.</text>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>MiddleRoad</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>ConvLobby</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Alley3</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>Alley3</Name>
+      <Title>Alley</Title>
+      <Description>You are in a narrow alley between storefronts with apartments above. There is a trash dumpster, and fire escape ladders on either side.</Description>
+      <ShortDescription>You are in a narrow alley.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>SouthRoad</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>ConvLobby</Name>
+      <Title>Convention Center Lobby</Title>
+      <Description>You enter the convention center. The striking design continues here, from the impressive tile mosaic in the floor to the grand structural trusses far overhead. As usual, it is very busy.</Description>
+      <ShortDescription>You are in the Convention Center Lobby.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>SouthRoad</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>ConvEastWing</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>ConvInfoDesk</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items>
+        <Item>4</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>ConvInfoDesk</Name>
+      <Title>Information desk</Title>
+      <Description>You move through the wide hall towards the information desk. Behind the desk you recognize a familiar face.</Description>
+      <ShortDescription>You are at the south end of the lobby, near the information desk.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>ConvLobby</roomName>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>e</direction>
+          <roomName>ConvEWHall</roomName>
+          <locked>true</locked>
+          <LockedDescription>The security guard steps in front of you, and says in his gravelly voice, "Sir, you can't come in here without an id."</LockedDescription>
+			<!-- <UnlockedDescription>The guard checks your ID badge and allows you to pass.</UnlockedDescription> -->
+          <UnlockPhrase>You wave your badge in front of the sensor and the door clicks open.</UnlockPhrase>
+          <LockPhrase></LockPhrase>
+          <!--<keyItemId>3</keyItemId>
+          <keyItemAction>wear</keyItemAction> -->
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>ConvLobbySouth</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>2</CreatureID>
+        <CreatureID>3</CreatureID>
+      </Creatures>
+      <Items />
+    </Room>
+    <Room>
+      <Name>ConvEWHall</Name>
+      <Title>East/West Hallway</Title>
+      <Description>You are in an access hallway, with doors to the north and south, presumably storage or mechanical rooms too which you do not have access. The lobby is to the west, and the storage for your auditorium is to the east.</Description>
+      <ShortDescription>You are in an east-west access hallway.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>ConvInfoDesk</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>ConvReceiving</roomName>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>n</direction>
+          <!-- Entrance is a place-holder; this door never unlocks.-->
+          <roomName>Entrance</roomName>
+          <locked>true</locked>
+          <LockedDescription>You wave your badge over the sensor pad, but nothing happens. You don't have access.</LockedDescription>
+          <UnlockedDescription></UnlockedDescription>
+          <UnlockPhrase></UnlockPhrase>
+          <LockPhrase></LockPhrase>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>s</direction>
+          <!-- Entrance is a place-holder; this door never unlocks.-->
+          <roomName>Entrance</roomName>
+          <locked>true</locked>
+          <LockedDescription>You wave your badge over the sensor pad, but nothing happens. You don't have access.</LockedDescription>
+          <UnlockedDescription></UnlockedDescription>
+          <UnlockPhrase></UnlockPhrase>
+          <LockPhrase></LockPhrase>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>ConvReceiving</Name>
+      <Title>Convention Center Receiving Bay</Title>
+      <Description>You are in a long, open area with large overhead doors where delivery trucks are loaded and unloaded for events here at the convention center. From here, cargo is carted north or south to the various conference rooms and auditoriums. It is quiet and empty now, but you have seen so much activity here in the last week that you wonder whether the staff could have moved so much cargo to the right rooms so quickly.</Description>
+      <ShortDescription>You are in the Convention Center Receiving Bay.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>ConvEWHall</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>BackStage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>BackStage</Name>
+      <Title>BackStage</Title>
+      <Description>You are in the back-stage area of the large auditorium where you will soon demonstrate your new technology. There are several open shipping crates among thick cables and other equipment you and Peter have set up over the past week in preparation.</Description>
+      <ShortDescription>You are backstage of your auditorium.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>ConvReceiving</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Stage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items>
+        <Item>7</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Stage</Name>
+      <Title>Stage</Title>
+      <Description>You are on the stage of the large auditorium.</Description>
+      <ShortDescription>You are on stage.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>BackStage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items>
+        <Item>8</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>ConvLobbySouth</Name>
+      <Title>South End of Lobby</Title>
+      <Description>You are in the south end of the Convention Center's lobby area. The auditorium is to the east. The doors will open soon, and members of the press have already started gathering.&#xA;&#xA;The restroom is opposite the auditorium, to the west.</Description>
+      <ShortDescription>You are in the south end of the Convention Center's lobby area.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>ConvInfoDesk</roomName>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>e</direction>
+          <roomName>Stage</roomName>
+          <locked>true</locked>
+          <LockedDescription>The doors are locked, but they will be opened soon.</LockedDescription>
+          <UnlockedDescription />
+          <UnlockPhrase />
+          <LockPhrase />
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>ConvRestroom</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>ConvRestroom</Name>
+      <Title>Restroom</Title>
+      <Description>You are in a large men's room.</Description>
+      <ShortDescription>You are in the men's room.</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="showTextAction">
+          <text>&#xA;Your lab assistant, Peter Parker, is here, nervously splashing his face with water, coming his hair, adjusting his tie, and muttering something about "M. J." Peter is a university student recommended by your friend, Dr. Connor. He has quickly become one of your favorites. After hosting him for dinner a few times, even Rosie has come to love him.&#xA;&#xA;More recently, Dr. Connor described him as "brilliant, but lazy." You have to admit he has become less reliable lately, sometimes disappearing for hours at a time. You hope to get a handle on this soon; you're not likely to find another student as capable as Peter.&#xA;</text>
+        </action>
+        <action i:type="showTextAction">
+          <text>&#xA;When Peter sees you, he seems to snap out of it. "Oh, Dr. Octavious! I'm sorry I'm late. I was about to go backstage and find you. Harry should be here by now, but I haven't seen him yet.</text>
+        </action>
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="constantEqualsCondition">
+            <name>WearingArmsConst</name>
+            <value>False</value>
+          </condition>
+          <action i:type="showTextAction">
+            <text>We gotta finish getting ready! Look, you don't even have your arms on yet!</text>
+          </action>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>ConvLobbySouth</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>4</CreatureID>
+      </Creatures>
+      <Items />
+    </Room>
+    <Room>
+      <Name>ConvEastWing</Name>
+      <Title>East Wing</Title>
+      <Description>You are in a large, wide, east-west hallway. There are doors to the north and south to smaller convention spaces. The hall to the east is roped off, as there are no exhibits down there today.</Description>
+      <ShortDescription>You are in the East wing of the convention center.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>ConvLobby</roomName>
+        </Exit>
+        <Exit>
+          <direction>n</direction>
+          <roomName>ConvPotteryRoom</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>ConvQuiltRoom</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <Room>
+      <Name>ConvQuiltRoom</Name>
+      <Title>Quilting Expo</Title>
+      <Description>You are in a large room filled with tables, chairs, and women of all ages (but mostly older) socializing and selling their wares. The tables display dozens of unique, hand made quilts. There are also a number of industry sales reps, demonstrating computer controlled cutting and sewing machines, and an elderly Amish woman teaching young girls how to lay the batten between the quilted layers and pin it all together. Along the back wall are several wooden crates. All but one are open.</Description>
+      <ShortDescription>You are in the quilting expo.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>ConvEastWing</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items>
+        <Item>12</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>ConvPotteryRoom</Name>
+      <Title>Pottery Workshop</Title>
+      <Description>You are in a large room outfitted with tables and chairs. There are bricks of clay and sculpting tools for sale, and a handful of spinning wheels. You count three classes in various parts of the room, teaching different pottery techniques.</Description>
+      <ShortDescription>You are at the pottery workshop.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>s</direction>
+          <roomName>ConvEastWing</roomName>
+        </Exit>
+      </Exits>
+      <Creatures />
+      <Items />
+    </Room>
+    <!-- END MAP CHAPTER 1: DEMONSTRATION -->
+  </RoomList>
+  <MonsterList>
+    <!-- BEGIN CREATURES CHAPTER 1: DEMONSTRATION -->
+    <Monster>
+      <ID>1</ID>
+      <Name>Rosie</Name>
+      <Hardiness>5</Hardiness>
+      <Agility>5</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>0</Sides>
+          <Count>0</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>cowers before</Phrase>
+          <Phrase>hides from</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>
+        Your wife, Rosalie Octavius, is here. She is a lovely, practical woman whose face brightens the room. Her long dark hair falls lightly
+        over her white lab coat the same way it did the first time you laid eyes on her, all those years ago.&#xA;
+        When she sees you there, looking at her, she gently scolds you. "Otto, didn't you get my note? You go on and get ready! I'll be along soon with your coffee.
+      </Description>
+      <Disposition>Friendly</Disposition>
+      <Friendliness>95</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>50</Courage>
+      <NoFollow>true</NoFollow>
+      <CanUseWeapons>false</CanUseWeapons>
+      <AutoCorpse>
+        <Description>Your dear, beloved Rosie lies in a pool of blood. Her beautiful life has left her, and taken with it any conceivable hope for your happiness.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>2</ID>
+      <Name>Mary</Name>
+      <Hardiness>5</Hardiness>
+      <Agility>5</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>0</Sides>
+          <Count>0</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>cowers before</Phrase>
+          <Phrase>hides from</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>You see Mary, a sweet, young, red-headed "Guest Assistant" you have spoken with several times over the past few days while preparing your equipment here. She waves and says, "Hi Mr. Octavius! You must be so excited! You can go on back and finish setting up." She gestures toward the door to the east, marked for authorized personnel only.</Description>
+      <Disposition>Friendly</Disposition>
+      <Friendliness>95</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>50</Courage>
+      <NoFollow>true</NoFollow>
+      <CanUseWeapons>false</CanUseWeapons>
+      <AutoCorpse>
+        <Description>Mary's body lies here. The poor girl was just in the wrong place at the wrong time.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>3</ID>
+      <Name>Security Guard</Name>
+      <Hardiness>15</Hardiness>
+      <Agility>10</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+        <Item>5</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>There is an elderly security guard here, with thinning white hair and a white mustache. He is armed, and carries a radio. There's something familiar about him, but you can't quite put your finger on it. People around here call him Stan.</Description>
+      <Disposition>Neutral</Disposition>
+      <Friendliness>95</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>200</Courage>
+      <NoFollow>true</NoFollow>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Bow</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>5</FavoredWeaponID>
+      <AutoCorpse>
+        <Description>You see the lifeless body of Stan, the security guard.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>4</ID>
+      <Name>Peter</Name>
+      <Hardiness>30</Hardiness>
+      <Agility>20</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>3</Count>
+          <Plus>3</Plus>
+        </AttackDice>
+      </NaturalAttack>
+      <Description>You see Peter Parker, your favorite assistant. He's a little awkward, but very smart, and nearly as passionate about your research as you are. At least, he is when you can find him.</Description>
+      <Disposition>Friendly</Disposition>
+      <Friendliness>100</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>50</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+    </Monster>
+    <Monster>
+      <ID>5</ID>
+      <Name>Harry</Name>
+      <Hardiness>12</Hardiness>
+      <Agility>12</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+        <Item>13</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>2</Sides>
+          <Count>3</Count>
+          <Plus>3</Plus>
+        </AttackDice>
+      </NaturalAttack>
+      <Description>Harry Osborn is the otherwise unremarkable college-aged owner of the billion-dollar Oscorp company, which he inherited after his father, Norman Osborn, tragically died last year.</Description>
+      <Disposition>Friendly</Disposition>
+      <Friendliness>100</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>50</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+    </Monster>
+    <!-- END CREATURES CHAPTER 1: DEMONSTRATION -->
+  </MonsterList>
+  <ItemList>
+    <!-- BEGIN ITEMS CHAPTER 1: DEMONSTRATION -->
+    <Item>
+      <id>1</id>
+      <name>pen</name>
+      <description>It's a normal, blue ink, ballpoint pen.</description>
+      <baseValue>0</baseValue>
+      <weight>0</weight>
+    </Item>
+    <Item>
+      <id>2</id>
+      <name>note</name>
+      <description>It's a hand-written note from your wife, Rosie.</description>
+      <baseValue>0</baseValue>
+      <weight>0</weight>
+      <Trigger>
+        <trigger>OnRead</trigger>
+        <action i:type="showTextAction">
+          <text>"So proud of you, my Love! I can't wait to have you to myself for a few days. P.S. I'll pick up some coffee and meet you there." It is signed with a heart.</text>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>3</id>
+      <name>ID badge</name>
+      <description>This is a presenter ID badge for the convention center. It has your name and picture, and an RFID chip inside.</description>
+      <baseValue>0</baseValue>
+      <weight>0</weight>
+      <isWearable>true</isWearable>
+      <!-- On Wear, unlock the "Authorized Personnel Only" door at Convention Center-->
+      <!-- On Remove, lock it again-->
+      <Trigger>
+        <trigger>OnWear</trigger>
+        <action i:type="doorLockAction">
+          <text></text>
+          <direction>e</direction>
+          <roomId>ConvInfoDesk</roomId>
+          <lockIt>false</lockIt>
+        </action>
+	  </Trigger>
+      <Trigger>
+        <trigger>OnRemove</trigger>
+        <action i:type="doorLockAction">
+          <text></text>
+          <direction>e</direction>
+          <roomId>ConvInfoDesk</roomId>
+          <lockIt>true</lockIt>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>4</id>
+      <name>directory</name>
+      <description>
+        The directory lists the day's events. It lists a pottery workshop and a quilting show in smaller areas to the east. Restrooms to the south, and just beyond them:
+
+        Eastern University Energy Labs presents:
+        The Future of Energy
+        Safe, Secure, Sustainable
+        Featuring Dr. Otto Octavius, Phd.
+
+        It even has a picture of your smiling face - the same one Rosie picked out for the brochures.
+      </description>
+      <baseValue>0</baseValue>
+      <!-- You can't "get" this -->
+      <weight>-999</weight>
+    </Item>
+    <Item i:type="weaponData">
+      <id>5</id>
+      <name>Stan's gun</name>
+      <description>You see Stan's gun. It's a custom Colt 1911 model, with mother-of-pearl grips, nickel plating, and a hair trigger. The slide is ornately engraved with images of Vikings, beautiful women, robots, and men in tights.</description>
+      <baseValue>200</baseValue>
+      <weight>3</weight>
+      <Attack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>2</Count>
+          <Plus>2</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>fires at</Phrase>
+          <Phrase>shoots</Phrase>
+        </AttackPhrases>
+        <Type>Bow</Type>
+        <Complexity>10</Complexity>
+      </Attack>
+    </Item>
+    <Item i:type="weaponData">
+      <id>6</id>
+      <name>Crowbar</name>
+      <description>You see a plain, well-used crowbar. One of the crooks probably dropped it before the police arrived. It's a good thing he did; he could have used it as a weapon!</description>
+      <baseValue>3</baseValue>
+      <weight>5</weight>
+      <Trigger>
+        <trigger>OnUse</trigger>
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="itemInRoomCondition">
+            <itemId>7</itemId>
+            <roomId>Current</roomId>
+          </condition>
+          <action i:type="openStorageAction">
+            <text>You pry the lid of the crate open.</text>
+            <storageItemId>7</storageItemId>
+          </action>
+        </action>
+      </Trigger>
+      <Trigger>
+        <trigger>OnUse</trigger>
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="itemInRoomCondition">
+            <itemId>12</itemId>
+            <roomId>Current</roomId>
+          </condition>
+          <action i:type="openStorageAction">
+            <text>You pry the lid of the crate open.</text>
+            <storageItemId>12</storageItemId>
+          </action>
+        </action>
+      </Trigger>
+      <Attack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <Type>Mace</Type>
+        <Complexity>0</Complexity>
+      </Attack>
+    </Item>
+    <Item>
+      <id>7</id>
+      <name>wooden crate</name>
+      <description>You see a long wooden crate, shipped here in your name.</description>
+      <baseValue>0</baseValue>
+      <!-- You can't "get" this -->
+      <weight>-999</weight>
+      <storage>
+        <isOpen>false</isOpen>
+        <closable>false</closable>
+        <openable>false</openable>
+        <CantOpenPhrase>The crate is nailed shut. You'll need to use a tool to pry it open.</CantOpenPhrase>
+        <maxWeight>999</maxWeight>
+        <Contents>9</Contents>
+      </storage>
+    </Item>
+    <Item>
+      <id>8</id>
+      <name>reactor</name>
+      <description>Your see your solar fusion reactor here, where you and Peter assembled and tested every component over the past week. You can't help but feel proud, admiring the strength of the arms supporting the containment generators, the precision of the ignition lasers, and the genius of the power transfer system -- all of your own design. All that remains now is to insert the Tritium fuel pellet and throw the switch. Harry should be along any time with the Tritium.</description>
+      <baseValue>0</baseValue>
+      <!-- You can't "get" this -->
+      <weight>-999</weight>
+      <storage>
+        <isOpen>true</isOpen>
+        <closable>false</closable>
+        <openable>false</openable>
+        <maxWeight>999</maxWeight>
+      </storage>
+    </Item>
+    <Item>
+      <id>9</id>
+      <name>upper robotic arms</name>
+      <description>You see a pair of robotic arms. Your specifications require they be able to withstand extreme heat, and be fully shielded against magnetic affects. Unfortunately, it isn't much use unless combined with the lower pair.</description>
+      <baseValue>0</baseValue>
+      <weight>20</weight>
+      <Trigger>
+        <trigger>OnPower</trigger>
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="orCondition">
+            <condition i:type="playerHoldingItemCondition">
+              <itemId>10</itemId>
+            </condition>
+            <condition i:type="itemInRoomCondition">
+              <itemId>10</itemId>
+              <roomId>Current</roomId>
+            </condition>
+          </condition>
+          <action i:type="destroyItemAction">
+            <text />
+            <id>9</id>
+          </action>
+          <action i:type="destroyItemAction">
+            <text />
+            <id>10</id>
+          </action>
+          <action i:type="revealItemAction">
+            <text>A sudden surge of power coarses through both pairs of arms! They suddenly stand out straight, flashing and sizzling. Electricity arcs from one pair to the other, as tiny tentacles reach out from their bases toward one another. They connect, pulling the bases together, electrical arcs intensifying, until with a loud "clunk" they lock in place.&#xA;&#xA;You see your most important tool, the Robotic Artificially Intelligent Device. It consists of four tentacle-like, telescoping arms, mounted on a torso harness. When you wear it, the harness inserts micro-conductors into your spinal cord (not as painful as it sounds, thankfully) and an on-board artificial intelligence interprets signals from you brain to controll the arms. A special "inhibitor chip" prevents the A. I. from trying to send its own commands back to your brain.</text>
+            <itemId>11</itemId>
+            <roomId>Current</roomId>
+          </action>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>10</id>
+      <name>lower robotic arms</name>
+      <description>You see a pair of robotic arms. Your specifications require they be able to withstand extreme heat, and be fully shielded against magnetic affects. Unfortunately, it isn't much use unless combined with the upper pair.</description>
+      <baseValue>0</baseValue>
+      <weight>20</weight>
+    </Item>
+    <Item i:type="weaponData">
+      <id>11</id>
+      <name>RAID</name>
+      <description>You see the RAID. With this, you can handle dangerous substances, manipulate objects in extreme temperatures, probably even climb a sheer brick wall!</description>
+      <baseValue>0</baseValue>
+      <weight>40</weight>
+      <revealed>false</revealed>
+      <isWearable>true</isWearable>
+      <isArmor>true</isArmor>
+      <armorClass>7</armorClass>
+      <Trigger>
+        <trigger>OnWear</trigger>
+        <action i:type="readyWeaponAction">
+          <text>You whince as dozens of micro-conductors effortlessly prick through your back and into your spinal cord. Suddenly, you are able to control, and feel, all four robotic arms.</text>
+          <weaponItemId>11</weaponItemId>
+        </action>
+        <!-- If Harry has not arrived, wake him backstage -->
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="constantEqualsCondition">
+            <name>WakeHarryConst</name>
+            <value>True</value>
+          </condition>
+          <!-- If player is BackStage, announce Harry walking in the room -->
+          <action i:type="executeIfAction">
+            <text/>
+            <condition i:type="playerInRoomCondition">
+              <roomId>BackStage</roomId>
+            </condition>
+            <action i:type="showTextAction">
+              <text>As you move your new appendages about, remembering the feel of their strength, your young friend Harry arrives.</text>
+            </action>
+          </action>
+          <action i:type="wakeCreatureAction">
+            <text />
+            <monsterId>5</monsterId>
+            <roomId>BackStage</roomId>
+          </action>
+          <!-- don't wake Harry twice -->
+          <action i:type="setConstantAction">
+            <text />
+            <name>WakeHarryConst</name>
+            <value>False</value>
+          </action>
+        </action>
+        <action i:type="setConstantAction">
+          <text />
+          <name>WearingArmsConst</name>
+          <value>True</value>
+        </action>
+      </Trigger>
+      <Trigger>
+        <trigger>OnRemove</trigger>
+        <action i:type="setConstantAction">
+          <text />
+          <name>WearingArmsConst</name>
+          <value>False</value>
+        </action>
+      </Trigger>
+      <Attack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>4</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>thrusts a stabbing tentacle at</Phrase>
+          <Phrase>smacks</Phrase>
+          <Phrase>wraps his tentacles around and squeezes</Phrase>
+          <Phrase>attempts to disassemble</Phrase>
+        </AttackPhrases>
+        <Type>Spear</Type>
+        <Complexity>30</Complexity>
+      </Attack>
+    </Item>
+    <Item>
+      <id>12</id>
+      <name>wooden crate</name>
+      <description>It is a long, plain, wooden shipping crate. It's label looks different from the others.</description>
+      <baseValue>0</baseValue>
+      <!-- You can't "get" this -->
+      <weight>-999</weight>
+      <storage>
+        <isOpen>false</isOpen>
+        <closable>false</closable>
+        <openable>false</openable>
+        <CantOpenPhrase>The crate is nailed shut. You'll need to use a tool to pry it open.</CantOpenPhrase>
+        <maxWeight>999</maxWeight>
+        <Contents>10</Contents>
+      </storage>
+      <Trigger>
+        <trigger>OnRead</trigger>
+        <action i:type="showTextAction">
+          <text>It has your name! This is one of the crates you shipped here from your lab. It must have been delivered to the quilting expo by mistake.</text>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>13</id>
+      <name>case</name>
+      <description>It looks like a small metallic suitcase</description>
+      <baseValue>0</baseValue>
+      <weight>20</weight>
+      <storage>
+        <isOpen>false</isOpen>
+        <closable>true</closable>
+        <maxWeight>25</maxWeight>
+        <Contents>14</Contents>
+      </storage>
+    </Item>
+    <Item>
+      <id>14</id>
+      <name>tritium</name>
+      <description>You see a small metallic marble, the precious Tritium fuel for your reactor.</description>
+      <baseValue>0</baseValue>
+      <weight>5</weight>
+<!--    <Trigger> -->
+<!--      <trigger></trigger> -->
+<!--    </Trigger> -->
+    </Item>
+    <!-- END ITEMS CHAPTER 1: DEMONSTRATION -->
+  </ItemList>
+</DungeonData>

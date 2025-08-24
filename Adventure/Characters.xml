@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CharacterList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datacontract.org/2004/07/Adventure">
+  <Character>
+    <ID>7</ID>
+    <Name>123</Name>
+    <Hardiness>9</Hardiness>
+    <Agility>10</Agility>
+    <ArmorClass>7</ArmorClass>
+    <Items />
+    <ArmorExpertise>6</ArmorExpertise>
+    <Axe>10</Axe>
+    <Bow>-20</Bow>
+    <Mace>20</Mace>
+    <Spear>0</Spear>
+    <Sword>16</Sword>
+    <Charisma>7</Charisma>
+    <Heal>0</Heal>
+    <Blast>0</Blast>
+    <Power>21</Power>
+    <Speed>0</Speed>
+    <Gold>736</Gold>
+    <GoldInBank>0</GoldInBank>
+    <WeaponList>
+      <Weapon>
+        <isLit>false</isLit>
+        <id>1004</id>
+        <name>TrollsFire</name>
+        <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".</description>
+        <baseValue>40</baseValue>
+        <weight>7</weight>
+        <Trigger>
+          <trigger
+            arg="TrollsFire">OnMagicWord</trigger>
+          <action
+            xsi:type="toggleAction">
+            <text />
+            <action
+              xsi:type="modifyWeaponAction">
+              <text>As you say the sword's name, bright green flames appear around the blade.</text>
+              <id>1003</id>
+              <damage>
+                <Sides>10</Sides>
+                <Count>2</Count>
+                <Plus>0</Plus>
+              </damage>
+              <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".
+
+Trollsfire is glowing!</description>
+            </action>
+            <action
+              xsi:type="modifyWeaponAction">
+              <text>As you say the sword's name, the bright green flames disappears from it.</text>
+              <id>1003</id>
+              <damage>
+                <Sides>6</Sides>
+                <Count>2</Count>
+                <Plus>0</Plus>
+              </damage>
+              <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".</description>
+            </action>
+          </action>
+        </Trigger>
+        <Attack>
+          <AttackDice>
+            <Sides>6</Sides>
+            <Count>2</Count>
+            <Plus>0</Plus>
+          </AttackDice>
+          <AttackPhrases>
+            <Phrase>stabs at</Phrase>
+            <Phrase>swings at</Phrase>
+            <Phrase>hacks at</Phrase>
+            <Phrase>slices at</Phrase>
+          </AttackPhrases>
+          <Type>Sword</Type>
+          <Complexity>25</Complexity>
+        </Attack>
+      </Weapon>
+    </WeaponList>
+  </Character>
+  <Character>
+    <ID>4</ID>
+    <Name>123</Name>
+    <Hardiness>9</Hardiness>
+    <Agility>13</Agility>
+    <ArmorClass>3</ArmorClass>
+    <Items />
+    <ArmorExpertise>2</ArmorExpertise>
+    <Axe>8</Axe>
+    <Bow>-20</Bow>
+    <Mace>20</Mace>
+    <Spear>0</Spear>
+    <Sword>10</Sword>
+    <Charisma>13</Charisma>
+    <Heal>0</Heal>
+    <Blast>0</Blast>
+    <Power>100</Power>
+    <Speed>0</Speed>
+    <Gold>124</Gold>
+    <GoldInBank>0</GoldInBank>
+    <WeaponList>
+      <Weapon>
+        <isLit>false</isLit>
+        <id>0</id>
+        <name>Axe</name>
+        <description>This is a basic, decent quality Axe.</description>
+        <baseValue>15</baseValue>
+        <weight>1</weight>
+        <Attack>
+          <AttackDice>
+            <Sides>6</Sides>
+            <Count>1</Count>
+            <Plus>0</Plus>
+          </AttackDice>
+          <Type>Axe</Type>
+          <Complexity>10</Complexity>
+        </Attack>
+      </Weapon>
+      <Weapon>
+        <isLit>false</isLit>
+        <id>1002</id>
+        <name>Rusty Sword</name>
+        <description>This is a plain, rusty sword.</description>
+        <baseValue>15</baseValue>
+        <weight>9</weight>
+        <Attack>
+          <AttackDice>
+            <Sides>2</Sides>
+            <Count>4</Count>
+            <Plus>2</Plus>
+          </AttackDice>
+          <AttackPhrases>
+            <Phrase>stabs at</Phrase>
+            <Phrase>swings at</Phrase>
+            <Phrase>hacks at</Phrase>
+            <Phrase>slices at</Phrase>
+          </AttackPhrases>
+          <Type>Sword</Type>
+          <Complexity>0</Complexity>
+        </Attack>
+      </Weapon>
+      <Weapon>
+        <isLit>false</isLit>
+        <id>1003</id>
+        <name>Hermit Axe</name>
+        <description>This is a well made woodsman's axe. It was the Hermit's only defense, other than his smell.</description>
+        <baseValue>15</baseValue>
+        <weight>6</weight>
+        <Attack>
+          <AttackDice>
+            <Sides>2</Sides>
+            <Count>4</Count>
+            <Plus>0</Plus>
+          </AttackDice>
+          <AttackPhrases>
+            <Phrase>chops at</Phrase>
+            <Phrase>swings at</Phrase>
+            <Phrase>hacks at</Phrase>
+          </AttackPhrases>
+          <Type>Axe</Type>
+          <Complexity>10</Complexity>
+        </Attack>
+      </Weapon>
+    </WeaponList>
+  </Character>
+  <Character>
+    <ID>5</ID>
+    <Name>Legolas</Name>
+    <Hardiness>9</Hardiness>
+    <Agility>15</Agility>
+    <ArmorClass>0</ArmorClass>
+    <Items />
+    <ArmorExpertise>0</ArmorExpertise>
+    <Axe>0</Axe>
+    <Bow>-20</Bow>
+    <Mace>20</Mace>
+    <Spear>0</Spear>
+    <Sword>10</Sword>
+    <Charisma>12</Charisma>
+    <Heal>0</Heal>
+    <Blast>0</Blast>
+    <Power>0</Power>
+    <Speed>0</Speed>
+    <Gold>234</Gold>
+    <GoldInBank>0</GoldInBank>
+    <WeaponList>
+      <Weapon>
+        <isLit>false</isLit>
+        <id>5</id>
+        <name>bow</name>
+        <description>This is a plain bow.</description>
+        <baseValue>10</baseValue>
+        <weight>0</weight>
+        <Attack>
+          <AttackDice>
+            <Sides>4</Sides>
+            <Count>3</Count>
+            <Plus>4</Plus>
+          </AttackDice>
+          <AttackPhrases>
+            <Phrase>shoots at</Phrase>
+          </AttackPhrases>
+          <Type>Bow</Type>
+          <Complexity>0</Complexity>
+        </Attack>
+      </Weapon>
+    </WeaponList>
+  </Character>
+</CharacterList>

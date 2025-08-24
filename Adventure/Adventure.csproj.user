@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Dungeon\DungeonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HistoryTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="MainHall\CharSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainHall\CreateCharacterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainHall\MainHallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainHall\ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainHall\ViewCharacterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainHall\WizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TextInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

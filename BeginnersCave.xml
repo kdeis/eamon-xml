@@ -1,0 +1,1032 @@
+﻿<DungeonData xmlns="http://schemas.datacontract.org/2004/07/Adventure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <Intro>
+    The Beginner's Cave has been set up by the Warlord as a service to all Free Adventurers, giving them a chance to try their skills in a not-too-dangerous setting. Let us all toast the Warlord for restocking the cave daily!&#xA;&#xA;
+    You have no trouble finding a horse that you, well, borrow to take you to the site of your first adventure. You follow several signs which lead you to the Beginner's Cave.&#xA;
+  </Intro>
+  <RoomList>
+    <Room>
+      <Name>Entrance</Name>
+      <Title>Cave Entrance</Title>
+      <Description>The entrance is to the south with a sign over it reading, "Beginners Only!". To the north is the road back to town.</Description>
+      <ShortDescription>You are at the cave entrance.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Entrance</roomName>
+          <toMainHall>true</toMainHall>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>Tunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Tunnel</Name>
+      <Title>Dark north/south tunnel</Title>
+      <Description>To the north you see bright light streaming in from outside. To the south you see flickering torch light, but you cannot make out any details.</Description>
+      <ShortDescription>You are in a dark north/south tunnel.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Entrance</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>Chamber</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Chamber</Name>
+      <Title>Large Chamber</Title>
+      <Description>You are in a large chamber where the roof rises out of sight. Burning torches line the walls making it easy to see. Tunnels lead north and south, and there are small chambers to the east and west.</Description>
+      <ShortDescription>You are in a large chamber.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Tunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>NorthPassage</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>EastChamber</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>WestChamber</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>WestChamber</Name>
+      <Title>West Side Chamber</Title>
+      <Description>It is very cold here and the only light comes in dimly from the large chamber to the east.</Description>
+      <ShortDescription>You are in the west side chamber.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>Chamber</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>1</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>1</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>EastChamber</Name>
+      <Title>East Side Chamber</Title>
+      <Description>It is very cold here and the only light comes in dimly from the large chamber to the west.</Description>
+      <ShortDescription>You are in the east side chamber.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Chamber</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>2</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>3</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>NorthPassage</Name>
+      <Title>North passage</Title>
+      <Description>A tunnel goes north and east and west are doors that are bolted shut. (Locking something in?). In the dim light you can see that the hall goes south but you cannot make out any details.</Description>
+      <ShortDescription>You are at the north end of a long passage.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Chamber</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>MiddlePassage</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>EastCell</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>WestCell</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>WestCell</Name>
+      <Title>West Cell</Title>
+      <Description>You are in a small stark cell with a door on the east side of the room.</Description>
+      <ShortDescription>You are in a west cell.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>NorthPassage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>3</CreatureID>
+      </Creatures>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>EastCell</Name>
+      <Title>East Cell</Title>
+      <Description>You are in a small stark cell with a door on the west side of the room.</Description>
+      <ShortDescription>You are in an east cell.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>NorthPassage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>4</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>4</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>MiddlePassage</Name>
+      <Title>Middle passage</Title>
+      <Description>Doors are bolted on both sides of you (east and west). The hall extends north and south.</Description>
+      <ShortDescription>You are at the middle of a long passage.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>NorthPassage</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>SouthPassage</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>EastCell2</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>WestCell2</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>WestCell2</Name>
+      <Title>West Cell</Title>
+      <Description>You are in a small stark cell with a door on the east side of the room.</Description>
+      <ShortDescription>You are in a west cell.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>MiddlePassage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>EastCell2</Name>
+      <Title>East Cell</Title>
+      <Description>You are in a small stark cell with a door on the west side of the room.</Description>
+      <ShortDescription>You are in an east cell.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>MiddlePassage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>SouthPassage</Name>
+      <Title>South passage</Title>
+      <Description>To your great shock there are doors to the east and west. The hall goes north from here and a broken tunnel goes south.</Description>
+      <ShortDescription>You are at the south end of a long passage.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>MiddlePassage</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>BrokenTunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>EastCell3</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>WestCell3</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>WestCell3</Name>
+      <Title>West Cell</Title>
+      <Description>You are in a small stark cell with a door on the east side of the room.</Description>
+      <ShortDescription>You are in a west cell.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>SouthPassage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>EastCell3</Name>
+      <Title>East Cell</Title>
+      <Description>You are in a small stark cell with a door on the west side of the room.</Description>
+      <ShortDescription>You are in an east cell.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>SouthPassage</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>6</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>BrokenTunnel</Name>
+      <Title>Broken north/south tunnel</Title>
+      <Description>The sides of the tunnel are very broken and rough. You see torch light to the south. The east wall has a smooth shape in the center, about the size of a door.</Description>
+      <ShortDescription>You are in a dark north/south tunnel.</ShortDescription>
+      <Trigger>
+        <trigger>OnExamine</trigger>
+        <action i:type="revealExitAction">
+          <text>You've found a hidden tunnel going off to the east!</text>
+          <direction>e</direction>
+          <roomId>BrokenTunnel</roomId>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>SouthPassage</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>T-Intersection</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>HiddenTunnel</roomName>
+          <visible>false</visible>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>HiddenTunnel</Name>
+      <Title>Secret Passage</Title>
+      <Description>You are in a secret east/west passage. You hear a faint melody coming from the east.</Description>
+      <ShortDescription>You are in an east/west tunnel with faint music.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>HiddenTunnel2</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>BrokenTunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>HiddenTunnel2</Name>
+      <Title>Secret Passage</Title>
+      <Description>You can very clearly hear religious music being played and can smell incense from the east.</Description>
+      <ShortDescription>You are in an east/west tunnel with loud music.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>Temple</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>HiddenTunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Temple</Name>
+      <Title>Temple</Title>
+      <Description>You are in a temple that has paintings of great deeds covering the walls. There are two altars here, one covered with gold paint and the other stained with blood. The only exit leads to the west.</Description>
+      <ShortDescription>You are at the temple.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>HiddenTunnel2</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>6</CreatureID>
+        <CreatureID>7</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>9</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>T-Intersection</Name>
+      <Title>T-Intersection</Title>
+      <Description>A brightly burning torch is bolted to the south wall. Dark tunnels lead north and east. To the west is a place where once a door stood, but it has been torn from its hinges.</Description>
+      <ShortDescription>You are at a T-Intersection; North by E/W.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>BrokenTunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>EWTunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>Library</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Library</Name>
+      <Title>Library</Title>
+      <Description>You are in what was obviously once a library. Most of the books have been destroyed, with the scraps left lying on the ground. A door, torn from its hinges, also lies on the floor. The exit is to the east.</Description>
+      <ShortDescription>You are in the library.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>T-Intersection</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>11</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>EWTunnel</Name>
+      <Title>East/West Tunnel</Title>
+      <Description>You are in an unremarkable tunnel. You can see torch light in both directions.</Description>
+      <ShortDescription>You are in an east/west tunnel.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>T-Intersection</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>TopStairway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>TopStairway</Name>
+      <Title>Top of a Stairway</Title>
+      <Description>You are at an unremarkable stone landing at the top of a flight of stairs. A single torch is bolted to the wall. A tunnel leads back west. It looks very dark down there...</Description>
+      <ShortDescription>You are at the top of a stairway.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>EWTunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>d</direction>
+          <roomName>BottomStairway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>BottomStairway</Name>
+      <Title>Bottom of a Stairway</Title>
+      <Description>You are at an unremarkable stone landing at the bottom of a flight of stairs. A light can be seen at the top and a very dim light can be seen down the tunnel to the east.</Description>
+      <ShortDescription>You are at the bottom of a stairway.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>EWTunnel2</roomName>
+        </Exit>
+        <Exit>
+          <direction>u</direction>
+          <roomName>TopStairway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>EWTunnel2</Name>
+      <Title>East/West Tunnel</Title>
+      <Description>You are in a very rough tunnel carved out of a series of natural caverns. Dim light can be seen in both directions.</Description>
+      <ShortDescription>You are in an east/west tunnel.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>SaltyTunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>BottomStairway</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>SaltyTunnel</Name>
+      <Title>East/West Tunnel</Title>
+      <Description>You see light to the east, and feel a cool wind coming from there. In the wind you smell a hint of salt.</Description>
+      <ShortDescription>You are in an east/west tunnel smelling of salt.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>e</direction>
+          <roomName>PiratesCove</roomName>
+        </Exit>
+        <Exit>
+          <direction>w</direction>
+          <roomName>EWTunnel2</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>PiratesCove</Name>
+      <Title>Pirate's Cove</Title>
+      <Description>You are at a small bay. Cliffs rise on either side of you so that the only exit is back in the tunnel to the west. A broken old boat is resting on the bank of the rough and stormy sea. All around you is salt water, as far as the eye can see.</Description>
+      <ShortDescription>You are in the Pirate's Cove.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>SaltyTunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>8</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>11</Item>
+      </Items>
+    </Room>
+  </RoomList>
+  <MonsterList>
+    <!-- 1 = 3 rats -->
+    <Monster>
+      <ID>1</ID>
+      <Name>Rat</Name>
+      <Hardiness>2</Hardiness>
+      <Agility>3</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items />
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>1</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>scratches at</Phrase>
+          <Phrase>bites</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>You see three huge rats charging at you! One is black, one is brown, and one is tan. Each one has sharp white teeth.</Description>
+      <Disposition>Angry</Disposition>
+      <!--Optional: <Friendliness>0</Friendliness>-->
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>200</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+      <AutoCorpse>
+        <Description>You see the hacked up body of what was once a huge rat.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>2</ID>
+      <Name>Hermit</Name>
+      <Hardiness>13</Hardiness>
+      <Agility>12</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+        <Item>1000</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>There is a grizzled old hermit (who smells as if he hasn't taken a bath in forty years) in the room.</Description>
+      <Disposition>Neutral</Disposition>
+      <Friendliness>50</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>85</Courage>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Axe</WeaponType>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Mace</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>1000</FavoredWeaponID>
+      <AutoCorpse>
+        <Description>You see the hermit's smelly body lying crumpled on the floor.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>3</ID>
+      <Name>Heinrich</Name>
+      <Hardiness>15</Hardiness>
+      <Agility>7</Agility>
+      <ArmorClass>1</ArmorClass>
+      <Items>
+        <Item>1001</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>8</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A human warrior stands before you, armed with a longsword and carrying a shield. On his shield is a sticker which says, "Hi, I'm Heinrich!"</Description>
+      <Disposition>Neutral</Disposition>
+      <Friendliness>70</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>105</Courage>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Axe</WeaponType>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Mace</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>1001</FavoredWeaponID>
+      <AutoCorpse>
+        <Description>Heinrich's body lies on the floor here. You can still picture that sticker saying, "Hi, I'm Heinrich!"</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>4</ID>
+      <Name>Gorilla</Name>
+      <Hardiness>12</Hardiness>
+      <Agility>11</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items />
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>tears at</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>There is a huge, hairy, strong and angry gorilla in the room with you!</Description>
+      <Disposition>Angry</Disposition>
+      <!--Optional: <Friendliness>0</Friendliness>-->
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>70</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+      <AutoCorpse>
+        <Description>You see the shaggy corpse of a dead gorilla.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>5</ID>
+      <Name>Mimic</Name>
+      <Hardiness>7</Hardiness>
+      <Agility>12</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items />
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>3</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>tears at</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A chest-shaped monster is in the room, holding you with two tentacles and attempting to dissassemble you with a third one.</Description>
+      <Disposition>Angry</Disposition>
+      <!--Optional: <Friendliness>0</Friendliness>-->
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>200</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+      <Trigger>
+        <trigger>OnKill</trigger>
+        <action i:type="revealItemAction">
+          <text>As the mimic dies, it rolls over and you find an unmarked gold ring!</text>
+          <itemId>7</itemId>
+          <roomId>Current</roomId>
+        </action>
+      </Trigger>
+      <AutoCorpse>
+        <Description>The dead mimic lies in a formless blob on the floor.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>6</ID>
+      <Name>Priest</Name>
+      <Hardiness>10</Hardiness>
+      <Agility>6</Agility>
+      <ArmorClass>1</ArmorClass>
+      <Items>
+        <Item>1002</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>There is a huge man in religious garb with an insane look on his face here. In his right hand, he carries a mace.</Description>
+      <Disposition>Angry</Disposition>
+      <!--Optional: <Friendliness>0</Friendliness>-->
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>100</Courage>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Axe</WeaponType>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Mace</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>1002</FavoredWeaponID>
+      <AutoCorpse>
+        <Description>The priest's corpse lies on the floor, his face frozen in a fanatic's sneer.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>7</ID>
+      <Name>Cynthia</Name>
+      <Hardiness>5</Hardiness>
+      <Agility>5</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>1</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>You see a beautiful girl in a flowing white dress. You recognize her as Cynthia Luxom, Duke Luxom's not-too-bright daughter.</Description>
+      <Disposition>Friendly</Disposition>
+      <Friendliness>95</Friendliness>
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>50</Courage>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Axe</WeaponType>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Mace</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <AutoCorpse>
+        <Description>Cynthia's body lies sprawled here, a pitiful sight.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>8</ID>
+      <Name>Pirate</Name>
+      <Hardiness>5</Hardiness>
+      <Agility>14</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+        <Item>1003</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>10</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>You see a man with a beard and a brass ring in his ear. He is wearing clothes made out of silk and is wielding a very fancily engraved sword.</Description>
+      <Disposition>Angry</Disposition>
+      <!--Optional: <Friendliness>0</Friendliness>-->
+      <!--% chance of fleeing, or pursuing fleeing player. - 5% when damaged or reduce number in group; -%10 when near death; 200% = never flee -->
+      <Courage>50</Courage>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Axe</WeaponType>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Mace</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>1003</FavoredWeaponID>
+      <Trigger>
+        <trigger>OnKill</trigger>
+        <action i:type="showTextAction">
+          <text>As the Pirate chokes and dies, the flame on his sword also dies.</text>
+        </action>
+      </Trigger>
+      <AutoCorpse>
+        <Description>The body of the Pirate, his fine-looking clothing now slashed and bloody, lies here.</Description>
+      </AutoCorpse>
+    </Monster>
+  </MonsterList>
+  <ItemList>
+    <!-- 1 = Diamonds -->
+    <Item>
+      <id>1</id>
+      <name>diamonds</name>
+      <description>You see a large pile of gleaming diamonds here!</description>
+      <!-- base value in gold pieces-->
+      <baseValue>200</baseValue>
+      <weight>3</weight>
+    </Item>
+    <!-- 3 = bottle -->
+    <Item>
+      <id>3</id>
+      <name>bottle</name>
+      <description>There is a bottle with a strange potion inside of it here! It has a label stuck to it that you could READ.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>50</baseValue>
+      <weight>2</weight>
+      <!-- <uses>1</uses>-->
+      <!-- <open>true</open>-->
+      <Trigger>
+        <trigger>OnDrink</trigger>
+        <action i:type="healPlayerAction">
+          <text>You feel better!</text>
+          <rangeLow>24</rangeLow>
+          <rangeHigh>0</rangeHigh>
+        </action>
+        <action i:type="destroyItemAction">
+          <text/>
+          <id>3</id>
+        </action>
+      </Trigger>
+      <Trigger>
+        <trigger>OnRead</trigger>
+        <action i:type="showTextAction">
+          <text>It says, "HEALING POTION"</text>
+        </action>
+      </Trigger>
+    </Item>
+    <!-- 4 = sack of coins -->
+    <Item>
+      <id>4</id>
+      <name>sack of coins</name>
+      <description>You find a sack with 50 gold coins inside!</description>
+      <!-- base value in gold pieces-->
+      <baseValue>50</baseValue>
+      <weight>5</weight>
+    </Item>
+    <!-- 6 = Chest (mimic) -->
+    <Item>
+      <id>6</id>
+      <name>Chest</name>
+      <description>There is a large chest in the center of the room.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>0</baseValue>
+      <weight>-999</weight>
+      <storage>
+        <isOpen>false</isOpen>
+        <maxWeight>0</maxWeight>
+      </storage>
+      <Trigger>
+        <trigger>OnOpen</trigger>
+        <action i:type="wakeCreatureAction">
+          <text>As you approach the chest, it suddenly comes alive and two tentacles come out of the sides, holding you fast. Another tentacle rises from the top and attempts to hurt you.</text>
+          <monsterId>5</monsterId>
+          <roomId>Current</roomId>
+        </action>
+        <action i:type="destroyItemAction">
+          <text/>
+          <id>6</id>
+        </action>
+      </Trigger>
+    </Item>
+    <!-- 7 = ring -->
+    <Item>
+      <id>7</id>
+      <name>ring</name>
+      <description>As the mimic dies, it rolls over and you find an unmarked gold ring!</description>
+      <!-- base value in gold pieces-->
+      <baseValue>45</baseValue>
+      <weight>1</weight>
+      <revealed>false</revealed>
+    </Item>
+    <!-- 9 = spices -->
+    <Item>
+      <id>9</id>
+      <name>spices</name>
+      <description>You find several spices. They are of a rare variety and quite valuable.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>30</baseValue>
+      <weight>3</weight>
+    </Item>
+    <!-- 11 = book -->
+    <Item>
+      <id>11</id>
+      <name>book</name>
+      <description>There is an old book here. It glows in the darkness and is remarkably well preserved.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>80</baseValue>
+      <weight>3</weight>
+      <Trigger>
+        <trigger>OnRead</trigger>
+        <action i:type="healPlayerAction">
+          <text>As you read the book, you feel a wierd sesnsation overtaking you. You are turning into a small fish!\n\nYou flop three times and die.</text>
+          <rangeLow>-9999</rangeLow>
+          <rangeHigh>-9999</rangeHigh>
+        </action>
+      </Trigger>
+    </Item>
+    <!-- 12 = jewels -->
+    <Item>
+      <id>12</id>
+      <name>jewels</name>
+      <description>There is a large pile of jewels here!</description>
+      <!-- base value in gold pieces-->
+      <baseValue>168</baseValue>
+      <weight>5</weight>
+    </Item>
+
+    <!-- 1000 = hermit axe -->
+    <Item i:type="weaponData">
+      <id>1000</id>
+      <name>axe</name>
+      <description>You see a standard Marcos axe here.</description>
+      <baseValue>20</baseValue>
+      <weight>8</weight>
+      <Attack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>chops at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+        </AttackPhrases>
+        <Type>Axe</Type>
+        <Complexity>0</Complexity>
+      </Attack>
+    </Item>
+    <!-- 1001 = Heinrich's long sword -->
+    <Item i:type="weaponData">
+      <id>1001</id>
+      <name>sword</name>
+      <description>There is a poor quality Marcos sword here.</description>
+      <baseValue>15</baseValue>
+      <weight>6</weight>
+      <Attack>
+        <AttackDice>
+          <Sides>8</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+          <Phrase>slices at</Phrase>
+        </AttackPhrases>
+        <Type>Sword</Type>
+        <Complexity>-10</Complexity>
+      </Attack>
+    </Item>
+    <!-- 1002 = Priest's mace -->
+    <Item i:type="weaponData">
+      <id>1002</id>
+      <name>mace</name>
+      <description>There is a high quality Marcos mace here.</description>
+      <baseValue>25</baseValue>
+      <weight>6</weight>
+      <Attack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clubs</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>bashes</Phrase>
+        </AttackPhrases>
+        <Type>Mace</Type>
+        <Complexity>10</Complexity>
+      </Attack>
+    </Item>
+    <!-- 1003 = Trollsfire -->
+    <Item i:type="weaponData">
+      <id>1003</id>
+      <name>TrollsFire</name>
+      <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".</description>
+      <baseValue>40</baseValue>
+      <weight>7</weight>
+      <Trigger>
+        <trigger arg="TrollsFire">OnMagicWord</trigger>
+        <action i:type="toggleAction">
+          <text/>
+          <action i:type="modifyWeaponAction">
+            <text>As you say the sword's name, bright green flames appear around the blade.</text>
+            <id>1003</id>
+            <damage>
+              <Sides>10</Sides>
+              <Count>2</Count>
+              <Plus>0</Plus>
+            </damage>
+            <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".&#xA;&#xA;Trollsfire is glowing!</description>
+          </action>
+          <action i:type="modifyWeaponAction">
+            <text>As you say the sword's name, the bright green flames disappears from it.</text>
+            <id>1003</id>
+            <damage>
+              <Sides>6</Sides>
+              <Count>2</Count>
+              <Plus>0</Plus>
+            </damage>
+            <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".</description>
+          </action>
+        </action>
+      </Trigger>
+      <Attack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>2</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+          <Phrase>slices at</Phrase>
+        </AttackPhrases>
+        <Type>Sword</Type>
+        <Complexity>25</Complexity>
+      </Attack>
+    </Item>
+  </ItemList>
+</DungeonData>

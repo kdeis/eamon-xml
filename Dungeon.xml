@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DungeonData xmlns="http://schemas.datacontract.org/2004/07/Adventure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+  <RoomList>
+    <Room>
+      <Name>Entrance</Name>
+      <Title>Cave Entrance</Title>
+      <Description>You are at the mouth of a large cave. Light filters in from the setting sun, revealing primitive art on the walls. Torch light glows in a rough passage to the south.</Description>
+      <ShortDescription>You are at the mouth of a large cave.</ShortDescription>
+      <Trigger>
+        <trigger>OnMagicWord</trigger>
+        <action i:type="toggleAction">
+          <text>You hear a loud 'click' and the whole mood of this place seems to change.</text>
+          <action i:type="showTextAction">
+            <text>You are wonderfully talkative. So many adventurers are 'strong, silent types' but I think we could be great friends!&#xA;What do you think?</text>
+          </action>
+          <action i:type="showTextAction">
+            <text>You look silly yelling like that. Act like you've seen a cave before.</text>
+          </action>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Entrance</roomName>
+          <toMainHall>true</toMainHall>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>EntryTunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>1</Item>
+        <Item>3</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>EntryTunnel</Name>
+      <Title>Rough hewn tunnel</Title>
+      <Description>You are in a north/south tunnel, roughly hewn from the rock. To the north, light filters in from the setting sun. The passage continues to the south.</Description>
+      <ShortDescription>You are in a roughly hewn north/south tunnel.</ShortDescription>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Entrance</roomName>
+        </Exit>
+        <Exit i:type="lockableDoorType">
+          <direction>s</direction>
+          <roomName>Cavern</roomName>
+          <locked>true</locked>
+          <LockedDescription>The door is locked. It has a keyhole.</LockedDescription>
+          <UnlockedDescription>The door is unlocked.</UnlockedDescription>
+          <UnlockPhrase>You slide the key into the keyhole and it easily turns, releasing the lock.</UnlockPhrase>
+          <LockPhrase>You lock the door again. Because you can.</LockPhrase>
+          <keyItemId>1</keyItemId>
+          <keyItemAction>use</keyItemAction>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>1</CreatureID>
+      </Creatures>
+      <Items>
+        <Item>1000</Item>
+        <Item>1001</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Cavern</Name>
+      <Title>Large Cavern</Title>
+      <Description>You are in a large cavern, carved out of rock. There is evidence a large battle, or several small ones, took place here. There are broken weapons, batterred shields, and blood stains, but anything useful has been long since looted.</Description>
+      <ShortDescription>You are in a large, torch lit cavern. There is a rough passage to the north.</ShortDescription>
+      <Trigger>
+        <trigger>OnPower</trigger>
+        <action i:type="setConstantAction">
+          <text />
+          <name>BoomHappened</name>
+          <value>TRUE</value>
+        </action>
+        <action i:type="revealExitAction">
+          <text>You hear a very loud sonic boom that echoes through the tunnels. It shakes some rocks loose, revealing a hole in the southwest wall!</text>
+          <direction>sw</direction>
+          <roomId>Cavern</roomId>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>EntryTunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>d</direction>
+          <roomName>Tunnel</roomName>
+          <visible>true</visible>
+        </Exit>
+        <Exit>
+          <direction>sw</direction>
+          <roomName>Chamber</roomName>
+          <visible>false</visible>
+        </Exit>
+      </Exits>
+      <Creatures>
+        <CreatureID>2</CreatureID>
+        <CreatureID>3</CreatureID>
+      </Creatures>
+      <Items />
+    </Room>
+    <Room>
+      <Name>Tunnel</Name>
+      <Title>Spider Tunnel</Title>
+      <Description>You are crouching in a low, north-south tunnel, filled with spider webs and bones.</Description>
+      <ShortDescription>You are crouching in a low, north-south tunnel, filled with spider webs and bones.</ShortDescription>
+      <Light>false</Light>
+      <Trigger>
+        <trigger>OnMagicWord</trigger>
+        <action i:type="setTimerAction">
+          <text>Nothing happens... yet!</text>
+          <name>echo timer</name>
+          <duration>3</duration>
+          <action i:type="showTextAction">
+            <text>Your words come back to you from the far reaches of the tunnels, amplified to a low rumble.</text>
+          </action>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Cavern</roomName>
+        </Exit>
+        <Exit>
+          <direction>s</direction>
+          <roomName>NE Tunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+      </Creatures>
+      <Items>
+        <Item>5</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>NE Tunnel</Name>
+      <Title>Bent Tunnel</Title>
+      <Description>The musty tunnel extends to the north and bends eastward. Jagged walls cast dancing shadows that play tricks on your mind.</Description>
+      <ShortDescription>You are in a tunnel extending north and east.</ShortDescription>
+      <Light>false</Light>
+      <Exits>
+        <Exit>
+          <direction>n</direction>
+          <roomName>Tunnel</roomName>
+        </Exit>
+        <Exit>
+          <direction>e</direction>
+          <roomName>Temple</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items>
+        <Item>6</Item>
+      </Items>
+    </Room>
+    <Room>
+      <Name>Temple</Name>
+      <Title>Temple</Title>
+      <Description>This place seems utterly foreign to the dank, primitive, rottenness of the dungeon through which you have fought and crawled to reach it. You are above ground now, judging by the sunlight streaming through extraordinary stained glass windows, casting prismatic sparkles upon a vast array of tapestries, statues and murals. The artifacts must be priceless, but you dare not violate the sanctity of this wondrous place. It would be a delight to examine this place for hours.</Description>
+      <ShortDescription>Temple of Honor</ShortDescription>
+      <Trigger>
+        <trigger>OnFirstEnter</trigger>
+        <action i:type="permaBoostPlayerStatAction">
+          <text>There are sculptures and paintings of such incredible artistry, depicting scenes of such beauty and valor and sacrifice, that you become a kinder, nobler adventurer after merely setting your eyes upon them.</text>
+          <stat>Charisma</stat>
+          <value>2</value>
+        </action>
+      </Trigger>
+      <Trigger>
+        <trigger>OnExamine</trigger>
+        <action i:type="revealItemAction">
+          <text>On examining the room, your are particularly taken with a marble sculpture of a warrior defending a beautiful maiden from an unseen beast. You don't know how long you stood gazing upon it, but you suddenly realized the maiden's marble arm is outstretched toward you, and in her open hand lies a vial of red liquid. By some magical virtue of this place, she seems to offer it to you.</text>
+          <itemId>4</itemId>
+          <roomId>Temple</roomId>
+        </action>
+      </Trigger>
+      <Exits>
+        <Exit>
+          <direction>w</direction>
+          <roomName>NE Tunnel</roomName>
+        </Exit>
+      </Exits>
+      <Creatures/>
+      <Items/>
+    </Room>
+    <Room>
+      <Name>Chamber</Name>
+      <Title>Broken Chamber</Title>
+      <Description>You are in a small, broken chamber, surrounded by rubble shaken loose by the boom. Some of the broken rocks contain valuable gems!</Description>
+      <ShortDescription>You are in a broken chamber filled with rubble.</ShortDescription>
+      <Light>true</Light>
+      <Exits>
+        <Exit>
+          <direction>ne</direction>
+          <roomName>Cavern</roomName>
+        </Exit>
+      </Exits>
+      <Creatures>
+      </Creatures>
+      <Items>
+        <Item>7</Item>
+      </Items>
+    </Room>
+  </RoomList>
+  <MonsterList>
+    <Monster>
+      <ID>1</ID>
+      <Name>Hermit</Name>
+      <Hardiness>14</Hardiness>
+      <Agility>14</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items>
+        <Item>2</Item>
+      </Items>
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>4</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>clobbers</Phrase>
+          <Phrase>claws at</Phrase>
+          <Phrase>punches</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A grizzled old hermit peers at you from beneath a worn animal skin hat. He wears thick hides of fur and carries a mean looking axe. He seems happy to see you, but you cannot quite tell whether he wants to hear news from the town, or is just hungry.</Description>
+      <Disposition>Neutral</Disposition>
+      <Courage>80</Courage>
+      <CanUseWeapons>true</CanUseWeapons>
+      <CanUseWeaponTypes>
+        <WeaponType>Axe</WeaponType>
+        <WeaponType>Sword</WeaponType>
+        <WeaponType>Mace</WeaponType>
+        <WeaponType>Spear</WeaponType>
+      </CanUseWeaponTypes>
+      <FavoredWeaponID>1000</FavoredWeaponID>
+      <AutoCorpse>
+        <Description>The Hermit's corpse lies on the floor. You doubt he will smell any worse when he begins to decompose.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>2</ID>
+      <Name>Snake</Name>
+      <Hardiness>4</Hardiness>
+      <Agility>5</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items />
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>3</Sides>
+          <Count>1</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>strikes at</Phrase>
+          <Phrase>bites</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A large, black snake slithers out from its nest in a pile of rocks. It coils itself and raises its head chest-high, prepared to strike.</Description>
+      <Disposition>Angry</Disposition>
+      <Courage>200</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+      <Trigger>
+        <trigger>OnKill</trigger>
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="monsterInRoomCondition">
+            <monsterId>3</monsterId>
+            <roomId>Current</roomId>
+          </condition>
+          <action i:type="showTextAction">
+            <text>To intimidate the spider, you take a long lick of the snakes blood off your weapon. It doesn't actually taste very good.</text>
+          </action>
+          <elseAction i:type="revealExitAction">
+            <text>On a whim, you taste some of the snake venom. It counteracts the spider's poison!&#xD;&#xA;The north exit is visible again!</text>
+            <direction>n</direction>
+            <roomId>Cavern</roomId>
+          </elseAction>
+        </action>
+      </Trigger>
+      <AutoCorpse>
+        <Description>The snake head is split, and it has finally stopped twitching.</Description>
+      </AutoCorpse>
+    </Monster>
+    <Monster>
+      <ID>3</ID>
+      <Name>Spider</Name>
+      <Hardiness>6</Hardiness>
+      <Agility>10</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items />
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>2</Sides>
+          <Count>2</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>bites</Phrase>
+          <Phrase>tears at</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A little, hairy, green spider dangles from its web in front of you. It's rather cute, if you consider hideously oversized poisonous fangs to be cute.</Description>
+      <Disposition>Angry</Disposition>
+      <Courage>200</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+      <Trigger>
+        <trigger>OnKill</trigger>
+        <action i:type="wakeCreatureAction">
+          <text>As you smear the yellowish spider guts in the dust with your boot, you hear a triumphant yell from the corner of the room! You crouch at the ready, waiting to see what new foe may approach from the shadows.</text>
+          <monsterId>4</monsterId>
+          <roomId>Current</roomId>
+        </action>
+        <action i:type="executeIfAction">
+          <text />
+          <condition i:type="monsterInRoomCondition">
+            <monsterId>2</monsterId>
+            <roomId>Current</roomId>
+          </condition>
+          <action i:type="hideExitAction">
+            <text>Unfortunately, some of the venom seeps through your boot and into your skin, causing realistic hallucinations.&#xD;&#xA;The north wall of the cave collapses, blocking the exit!</text>
+            <direction>n</direction>
+            <roomId>Cavern</roomId>
+          </action>
+          <elseAction i:type="showTextAction">
+            <text>Unfortunately, some of the venom seeps through your boot and into your skin, causing realistic hallucinations. Lucky for you, the snake blood you swallowed seems to counteract it, and your head soon clears.</text>
+          </elseAction>
+        </action>
+      </Trigger>
+    </Monster>
+    <Monster>
+      <ID>4</ID>
+      <Name>Happy Worm</Name>
+      <Hardiness>5</Hardiness>
+      <Agility>10</Agility>
+      <ArmorClass>0</ArmorClass>
+      <Items />
+      <NaturalAttack>
+        <AttackDice>
+          <Sides>6</Sides>
+          <Count>4</Count>
+          <Plus>5</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>breathes fire at</Phrase>
+          <Phrase>mauls</Phrase>
+          <Phrase>stretches its jaws wide and chomps at</Phrase>
+        </AttackPhrases>
+      </NaturalAttack>
+      <Description>A little red and blue worm the size of your index finger wiggles out into the middle of the room. It looks like it could make a delightful, chewy treat. It curls its head upward and smiles at you.</Description>
+      <Disposition>Friendly</Disposition>
+      <Courage>200</Courage>
+      <CanUseWeapons>false</CanUseWeapons>
+    </Monster>
+  </MonsterList>
+  <ItemList>
+    <Item i:type="weaponData">
+      <id>1000</id>
+      <name>Hermit Axe</name>
+      <description>This is a well made woodsman's axe. It was the Hermit's only defense, other than his smell.</description>
+      <baseValue>15</baseValue>
+      <weight>6</weight>
+      <Attack>
+        <AttackDice>
+          <Sides>2</Sides>
+          <Count>4</Count>
+          <Plus>0</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>chops at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+        </AttackPhrases>
+        <Type>Axe</Type>
+        <Complexity>10</Complexity>
+      </Attack>
+    </Item>
+    <Item i:type="weaponData">
+      <id>1001</id>
+      <name>Rusty Sword</name>
+      <description>This is a plain, rusty sword.</description>
+      <baseValue>15</baseValue>
+      <weight>9</weight>
+      <Attack>
+        <AttackDice>
+          <Sides>2</Sides>
+          <Count>4</Count>
+          <Plus>2</Plus>
+        </AttackDice>
+        <AttackPhrases>
+          <Phrase>stabs at</Phrase>
+          <Phrase>swings at</Phrase>
+          <Phrase>hacks at</Phrase>
+          <Phrase>slices at</Phrase>
+        </AttackPhrases>
+        <Type>Sword</Type>
+        <Complexity>0</Complexity>
+      </Attack>
+    </Item>
+    <Item>
+      <id>1</id>
+      <name>Key</name>
+      <description>There is a small brass key here. It looks like it might unlock something.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>1</baseValue>
+      <weight>1</weight>
+    </Item>
+    <Item>
+      <id>2</id>
+      <name>Ruby</name>
+      <description>It is surprisingly clear and bright, for such a large ruby.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>60</baseValue>
+      <weight>1</weight>
+    </Item>
+    <Item>
+      <id>3</id>
+      <name>Lantern</name>
+      <description>It is a simple brass lantern, with more oil than you could burn.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>5</baseValue>
+      <weight>15</weight>
+      <canLight>true</canLight>
+    </Item>
+    <Item>
+      <id>4</id>
+      <name>Potion</name>
+      <description>The label on the bottle reads, "Doctor Lucy's Patented Healing Cordial."</description>
+      <!-- base value in gold pieces-->
+      <baseValue>50</baseValue>
+      <weight>3</weight>
+      <revealed>false</revealed>
+      <Trigger>
+        <trigger>OnUse</trigger>
+        <action i:type="healPlayerAction">
+          <text>You drink it down and, amazingly enough, you feel stronger!</text>
+          <rangeLow>5</rangeLow>
+          <rangeHigh>10</rangeHigh>
+        </action>
+        <action i:type="destroyItemAction">
+          <text/>
+          <id>4</id>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>5</id>
+      <name>Book</name>
+      <description>The book has seen better days, but you can see the title clearly: "How to Be a Ninja", by Lee Chan. Its pages are packed with detailed exercises and diagrams.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>50</baseValue>
+      <weight>5</weight>
+      <Trigger>
+        <trigger>OnUse</trigger>
+        <action i:type="permaBoostPlayerStatAction">
+          <text>It is a surprisingly fast read, and you find several practical tips you can put to use.</text>
+          <stat>Agility</stat>
+          <value>2</value>
+        </action>
+        <action i:type="permaBoostPlayerStatAction">
+          <text></text>
+          <stat>Hardiness</stat>
+          <value>4</value>
+        </action>
+        <action i:type="destroyItemAction">
+          <text/>
+          <id>5</id>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>6</id>
+      <name>Medicine Cabinet</name>
+      <description>There is a medicine cabinet bolted to the wall. You see your clear reflection in the glass mirror on the door. Did your hair look like that earlier, when you dined with Cynthia Luxom?!</description>
+      <!-- base value in gold pieces-->
+      <baseValue>60</baseValue>
+      <weight>-999</weight>
+      <storage>
+        <isOpen>false</isOpen>
+        <closable>true</closable>
+        <maxWeight>100</maxWeight>
+      </storage>
+      <Trigger>
+        <trigger>OnExamine</trigger>
+        <action i:type="executeIfAction">
+          <text/>
+          <condition i:type="constantEqualsCondition">
+            <name>BoomHappened</name>
+            <value>TRUE</value>
+          </condition>
+          <action i:type="showTextAction">
+            <text>There are several thin cracks in the glass, likely due to the sonic boom earlier.</text>
+          </action>
+        </action>
+      </Trigger>
+    </Item>
+    <Item>
+      <id>7</id>
+      <name>Gems</name>
+      <description>They are valuable raw gemstones, uncut. Some still need to be removed from the surrounding rock.</description>
+      <!-- base value in gold pieces-->
+      <baseValue>65</baseValue>
+      <weight>15</weight>
+    </Item>
+  </ItemList>
+</DungeonData>
