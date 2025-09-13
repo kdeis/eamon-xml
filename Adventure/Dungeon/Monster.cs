@@ -8,6 +8,8 @@ namespace Adventure.Dungeon
 {
     public class Monster : Creature
     {
+        public string Intro { get; set; }
+
         public string Description { get; set; }
 
         public DispositionType Disposition { get; set; }
@@ -31,6 +33,7 @@ namespace Adventure.Dungeon
         public Monster(MonsterType monster)
             : base(monster)
         {
+            Intro = monster.Intro;
             Description = monster.Description;
             Disposition = monster.Disposition;
             if (monster.FriendlinessSpecified)

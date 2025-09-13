@@ -20,85 +20,69 @@ using System.Xml.Serialization;
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure", IsNullable = false)]
-public partial class DungeonData
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure", IsNullable=false)]
+public partial class DungeonData {
+    
     private string introField;
-
+    
     private cantTakeItWithYouType cantTakeItWithYouField;
-
+    
     private roomType[] roomListField;
-
+    
     private MonsterType[] monsterListField;
-
+    
     private itemType[] itemListField;
-
+    
     /// <remarks/>
-    public string Intro
-    {
-        get
-        {
+    public string Intro {
+        get {
             return this.introField;
         }
-        set
-        {
+        set {
             this.introField = value;
         }
     }
-
+    
     /// <remarks/>
-    public cantTakeItWithYouType CantTakeItWithYou
-    {
-        get
-        {
+    public cantTakeItWithYouType CantTakeItWithYou {
+        get {
             return this.cantTakeItWithYouField;
         }
-        set
-        {
+        set {
             this.cantTakeItWithYouField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Room", IsNullable = false)]
-    public roomType[] RoomList
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Room", IsNullable=false)]
+    public roomType[] RoomList {
+        get {
             return this.roomListField;
         }
-        set
-        {
+        set {
             this.roomListField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Monster", IsNullable = false)]
-    public MonsterType[] MonsterList
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Monster", IsNullable=false)]
+    public MonsterType[] MonsterList {
+        get {
             return this.monsterListField;
         }
-        set
-        {
+        set {
             this.monsterListField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable = false)]
-    public itemType[] ItemList
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable=false)]
+    public itemType[] ItemList {
+        get {
             return this.itemListField;
         }
-        set
-        {
+        set {
             this.itemListField = value;
         }
     }
@@ -109,37 +93,30 @@ public partial class DungeonData
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class cantTakeItWithYouType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class cantTakeItWithYouType {
+    
     private int startingArmorClassField;
-
+    
     private int[] startingItemField;
-
+    
     /// <remarks/>
-    public int StartingArmorClass
-    {
-        get
-        {
+    public int StartingArmorClass {
+        get {
             return this.startingArmorClassField;
         }
-        set
-        {
+        set {
             this.startingArmorClassField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("StartingItem")]
-    public int[] StartingItem
-    {
-        get
-        {
+    public int[] StartingItem {
+        get {
             return this.startingItemField;
         }
-        set
-        {
+        set {
             this.startingItemField = value;
         }
     }
@@ -150,38 +127,31 @@ public partial class cantTakeItWithYouType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class elementItemTriggerNameType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class elementItemTriggerNameType {
+    
     private string argField;
-
+    
     private itemTriggerNameType valueField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string arg
-    {
-        get
-        {
+    public string arg {
+        get {
             return this.argField;
         }
-        set
-        {
+        set {
             this.argField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlTextAttribute()]
-    public itemTriggerNameType Value
-    {
-        get
-        {
+    public itemTriggerNameType Value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -190,46 +160,45 @@ public partial class elementItemTriggerNameType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public enum itemTriggerNameType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public enum itemTriggerNameType {
+    
     /// <remarks/>
     OnBlast,
-
+    
     /// <remarks/>
     OnDrink,
-
+    
     /// <remarks/>
     OnExamine,
-
+    
     /// <remarks/>
     OnGet,
-
+    
     /// <remarks/>
     OnDrop,
-
+    
     /// <remarks/>
     OnMagicWord,
-
+    
     /// <remarks/>
     OnPower,
-
+    
     /// <remarks/>
     OnRead,
-
+    
     /// <remarks/>
     OnUse,
-
+    
     /// <remarks/>
     OnOpen,
-
+    
     /// <remarks/>
     OnClose,
-
+    
     /// <remarks/>
     OnWear,
-
+    
     /// <remarks/>
     OnRemove,
 }
@@ -239,37 +208,30 @@ public enum itemTriggerNameType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class itemTriggerType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class itemTriggerType {
+    
     private elementItemTriggerNameType triggerField;
-
+    
     private actionType[] actionField;
-
+    
     /// <remarks/>
-    public elementItemTriggerNameType trigger
-    {
-        get
-        {
+    public elementItemTriggerNameType trigger {
+        get {
             return this.triggerField;
         }
-        set
-        {
+        set {
             this.triggerField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("action")]
-    public actionType[] action
-    {
-        get
-        {
+    public actionType[] action {
+        get {
             return this.actionField;
         }
-        set
-        {
+        set {
             this.actionField = value;
         }
     }
@@ -297,21 +259,17 @@ public partial class itemTriggerType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public abstract partial class actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public abstract partial class actionType {
+    
     private string textField;
-
+    
     /// <remarks/>
-    public string text
-    {
-        get
-        {
+    public string text {
+        get {
             return this.textField;
         }
-        set
-        {
+        set {
             this.textField = value;
         }
     }
@@ -322,36 +280,29 @@ public abstract partial class actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class wakeCreatureAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class wakeCreatureAction : actionType {
+    
     private int monsterIdField;
-
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public int monsterId
-    {
-        get
-        {
+    public int monsterId {
+        get {
             return this.monsterIdField;
         }
-        set
-        {
+        set {
             this.monsterIdField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -362,22 +313,18 @@ public partial class wakeCreatureAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class toggleAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class toggleAction : actionType {
+    
     private actionType[] actionField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("action")]
-    public actionType[] action
-    {
-        get
-        {
+    public actionType[] action {
+        get {
             return this.actionField;
         }
-        set
-        {
+        set {
             this.actionField = value;
         }
     }
@@ -388,73 +335,59 @@ public partial class toggleAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class setTimerAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class setTimerAction : actionType {
+    
     private string nameField;
-
+    
     private int durationField;
-
+    
     private bool repeatField;
-
+    
     private actionType[] actionField;
-
-    public setTimerAction()
-    {
+    
+    public setTimerAction() {
         this.repeatField = false;
     }
-
+    
     /// <remarks/>
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int duration
-    {
-        get
-        {
+    public int duration {
+        get {
             return this.durationField;
         }
-        set
-        {
+        set {
             this.durationField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool repeat
-    {
-        get
-        {
+    public bool repeat {
+        get {
             return this.repeatField;
         }
-        set
-        {
+        set {
             this.repeatField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("action")]
-    public actionType[] action
-    {
-        get
-        {
+    public actionType[] action {
+        get {
             return this.actionField;
         }
-        set
-        {
+        set {
             this.actionField = value;
         }
     }
@@ -465,36 +398,29 @@ public partial class setTimerAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class setConstantAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class setConstantAction : actionType {
+    
     private string nameField;
-
+    
     private string valueField;
-
+    
     /// <remarks/>
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string value
-    {
-        get
-        {
+    public string value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -505,9 +431,8 @@ public partial class setConstantAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class showTextAction : actionType
-{
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class showTextAction : actionType {
 }
 
 /// <remarks/>
@@ -515,36 +440,29 @@ public partial class showTextAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class revealItemAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class revealItemAction : actionType {
+    
     private int itemIdField;
-
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public int itemId
-    {
-        get
-        {
+    public int itemId {
+        get {
             return this.itemIdField;
         }
-        set
-        {
+        set {
             this.itemIdField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -555,36 +473,29 @@ public partial class revealItemAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class revealExitAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class revealExitAction : actionType {
+    
     private directionType directionField;
-
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public directionType direction
-    {
-        get
-        {
+    public directionType direction {
+        get {
             return this.directionField;
         }
-        set
-        {
+        set {
             this.directionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -593,37 +504,36 @@ public partial class revealExitAction : actionType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public enum directionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public enum directionType {
+    
     /// <remarks/>
     n,
-
+    
     /// <remarks/>
     s,
-
+    
     /// <remarks/>
     e,
-
+    
     /// <remarks/>
     w,
-
+    
     /// <remarks/>
     ne,
-
+    
     /// <remarks/>
     se,
-
+    
     /// <remarks/>
     nw,
-
+    
     /// <remarks/>
     sw,
-
+    
     /// <remarks/>
     u,
-
+    
     /// <remarks/>
     d,
 }
@@ -633,21 +543,17 @@ public enum directionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class readyWeaponAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class readyWeaponAction : actionType {
+    
     private int weaponItemIdField;
-
+    
     /// <remarks/>
-    public int weaponItemId
-    {
-        get
-        {
+    public int weaponItemId {
+        get {
             return this.weaponItemIdField;
         }
-        set
-        {
+        set {
             this.weaponItemIdField = value;
         }
     }
@@ -658,36 +564,29 @@ public partial class readyWeaponAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class permaBoostPlayerStatAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class permaBoostPlayerStatAction : actionType {
+    
     private string statField;
-
+    
     private int valueField;
-
+    
     /// <remarks/>
-    public string stat
-    {
-        get
-        {
+    public string stat {
+        get {
             return this.statField;
         }
-        set
-        {
+        set {
             this.statField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int value
-    {
-        get
-        {
+    public int value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -698,51 +597,41 @@ public partial class permaBoostPlayerStatAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class modifyWeaponAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class modifyWeaponAction : actionType {
+    
     private int idField;
-
+    
     private diceType damageField;
-
+    
     private string descriptionField;
-
+    
     /// <remarks/>
-    public int id
-    {
-        get
-        {
+    public int id {
+        get {
             return this.idField;
         }
-        set
-        {
+        set {
             this.idField = value;
         }
     }
-
+    
     /// <remarks/>
-    public diceType damage
-    {
-        get
-        {
+    public diceType damage {
+        get {
             return this.damageField;
         }
-        set
-        {
+        set {
             this.damageField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string description
-    {
-        get
-        {
+    public string description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
@@ -753,51 +642,41 @@ public partial class modifyWeaponAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class diceType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class diceType {
+    
     private int sidesField;
-
+    
     private int countField;
-
+    
     private int plusField;
-
+    
     /// <remarks/>
-    public int Sides
-    {
-        get
-        {
+    public int Sides {
+        get {
             return this.sidesField;
         }
-        set
-        {
+        set {
             this.sidesField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Count
-    {
-        get
-        {
+    public int Count {
+        get {
             return this.countField;
         }
-        set
-        {
+        set {
             this.countField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Plus
-    {
-        get
-        {
+    public int Plus {
+        get {
             return this.plusField;
         }
-        set
-        {
+        set {
             this.plusField = value;
         }
     }
@@ -808,21 +687,17 @@ public partial class diceType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class openStorageAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class openStorageAction : actionType {
+    
     private int storageItemIdField;
-
+    
     /// <remarks/>
-    public int storageItemId
-    {
-        get
-        {
+    public int storageItemId {
+        get {
             return this.storageItemIdField;
         }
-        set
-        {
+        set {
             this.storageItemIdField = value;
         }
     }
@@ -833,36 +708,29 @@ public partial class openStorageAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class hideExitAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class hideExitAction : actionType {
+    
     private directionType directionField;
-
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public directionType direction
-    {
-        get
-        {
+    public directionType direction {
+        get {
             return this.directionField;
         }
-        set
-        {
+        set {
             this.directionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -873,36 +741,29 @@ public partial class hideExitAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class healPlayerAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class healPlayerAction : actionType {
+    
     private int rangeLowField;
-
+    
     private int rangeHighField;
-
+    
     /// <remarks/>
-    public int rangeLow
-    {
-        get
-        {
+    public int rangeLow {
+        get {
             return this.rangeLowField;
         }
-        set
-        {
+        set {
             this.rangeLowField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int rangeHigh
-    {
-        get
-        {
+    public int rangeHigh {
+        get {
             return this.rangeHighField;
         }
-        set
-        {
+        set {
             this.rangeHighField = value;
         }
     }
@@ -913,21 +774,17 @@ public partial class healPlayerAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class goToRoomAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class goToRoomAction : actionType {
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -938,53 +795,43 @@ public partial class goToRoomAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class executeIfAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class executeIfAction : actionType {
+    
     private conditionType conditionField;
-
+    
     private actionType[] actionField;
-
+    
     private actionType[] elseActionField;
-
+    
     /// <remarks/>
-    public conditionType condition
-    {
-        get
-        {
+    public conditionType condition {
+        get {
             return this.conditionField;
         }
-        set
-        {
+        set {
             this.conditionField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("action")]
-    public actionType[] action
-    {
-        get
-        {
+    public actionType[] action {
+        get {
             return this.actionField;
         }
-        set
-        {
+        set {
             this.actionField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("elseAction")]
-    public actionType[] elseAction
-    {
-        get
-        {
+    public actionType[] elseAction {
+        get {
             return this.elseActionField;
         }
-        set
-        {
+        set {
             this.elseActionField = value;
         }
     }
@@ -1003,9 +850,8 @@ public partial class executeIfAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public abstract partial class conditionType
-{
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public abstract partial class conditionType {
 }
 
 /// <remarks/>
@@ -1013,36 +859,29 @@ public abstract partial class conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class constantEqualsCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class constantEqualsCondition : conditionType {
+    
     private string nameField;
-
+    
     private string valueField;
-
+    
     /// <remarks/>
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string value
-    {
-        get
-        {
+    public string value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -1053,21 +892,17 @@ public partial class constantEqualsCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class playerHoldingItemCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class playerHoldingItemCondition : conditionType {
+    
     private int itemIdField;
-
+    
     /// <remarks/>
-    public int itemId
-    {
-        get
-        {
+    public int itemId {
+        get {
             return this.itemIdField;
         }
-        set
-        {
+        set {
             this.itemIdField = value;
         }
     }
@@ -1078,21 +913,17 @@ public partial class playerHoldingItemCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class playerInRoomCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class playerInRoomCondition : conditionType {
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -1103,36 +934,29 @@ public partial class playerInRoomCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class monsterInRoomCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class monsterInRoomCondition : conditionType {
+    
     private int monsterIdField;
-
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public int monsterId
-    {
-        get
-        {
+    public int monsterId {
+        get {
             return this.monsterIdField;
         }
-        set
-        {
+        set {
             this.monsterIdField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -1143,36 +967,29 @@ public partial class monsterInRoomCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class itemInRoomCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class itemInRoomCondition : conditionType {
+    
     private int itemIdField;
-
+    
     private string roomIdField;
-
+    
     /// <remarks/>
-    public int itemId
-    {
-        get
-        {
+    public int itemId {
+        get {
             return this.itemIdField;
         }
-        set
-        {
+        set {
             this.itemIdField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
@@ -1183,21 +1000,17 @@ public partial class itemInRoomCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class notCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class notCondition : conditionType {
+    
     private conditionType conditionField;
-
+    
     /// <remarks/>
-    public conditionType condition
-    {
-        get
-        {
+    public conditionType condition {
+        get {
             return this.conditionField;
         }
-        set
-        {
+        set {
             this.conditionField = value;
         }
     }
@@ -1208,22 +1021,18 @@ public partial class notCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class orCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class orCondition : conditionType {
+    
     private conditionType[] conditionField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("condition")]
-    public conditionType[] condition
-    {
-        get
-        {
+    public conditionType[] condition {
+        get {
             return this.conditionField;
         }
-        set
-        {
+        set {
             this.conditionField = value;
         }
     }
@@ -1234,22 +1043,18 @@ public partial class orCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class andCondition : conditionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class andCondition : conditionType {
+    
     private conditionType[] conditionField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("condition")]
-    public conditionType[] condition
-    {
-        get
-        {
+    public conditionType[] condition {
+        get {
             return this.conditionField;
         }
-        set
-        {
+        set {
             this.conditionField = value;
         }
     }
@@ -1260,51 +1065,41 @@ public partial class andCondition : conditionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class doorLockAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class doorLockAction : actionType {
+    
     private directionType directionField;
-
+    
     private string roomIdField;
-
+    
     private bool lockItField;
-
+    
     /// <remarks/>
-    public directionType direction
-    {
-        get
-        {
+    public directionType direction {
+        get {
             return this.directionField;
         }
-        set
-        {
+        set {
             this.directionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomId
-    {
-        get
-        {
+    public string roomId {
+        get {
             return this.roomIdField;
         }
-        set
-        {
+        set {
             this.roomIdField = value;
         }
     }
-
+    
     /// <remarks/>
-    public bool lockIt
-    {
-        get
-        {
+    public bool lockIt {
+        get {
             return this.lockItField;
         }
-        set
-        {
+        set {
             this.lockItField = value;
         }
     }
@@ -1315,21 +1110,17 @@ public partial class doorLockAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class destroyItemAction : actionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class destroyItemAction : actionType {
+    
     private int idField;
-
+    
     /// <remarks/>
-    public int id
-    {
-        get
-        {
+    public int id {
+        get {
             return this.idField;
         }
-        set
-        {
+        set {
             this.idField = value;
         }
     }
@@ -1340,107 +1131,87 @@ public partial class destroyItemAction : actionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class storageType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class storageType {
+    
     private bool isOpenField;
-
+    
     private bool closableField;
-
+    
     private bool openableField;
-
+    
     private string cantOpenPhraseField;
-
+    
     private int maxWeightField;
-
+    
     private int[] contentsField;
-
-    public storageType()
-    {
+    
+    public storageType() {
         this.isOpenField = true;
         this.closableField = false;
         this.openableField = false;
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(true)]
-    public bool isOpen
-    {
-        get
-        {
+    public bool isOpen {
+        get {
             return this.isOpenField;
         }
-        set
-        {
+        set {
             this.isOpenField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool closable
-    {
-        get
-        {
+    public bool closable {
+        get {
             return this.closableField;
         }
-        set
-        {
+        set {
             this.closableField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool openable
-    {
-        get
-        {
+    public bool openable {
+        get {
             return this.openableField;
         }
-        set
-        {
+        set {
             this.openableField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string CantOpenPhrase
-    {
-        get
-        {
+    public string CantOpenPhrase {
+        get {
             return this.cantOpenPhraseField;
         }
-        set
-        {
+        set {
             this.cantOpenPhraseField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int maxWeight
-    {
-        get
-        {
+    public int maxWeight {
+        get {
             return this.maxWeightField;
         }
-        set
-        {
+        set {
             this.maxWeightField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Contents")]
-    public int[] Contents
-    {
-        get
-        {
+    public int[] Contents {
+        get {
             return this.contentsField;
         }
-        set
-        {
+        set {
             this.contentsField = value;
         }
     }
@@ -1452,38 +1223,36 @@ public partial class storageType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class itemType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class itemType {
+    
     private int idField;
-
+    
     private string nameField;
-
+    
     private string descriptionField;
-
+    
     private int baseValueField;
-
+    
     private int weightField;
-
+    
     private bool canLightField;
-
+    
     private bool isMoneyField;
-
+    
     private storageType storageField;
-
+    
     private bool revealedField;
-
+    
     private bool isWearableField;
-
+    
     private bool isArmorField;
-
+    
     private int armorClassField;
-
+    
     private itemTriggerType[] triggerField;
-
-    public itemType()
-    {
+    
+    public itemType() {
         this.canLightField = false;
         this.isMoneyField = false;
         this.revealedField = true;
@@ -1491,179 +1260,140 @@ public partial class itemType
         this.isArmorField = false;
         this.armorClassField = 0;
     }
-
+    
     /// <remarks/>
-    public int id
-    {
-        get
-        {
+    public int id {
+        get {
             return this.idField;
         }
-        set
-        {
+        set {
             this.idField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string name
-    {
-        get
-        {
+    public string name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string description
-    {
-        get
-        {
+    public string description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int baseValue
-    {
-        get
-        {
+    public int baseValue {
+        get {
             return this.baseValueField;
         }
-        set
-        {
+        set {
             this.baseValueField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int weight
-    {
-        get
-        {
+    public int weight {
+        get {
             return this.weightField;
         }
-        set
-        {
+        set {
             this.weightField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool canLight
-    {
-        get
-        {
+    public bool canLight {
+        get {
             return this.canLightField;
         }
-        set
-        {
+        set {
             this.canLightField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool isMoney
-    {
-        get
-        {
+    public bool isMoney {
+        get {
             return this.isMoneyField;
         }
-        set
-        {
+        set {
             this.isMoneyField = value;
         }
     }
-
+    
     /// <remarks/>
-    public storageType storage
-    {
-        get
-        {
+    public storageType storage {
+        get {
             return this.storageField;
         }
-        set
-        {
+        set {
             this.storageField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(true)]
-    public bool revealed
-    {
-        get
-        {
+    public bool revealed {
+        get {
             return this.revealedField;
         }
-        set
-        {
+        set {
             this.revealedField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool isWearable
-    {
-        get
-        {
+    public bool isWearable {
+        get {
             return this.isWearableField;
         }
-        set
-        {
+        set {
             this.isWearableField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool isArmor
-    {
-        get
-        {
+    public bool isArmor {
+        get {
             return this.isArmorField;
         }
-        set
-        {
+        set {
             this.isArmorField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(0)]
-    public int armorClass
-    {
-        get
-        {
+    public int armorClass {
+        get {
             return this.armorClassField;
         }
-        set
-        {
+        set {
             this.armorClassField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Trigger")]
-    public itemTriggerType[] Trigger
-    {
-        get
-        {
+    public itemTriggerType[] Trigger {
+        get {
             return this.triggerField;
         }
-        set
-        {
+        set {
             this.triggerField = value;
         }
     }
@@ -1674,21 +1404,17 @@ public partial class itemType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class weaponData : itemType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class weaponData : itemType {
+    
     private WeaponAttackType attackField;
-
+    
     /// <remarks/>
-    public WeaponAttackType Attack
-    {
-        get
-        {
+    public WeaponAttackType Attack {
+        get {
             return this.attackField;
         }
-        set
-        {
+        set {
             this.attackField = value;
         }
     }
@@ -1699,36 +1425,29 @@ public partial class weaponData : itemType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class WeaponAttackType : AttackType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class WeaponAttackType : AttackType {
+    
     private weaponType typeField;
-
+    
     private int complexityField;
-
+    
     /// <remarks/>
-    public weaponType Type
-    {
-        get
-        {
+    public weaponType Type {
+        get {
             return this.typeField;
         }
-        set
-        {
+        set {
             this.typeField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Complexity
-    {
-        get
-        {
+    public int Complexity {
+        get {
             return this.complexityField;
         }
-        set
-        {
+        set {
             this.complexityField = value;
         }
     }
@@ -1737,22 +1456,21 @@ public partial class WeaponAttackType : AttackType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public enum weaponType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public enum weaponType {
+    
     /// <remarks/>
     Axe,
-
+    
     /// <remarks/>
     Bow,
-
+    
     /// <remarks/>
     Mace,
-
+    
     /// <remarks/>
     Spear,
-
+    
     /// <remarks/>
     Sword,
 }
@@ -1763,37 +1481,30 @@ public enum weaponType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class AttackType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class AttackType {
+    
     private diceType attackDiceField;
-
+    
     private string[] attackPhrasesField;
-
+    
     /// <remarks/>
-    public diceType AttackDice
-    {
-        get
-        {
+    public diceType AttackDice {
+        get {
             return this.attackDiceField;
         }
-        set
-        {
+        set {
             this.attackDiceField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Phrase", IsNullable = false)]
-    public string[] AttackPhrases
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Phrase", IsNullable=false)]
+    public string[] AttackPhrases {
+        get {
             return this.attackPhrasesField;
         }
-        set
-        {
+        set {
             this.attackPhrasesField = value;
         }
     }
@@ -1804,21 +1515,17 @@ public partial class AttackType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class AutoCorpseType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class AutoCorpseType {
+    
     private string descriptionField;
-
+    
     /// <remarks/>
-    public string Description
-    {
-        get
-        {
+    public string Description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
@@ -1829,38 +1536,31 @@ public partial class AutoCorpseType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class elementMonsterTriggerNameType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class elementMonsterTriggerNameType {
+    
     private string argField;
-
+    
     private monsterTriggerNameType valueField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string arg
-    {
-        get
-        {
+    public string arg {
+        get {
             return this.argField;
         }
-        set
-        {
+        set {
             this.argField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlTextAttribute()]
-    public monsterTriggerNameType Value
-    {
-        get
-        {
+    public monsterTriggerNameType Value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -1869,22 +1569,21 @@ public partial class elementMonsterTriggerNameType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public enum monsterTriggerNameType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public enum monsterTriggerNameType {
+    
     /// <remarks/>
     OnBlast,
-
+    
     /// <remarks/>
     OnKill,
-
+    
     /// <remarks/>
     OnMagicWord,
-
+    
     /// <remarks/>
     OnPower,
-
+    
     /// <remarks/>
     OnWound,
 }
@@ -1894,37 +1593,30 @@ public enum monsterTriggerNameType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class monsterTriggerType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class monsterTriggerType {
+    
     private elementMonsterTriggerNameType triggerField;
-
+    
     private actionType[] actionField;
-
+    
     /// <remarks/>
-    public elementMonsterTriggerNameType trigger
-    {
-        get
-        {
+    public elementMonsterTriggerNameType trigger {
+        get {
             return this.triggerField;
         }
-        set
-        {
+        set {
             this.triggerField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("action")]
-    public actionType[] action
-    {
-        get
-        {
+    public actionType[] action {
+        get {
             return this.actionField;
         }
-        set
-        {
+        set {
             this.actionField = value;
         }
     }
@@ -1937,96 +1629,77 @@ public partial class monsterTriggerType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class CreatureType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class CreatureType {
+    
     private int idField;
-
+    
     private string nameField;
-
+    
     private int hardinessField;
-
+    
     private int agilityField;
-
+    
     private int armorClassField;
-
+    
     private CreatureTypeItems itemsField;
-
+    
     /// <remarks/>
-    public int ID
-    {
-        get
-        {
+    public int ID {
+        get {
             return this.idField;
         }
-        set
-        {
+        set {
             this.idField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string Name
-    {
-        get
-        {
+    public string Name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Hardiness
-    {
-        get
-        {
+    public int Hardiness {
+        get {
             return this.hardinessField;
         }
-        set
-        {
+        set {
             this.hardinessField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Agility
-    {
-        get
-        {
+    public int Agility {
+        get {
             return this.agilityField;
         }
-        set
-        {
+        set {
             this.agilityField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int ArmorClass
-    {
-        get
-        {
+    public int ArmorClass {
+        get {
             return this.armorClassField;
         }
-        set
-        {
+        set {
             this.armorClassField = value;
         }
     }
-
+    
     /// <remarks/>
-    public CreatureTypeItems Items
-    {
-        get
-        {
+    public CreatureTypeItems Items {
+        get {
             return this.itemsField;
         }
-        set
-        {
+        set {
             this.itemsField = value;
         }
     }
@@ -2037,22 +1710,18 @@ public partial class CreatureType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class CreatureTypeItems
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class CreatureTypeItems {
+    
     private int[] itemField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Item")]
-    public int[] Item
-    {
-        get
-        {
+    public int[] Item {
+        get {
             return this.itemField;
         }
-        set
-        {
+        set {
             this.itemField = value;
         }
     }
@@ -2063,217 +1732,174 @@ public partial class CreatureTypeItems
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class CharacterType : CreatureType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class CharacterType : CreatureType {
+    
     private byte armorExpertiseField;
-
+    
     private sbyte axeField;
-
+    
     private sbyte bowField;
-
+    
     private sbyte maceField;
-
+    
     private sbyte spearField;
-
+    
     private sbyte swordField;
-
+    
     private sbyte charismaField;
-
+    
     private sbyte healField;
-
+    
     private sbyte blastField;
-
+    
     private sbyte powerField;
-
+    
     private sbyte speedField;
-
+    
     private ulong goldField;
-
+    
     private ulong goldInBankField;
-
+    
     private weaponData[] weaponListField;
-
+    
     /// <remarks/>
-    public byte ArmorExpertise
-    {
-        get
-        {
+    public byte ArmorExpertise {
+        get {
             return this.armorExpertiseField;
         }
-        set
-        {
+        set {
             this.armorExpertiseField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Axe
-    {
-        get
-        {
+    public sbyte Axe {
+        get {
             return this.axeField;
         }
-        set
-        {
+        set {
             this.axeField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Bow
-    {
-        get
-        {
+    public sbyte Bow {
+        get {
             return this.bowField;
         }
-        set
-        {
+        set {
             this.bowField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Mace
-    {
-        get
-        {
+    public sbyte Mace {
+        get {
             return this.maceField;
         }
-        set
-        {
+        set {
             this.maceField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Spear
-    {
-        get
-        {
+    public sbyte Spear {
+        get {
             return this.spearField;
         }
-        set
-        {
+        set {
             this.spearField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Sword
-    {
-        get
-        {
+    public sbyte Sword {
+        get {
             return this.swordField;
         }
-        set
-        {
+        set {
             this.swordField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Charisma
-    {
-        get
-        {
+    public sbyte Charisma {
+        get {
             return this.charismaField;
         }
-        set
-        {
+        set {
             this.charismaField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Heal
-    {
-        get
-        {
+    public sbyte Heal {
+        get {
             return this.healField;
         }
-        set
-        {
+        set {
             this.healField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Blast
-    {
-        get
-        {
+    public sbyte Blast {
+        get {
             return this.blastField;
         }
-        set
-        {
+        set {
             this.blastField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Power
-    {
-        get
-        {
+    public sbyte Power {
+        get {
             return this.powerField;
         }
-        set
-        {
+        set {
             this.powerField = value;
         }
     }
-
+    
     /// <remarks/>
-    public sbyte Speed
-    {
-        get
-        {
+    public sbyte Speed {
+        get {
             return this.speedField;
         }
-        set
-        {
+        set {
             this.speedField = value;
         }
     }
-
+    
     /// <remarks/>
-    public ulong Gold
-    {
-        get
-        {
+    public ulong Gold {
+        get {
             return this.goldField;
         }
-        set
-        {
+        set {
             this.goldField = value;
         }
     }
-
+    
     /// <remarks/>
-    public ulong GoldInBank
-    {
-        get
-        {
+    public ulong GoldInBank {
+        get {
             return this.goldInBankField;
         }
-        set
-        {
+        set {
             this.goldInBankField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Weapon", IsNullable = false)]
-    public weaponData[] WeaponList
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Weapon", IsNullable=false)]
+    public weaponData[] WeaponList {
+        get {
             return this.weaponListField;
         }
-        set
-        {
+        set {
             this.weaponListField = value;
         }
     }
@@ -2284,242 +1910,207 @@ public partial class CharacterType : CreatureType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class MonsterType : CreatureType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class MonsterType : CreatureType {
+    
     private AttackType naturalAttackField;
-
+    
+    private string introField;
+    
     private string descriptionField;
-
+    
     private DispositionType dispositionField;
-
+    
     private int friendlinessField;
-
+    
     private bool friendlinessFieldSpecified;
-
+    
     private int courageField;
-
+    
     private bool noFollowField;
-
+    
     private bool canUseWeaponsField;
-
+    
     private weaponType[] canUseWeaponTypesField;
-
+    
     private int favoredWeaponIDField;
-
+    
     private bool favoredWeaponIDFieldSpecified;
-
+    
     private int weaponIDField;
-
+    
     private bool weaponIDFieldSpecified;
-
+    
     private monsterTriggerType[] triggerField;
-
+    
     private AutoCorpseType autoCorpseField;
-
-    public MonsterType()
-    {
+    
+    public MonsterType() {
         this.noFollowField = false;
     }
-
+    
     /// <remarks/>
-    public AttackType NaturalAttack
-    {
-        get
-        {
+    public AttackType NaturalAttack {
+        get {
             return this.naturalAttackField;
         }
-        set
-        {
+        set {
             this.naturalAttackField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string Description
-    {
-        get
-        {
+    public string Intro {
+        get {
+            return this.introField;
+        }
+        set {
+            this.introField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string Description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public DispositionType Disposition
-    {
-        get
-        {
+    public DispositionType Disposition {
+        get {
             return this.dispositionField;
         }
-        set
-        {
+        set {
             this.dispositionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Friendliness
-    {
-        get
-        {
+    public int Friendliness {
+        get {
             return this.friendlinessField;
         }
-        set
-        {
+        set {
             this.friendlinessField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool FriendlinessSpecified
-    {
-        get
-        {
+    public bool FriendlinessSpecified {
+        get {
             return this.friendlinessFieldSpecified;
         }
-        set
-        {
+        set {
             this.friendlinessFieldSpecified = value;
         }
     }
-
+    
     /// <remarks/>
-    public int Courage
-    {
-        get
-        {
+    public int Courage {
+        get {
             return this.courageField;
         }
-        set
-        {
+        set {
             this.courageField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool NoFollow
-    {
-        get
-        {
+    public bool NoFollow {
+        get {
             return this.noFollowField;
         }
-        set
-        {
+        set {
             this.noFollowField = value;
         }
     }
-
+    
     /// <remarks/>
-    public bool CanUseWeapons
-    {
-        get
-        {
+    public bool CanUseWeapons {
+        get {
             return this.canUseWeaponsField;
         }
-        set
-        {
+        set {
             this.canUseWeaponsField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("WeaponType", IsNullable = false)]
-    public weaponType[] CanUseWeaponTypes
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("WeaponType", IsNullable=false)]
+    public weaponType[] CanUseWeaponTypes {
+        get {
             return this.canUseWeaponTypesField;
         }
-        set
-        {
+        set {
             this.canUseWeaponTypesField = value;
         }
     }
-
+    
     /// <remarks/>
-    public int FavoredWeaponID
-    {
-        get
-        {
+    public int FavoredWeaponID {
+        get {
             return this.favoredWeaponIDField;
         }
-        set
-        {
+        set {
             this.favoredWeaponIDField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool FavoredWeaponIDSpecified
-    {
-        get
-        {
+    public bool FavoredWeaponIDSpecified {
+        get {
             return this.favoredWeaponIDFieldSpecified;
         }
-        set
-        {
+        set {
             this.favoredWeaponIDFieldSpecified = value;
         }
     }
-
+    
     /// <remarks/>
-    public int WeaponID
-    {
-        get
-        {
+    public int WeaponID {
+        get {
             return this.weaponIDField;
         }
-        set
-        {
+        set {
             this.weaponIDField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlIgnoreAttribute()]
-    public bool WeaponIDSpecified
-    {
-        get
-        {
+    public bool WeaponIDSpecified {
+        get {
             return this.weaponIDFieldSpecified;
         }
-        set
-        {
+        set {
             this.weaponIDFieldSpecified = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Trigger")]
-    public monsterTriggerType[] Trigger
-    {
-        get
-        {
+    public monsterTriggerType[] Trigger {
+        get {
             return this.triggerField;
         }
-        set
-        {
+        set {
             this.triggerField = value;
         }
     }
-
+    
     /// <remarks/>
-    public AutoCorpseType AutoCorpse
-    {
-        get
-        {
+    public AutoCorpseType AutoCorpse {
+        get {
             return this.autoCorpseField;
         }
-        set
-        {
+        set {
             this.autoCorpseField = value;
         }
     }
@@ -2528,16 +2119,15 @@ public partial class MonsterType : CreatureType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public enum DispositionType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public enum DispositionType {
+    
     /// <remarks/>
     Angry,
-
+    
     /// <remarks/>
     Friendly,
-
+    
     /// <remarks/>
     Neutral,
 }
@@ -2548,74 +2138,60 @@ public enum DispositionType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class doorType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class doorType {
+    
     private directionType directionField;
-
+    
     private string roomNameField;
-
+    
     private bool toMainHallField;
-
+    
     private bool visibleField;
-
-    public doorType()
-    {
+    
+    public doorType() {
         this.toMainHallField = false;
         this.visibleField = true;
     }
-
+    
     /// <remarks/>
-    public directionType direction
-    {
-        get
-        {
+    public directionType direction {
+        get {
             return this.directionField;
         }
-        set
-        {
+        set {
             this.directionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string roomName
-    {
-        get
-        {
+    public string roomName {
+        get {
             return this.roomNameField;
         }
-        set
-        {
+        set {
             this.roomNameField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(false)]
-    public bool toMainHall
-    {
-        get
-        {
+    public bool toMainHall {
+        get {
             return this.toMainHallField;
         }
-        set
-        {
+        set {
             this.toMainHallField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(true)]
-    public bool visible
-    {
-        get
-        {
+    public bool visible {
+        get {
             return this.visibleField;
         }
-        set
-        {
+        set {
             this.visibleField = value;
         }
     }
@@ -2626,111 +2202,89 @@ public partial class doorType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class lockableDoorType : doorType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class lockableDoorType : doorType {
+    
     private bool lockedField;
-
+    
     private string lockedDescriptionField;
-
+    
     private string unlockedDescriptionField;
-
+    
     private string unlockPhraseField;
-
+    
     private string lockPhraseField;
-
+    
     private string keyItemIdField;
-
+    
     private string keyItemActionField;
-
+    
     /// <remarks/>
-    public bool locked
-    {
-        get
-        {
+    public bool locked {
+        get {
             return this.lockedField;
         }
-        set
-        {
+        set {
             this.lockedField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string LockedDescription
-    {
-        get
-        {
+    public string LockedDescription {
+        get {
             return this.lockedDescriptionField;
         }
-        set
-        {
+        set {
             this.lockedDescriptionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string UnlockedDescription
-    {
-        get
-        {
+    public string UnlockedDescription {
+        get {
             return this.unlockedDescriptionField;
         }
-        set
-        {
+        set {
             this.unlockedDescriptionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string UnlockPhrase
-    {
-        get
-        {
+    public string UnlockPhrase {
+        get {
             return this.unlockPhraseField;
         }
-        set
-        {
+        set {
             this.unlockPhraseField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string LockPhrase
-    {
-        get
-        {
+    public string LockPhrase {
+        get {
             return this.lockPhraseField;
         }
-        set
-        {
+        set {
             this.lockPhraseField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string keyItemId
-    {
-        get
-        {
+    public string keyItemId {
+        get {
             return this.keyItemIdField;
         }
-        set
-        {
+        set {
             this.keyItemIdField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string keyItemAction
-    {
-        get
-        {
+    public string keyItemAction {
+        get {
             return this.keyItemActionField;
         }
-        set
-        {
+        set {
             this.keyItemActionField = value;
         }
     }
@@ -2741,38 +2295,31 @@ public partial class lockableDoorType : doorType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class elementRoomTriggerNameType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class elementRoomTriggerNameType {
+    
     private string argField;
-
+    
     private roomTriggerNameType valueField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlAttributeAttribute()]
-    public string arg
-    {
-        get
-        {
+    public string arg {
+        get {
             return this.argField;
         }
-        set
-        {
+        set {
             this.argField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlTextAttribute()]
-    public roomTriggerNameType Value
-    {
-        get
-        {
+    public roomTriggerNameType Value {
+        get {
             return this.valueField;
         }
-        set
-        {
+        set {
             this.valueField = value;
         }
     }
@@ -2781,22 +2328,21 @@ public partial class elementRoomTriggerNameType
 /// <remarks/>
 [System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
 [System.SerializableAttribute()]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public enum roomTriggerNameType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public enum roomTriggerNameType {
+    
     /// <remarks/>
     OnFirstEnter,
-
+    
     /// <remarks/>
     OnEachEnter,
-
+    
     /// <remarks/>
     OnExamine,
-
+    
     /// <remarks/>
     OnMagicWord,
-
+    
     /// <remarks/>
     OnPower,
 }
@@ -2806,37 +2352,30 @@ public enum roomTriggerNameType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class roomTriggerType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class roomTriggerType {
+    
     private elementRoomTriggerNameType triggerField;
-
+    
     private actionType[] actionField;
-
+    
     /// <remarks/>
-    public elementRoomTriggerNameType trigger
-    {
-        get
-        {
+    public elementRoomTriggerNameType trigger {
+        get {
             return this.triggerField;
         }
-        set
-        {
+        set {
             this.triggerField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("action")]
-    public actionType[] action
-    {
-        get
-        {
+    public actionType[] action {
+        get {
             return this.actionField;
         }
-        set
-        {
+        set {
             this.actionField = value;
         }
     }
@@ -2847,151 +2386,122 @@ public partial class roomTriggerType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-public partial class roomType
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class roomType {
+    
     private string nameField;
-
+    
     private string titleField;
-
+    
     private string descriptionField;
-
+    
     private string shortDescriptionField;
-
+    
     private bool lightField;
-
+    
     private roomTriggerType[] triggerField;
-
+    
     private doorType[] exitsField;
-
+    
     private int[] creaturesField;
-
+    
     private int[] itemsField;
-
-    public roomType()
-    {
+    
+    public roomType() {
         this.lightField = true;
     }
-
+    
     /// <remarks/>
-    public string Name
-    {
-        get
-        {
+    public string Name {
+        get {
             return this.nameField;
         }
-        set
-        {
+        set {
             this.nameField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string Title
-    {
-        get
-        {
+    public string Title {
+        get {
             return this.titleField;
         }
-        set
-        {
+        set {
             this.titleField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string Description
-    {
-        get
-        {
+    public string Description {
+        get {
             return this.descriptionField;
         }
-        set
-        {
+        set {
             this.descriptionField = value;
         }
     }
-
+    
     /// <remarks/>
-    public string ShortDescription
-    {
-        get
-        {
+    public string ShortDescription {
+        get {
             return this.shortDescriptionField;
         }
-        set
-        {
+        set {
             this.shortDescriptionField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.ComponentModel.DefaultValueAttribute(true)]
-    public bool Light
-    {
-        get
-        {
+    public bool Light {
+        get {
             return this.lightField;
         }
-        set
-        {
+        set {
             this.lightField = value;
         }
     }
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Trigger")]
-    public roomTriggerType[] Trigger
-    {
-        get
-        {
+    public roomTriggerType[] Trigger {
+        get {
             return this.triggerField;
         }
-        set
-        {
+        set {
             this.triggerField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Exit", IsNullable = false)]
-    public doorType[] Exits
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Exit", IsNullable=false)]
+    public doorType[] Exits {
+        get {
             return this.exitsField;
         }
-        set
-        {
+        set {
             this.exitsField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("CreatureID", IsNullable = false)]
-    public int[] Creatures
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("CreatureID", IsNullable=false)]
+    public int[] Creatures {
+        get {
             return this.creaturesField;
         }
-        set
-        {
+        set {
             this.creaturesField = value;
         }
     }
-
+    
     /// <remarks/>
-    [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable = false)]
-    public int[] Items
-    {
-        get
-        {
+    [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable=false)]
+    public int[] Items {
+        get {
             return this.itemsField;
         }
-        set
-        {
+        set {
             this.itemsField = value;
         }
     }
@@ -3002,23 +2512,19 @@ public partial class roomType
 [System.SerializableAttribute()]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-[System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schemas.datacontract.org/2004/07/Adventure")]
-[System.Xml.Serialization.XmlRootAttribute(Namespace = "http://schemas.datacontract.org/2004/07/Adventure", IsNullable = false)]
-public partial class CharacterList
-{
-
+[System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+[System.Xml.Serialization.XmlRootAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure", IsNullable=false)]
+public partial class CharacterList {
+    
     private CharacterType[] characterField;
-
+    
     /// <remarks/>
     [System.Xml.Serialization.XmlElementAttribute("Character")]
-    public CharacterType[] Character
-    {
-        get
-        {
+    public CharacterType[] Character {
+        get {
             return this.characterField;
         }
-        set
-        {
+        set {
             this.characterField = value;
         }
     }

@@ -1590,7 +1590,7 @@ namespace Adventure.Dungeon
                     Logger.WriteLn("You can't go that way.");
                     if (checkLight())
                     {
-                        Logger.Write(currentContext.CurrentRoom.ShortDescription);
+                        DescribeRoom();
                         AppendExitsToOutput();
                         PostAction();
                     }
@@ -1684,7 +1684,14 @@ namespace Adventure.Dungeon
             // Append creature descriptions for first encounters
             foreach (Monster monster in currentContext.CurrentRoom.Creatures.FindAll(c => !repeatEncounters.Contains(c.ID)))
             {
-                Logger.WriteLn(String.Format("\n{0}", monster.Description));
+                if (monster.Intro != null)
+                {
+                    Logger.WriteLn(String.Format("\n{0}", monster.Intro));
+                }
+                else
+                {
+                    Logger.WriteLn(String.Format("\n{0}", monster.Description));
+                }
             }
 
             // List previously encountered creatures that are still here
