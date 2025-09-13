@@ -7,22 +7,21 @@
     <Agility>10</Agility>
     <ArmorClass>7</ArmorClass>
     <Items />
-    <ArmorExpertise>6</ArmorExpertise>
+    <ArmorExpertise>10</ArmorExpertise>
     <Axe>10</Axe>
     <Bow>-20</Bow>
     <Mace>20</Mace>
     <Spear>0</Spear>
-    <Sword>16</Sword>
+    <Sword>20</Sword>
     <Charisma>7</Charisma>
     <Heal>0</Heal>
     <Blast>0</Blast>
     <Power>21</Power>
     <Speed>0</Speed>
-    <Gold>736</Gold>
+    <Gold>786</Gold>
     <GoldInBank>0</GoldInBank>
     <WeaponList>
       <Weapon>
-        <isLit>false</isLit>
         <id>1004</id>
         <name>TrollsFire</name>
         <description>The pirate was carrying a beautiful sword. Carved on the hilt, in intricate detail, is the sword's name, "TrollsFire".</description>
@@ -60,6 +59,7 @@ Trollsfire is glowing!</description>
             </action>
           </action>
         </Trigger>
+        <isLit>false</isLit>
         <Attack>
           <AttackDice>
             <Sides>6</Sides>
@@ -74,6 +74,50 @@ Trollsfire is glowing!</description>
           </AttackPhrases>
           <Type>Sword</Type>
           <Complexity>25</Complexity>
+        </Attack>
+      </Weapon>
+      <Weapon>
+        <id>1004</id>
+        <name>axe</name>
+        <description>You see a standard Marcos axe here.</description>
+        <baseValue>20</baseValue>
+        <weight>8</weight>
+        <isLit>false</isLit>
+        <Attack>
+          <AttackDice>
+            <Sides>6</Sides>
+            <Count>1</Count>
+            <Plus>0</Plus>
+          </AttackDice>
+          <AttackPhrases>
+            <Phrase>chops at</Phrase>
+            <Phrase>swings at</Phrase>
+            <Phrase>hacks at</Phrase>
+          </AttackPhrases>
+          <Type>Axe</Type>
+          <Complexity>0</Complexity>
+        </Attack>
+      </Weapon>
+      <Weapon>
+        <id>1005</id>
+        <name>axe</name>
+        <description>You see a standard Marcos axe here.</description>
+        <baseValue>20</baseValue>
+        <weight>8</weight>
+        <isLit>false</isLit>
+        <Attack>
+          <AttackDice>
+            <Sides>6</Sides>
+            <Count>1</Count>
+            <Plus>0</Plus>
+          </AttackDice>
+          <AttackPhrases>
+            <Phrase>chops at</Phrase>
+            <Phrase>swings at</Phrase>
+            <Phrase>hacks at</Phrase>
+          </AttackPhrases>
+          <Type>Axe</Type>
+          <Complexity>0</Complexity>
         </Attack>
       </Weapon>
     </WeaponList>
@@ -100,12 +144,12 @@ Trollsfire is glowing!</description>
     <GoldInBank>0</GoldInBank>
     <WeaponList>
       <Weapon>
-        <isLit>false</isLit>
         <id>0</id>
         <name>Axe</name>
         <description>This is a basic, decent quality Axe.</description>
         <baseValue>15</baseValue>
         <weight>1</weight>
+        <isLit>false</isLit>
         <Attack>
           <AttackDice>
             <Sides>6</Sides>
@@ -117,12 +161,12 @@ Trollsfire is glowing!</description>
         </Attack>
       </Weapon>
       <Weapon>
-        <isLit>false</isLit>
         <id>1002</id>
         <name>Rusty Sword</name>
         <description>This is a plain, rusty sword.</description>
         <baseValue>15</baseValue>
         <weight>9</weight>
+        <isLit>false</isLit>
         <Attack>
           <AttackDice>
             <Sides>2</Sides>
@@ -140,12 +184,12 @@ Trollsfire is glowing!</description>
         </Attack>
       </Weapon>
       <Weapon>
-        <isLit>false</isLit>
         <id>1003</id>
         <name>Hermit Axe</name>
         <description>This is a well made woodsman's axe. It was the Hermit's only defense, other than his smell.</description>
         <baseValue>15</baseValue>
         <weight>6</weight>
+        <isLit>false</isLit>
         <Attack>
           <AttackDice>
             <Sides>2</Sides>
@@ -185,12 +229,12 @@ Trollsfire is glowing!</description>
     <GoldInBank>0</GoldInBank>
     <WeaponList>
       <Weapon>
-        <isLit>false</isLit>
         <id>5</id>
         <name>bow</name>
         <description>This is a plain bow.</description>
         <baseValue>10</baseValue>
         <weight>0</weight>
+        <isLit>false</isLit>
         <Attack>
           <AttackDice>
             <Sides>4</Sides>

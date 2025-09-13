@@ -1,16 +1,217 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{980489F5-69F4-4A2E-A9EC-A5DA7BD03633}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Adventure</RootNamespace>
+    <AssemblyName>Adventure</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>..\..\..\Windows\Microsoft.NET\Framework64\v4.0.30319\System.Windows.Forms.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Compile Include="Character.cs" />
+    <Compile Include="CharacterLoader.cs" />
+    <Compile Include="Creature.cs" />
+    <Compile Include="DungeonExtensions\Actions\actionType.cs" />
+    <Compile Include="DungeonExtensions\Actions\destroyItemAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\doorLockAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\executeIfAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\goToRoomAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\healPlayerAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\HideExitAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\modifyWeaponAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\openStorageAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\PermaBoostPlayerStatAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\readyWeaponAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\RevealExitAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\RevealItemAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\setConstantAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\setTimerAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\ShowTextAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\toggleAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\wakeCreatureAction.cs" />
+    <Compile Include="DungeonExtensions\Conditions\andCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\conditionType.cs" />
+    <Compile Include="DungeonExtensions\Conditions\constantEqualsCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\itemInRoomCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\monsterInRoomCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\notCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\orCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\playerHoldingItemCondition.cs" />
+    <Compile Include="DungeonExtensions\Conditions\playerInRoomCondition.cs" />
+    <Compile Include="Dungeon\BaseExit.cs" />
+    <Compile Include="Dungeon\CombatEngine.cs" />
+    <Compile Include="Dungeon\CommandEngine.cs" />
+    <Compile Include="Dungeon\Context.cs" />
+    <Compile Include="Dungeon\DungeonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dungeon\DungeonLoader.cs" />
+    <Compile Include="Dungeon\ExitFactory.cs" />
+    <Compile Include="Dungeon\ExitRooms.cs" />
+    <Compile Include="Dungeon\ILockable.cs" />
+    <Compile Include="Dungeon\IRoom.cs" />
+    <Compile Include="Dungeon\LockableExit.cs" />
+    <Compile Include="Dungeon\Monster.cs" />
+    <Compile Include="Dungeon\Room.cs" />
+    <Compile Include="Dungeon\Triggers\IAction.cs" />
+    <Compile Include="Dungeon\Triggers\TriggeredActionsHandler.cs" />
+    <Compile Include="Dungeon\TurnTimer.cs" />
+    <Compile Include="dungeon_characters.cs" />
+    <Compile Include="HistoryTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HistoryTextBox.Designer.cs">
+      <DependentUpon>HistoryTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICreature.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="MainHall\CharSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHall\CharSelectDialog.Designer.cs">
+      <DependentUpon>CharSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainHall\CreateCharacterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHall\CreateCharacterForm.Designer.cs">
+      <DependentUpon>CreateCharacterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainHall\diceType.cs" />
+    <Compile Include="MainHall\itemType.cs" />
+    <Compile Include="MainHall\MainHallConfig.cs" />
+    <Compile Include="MainHall\MainHallForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHall\MainHallForm.Designer.cs">
+      <DependentUpon>MainHallForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainHall\ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHall\storageType.cs" />
+    <Compile Include="MainHall\ViewCharacterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHall\ViewCharacterForm.Designer.cs">
+      <DependentUpon>ViewCharacterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainHall\WizardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainHall\WizardForm.Designer.cs">
+      <DependentUpon>WizardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParseHelpers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RichTextBoxExtensions.cs" />
+    <Compile Include="SerializableDictionary.cs" />
+    <Compile Include="StringEventArgs.cs" />
+    <Compile Include="TextInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextInputForm.Designer.cs">
+      <DependentUpon>TextInputForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="HistoryTextBox.resx">
+      <DependentUpon>HistoryTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHall\CharSelectDialog.resx">
+      <DependentUpon>CharSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHall\CreateCharacterForm.resx">
+      <DependentUpon>CreateCharacterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHall\MainHallForm.resx">
+      <DependentUpon>MainHallForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHall\ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHall\ViewCharacterForm.resx">
+      <DependentUpon>ViewCharacterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainHall\WizardForm.resx">
+      <DependentUpon>WizardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TextInputForm.resx">
+      <DependentUpon>TextInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Characters.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dungeon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainHallConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

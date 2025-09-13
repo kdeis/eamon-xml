@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Adventure;
+using Adventure.Dungeon;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Adventure;
-using Adventure.Dungeon;
 
 public partial class destroyItemAction
 {
@@ -23,40 +24,45 @@ public partial class destroyItemAction
         Logger.WriteLn(text);
 
         // If player has the item, remove it from inventory
-        itemType item = Context.Instance.Player.Items.Find((i) => i.id == id);
-        if (item != null)
-        {
-            Context.Instance.Player.Items.Remove(item);
-        }
-        else
+        bool found = removeItemFromList(Context.Instance.Player.Items);
+        if (!found)
         {
             // Search rooms and monsters for it
-            bool found = false;
             foreach (IRoom r in Context.Instance.rooms.Values)
             {
                 // If the item is in the room, remove it
-                item = r.Items.Find((i) => i.id == id);
-                if (item != null)
-                {
-                    r.Items.Remove(item);
-                    found = true;
-                }
-                else
+                found = removeItemFromList(r.Items);
+                if (!found)
                 {
                     // If a monster in the room has the item, remove it from its inventory
                     foreach (Monster m in r.Creatures)
                     {
-                        item = m.Items.Find((i) => i.id == id);
-                        if (item != null)
-                        {
-                            m.Items.Remove(item);
-                            found = true;
-                        }
+                        found = removeItemFromList(m.Items);
                         if (found) break;
                     }
                 }
                 if (found) break;
             }
         }
+    }
+
+    private bool removeItemFromList(List<itemType> items)
+    {
+        bool found = false;
+        foreach (itemType i in items)
+        {
+            if (i.id == id)
+            {
+                items.Remove(i);
+                found = true;
+            }
+            else if (i.storage != null)
+            {
+                found = removeItemFromList(i.storage.ContentsList);
+            }
+            if (found) break;
+        }
+
+        return found;
     }
 }

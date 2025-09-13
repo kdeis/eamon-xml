@@ -228,19 +228,19 @@ namespace Adventure.Dungeon
                         switch (trigger.trigger.Value)
                         {
                             case monsterTriggerNameType.OnBlast:
-                                monster.onBlast += handler.HandleEvent;
+                                monster.OnBlast += handler.HandleEvent;
                                 break;
                             case monsterTriggerNameType.OnWound:
                                 monster.onWound += handler.HandleEvent;
                                 break;
                             case monsterTriggerNameType.OnPower:
-                                monster.onPower += handler.HandleEvent;
+                                monster.OnPower += handler.HandleEvent;
                                 break;
                             case monsterTriggerNameType.OnKill:
                                 monster.onKill += handler.HandleEvent;
                                 break;
                             case monsterTriggerNameType.OnMagicWord:
-                                monster.onMagicWord += handler.HandleStringArgsEvent;
+                                monster.OnMagicWord += handler.HandleStringArgsEvent;
                                 break;
                             default:
                                 Console.WriteLine("Unsupported Monster trigger: {0}", trigger.trigger);

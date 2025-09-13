@@ -8,6 +8,7 @@ namespace Adventure
 {
     public abstract class Creature : Adventure.ICreature
     {
+
         public int ID { get; set; }
 
         public string Name { get; set; }
@@ -22,7 +23,8 @@ namespace Adventure
 
         public int ArmorClass { get; set; }
 
-        public List<itemType> Items { get; set; }
+        public List<itemType> Items
+        { get; set; }
 
         public Creature()
         {
@@ -87,7 +89,7 @@ namespace Adventure
 
         public string GetStatus()
         {
-            if (HP == 0)
+            if (HP <= 0)
             {
                 return " dead!";
             }
@@ -133,31 +135,31 @@ namespace Adventure
 
         public void blast()
         {
-            onBlast?.Invoke(this, EventArgs.Empty);
+            OnBlast?.Invoke(this, EventArgs.Empty);
         }
 
         public void MagicWord(string word)
         {
-            onMagicWord?.Invoke(this, new StringEventArgs(word));
+            OnMagicWord?.Invoke(this, new StringEventArgs(word));
         }
 
         public bool power()
         {
-            if (onPower != null)
+            if (OnPower != null)
             {
-                onPower(this, EventArgs.Empty);
+                OnPower(this, EventArgs.Empty);
                 return true;
             }
             return false;
         }
 
-        public event EventHandler onBlast;
+        public event EventHandler OnBlast;
 
-        public event EventHandler<StringEventArgs> onMagicWord;
+        public event EventHandler<StringEventArgs> OnMagicWord;
 
         public event EventHandler onWound;
 
-        public event EventHandler onPower;
+        public event EventHandler OnPower;
 
         public event EventHandler onKill;
     }
