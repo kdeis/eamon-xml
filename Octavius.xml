@@ -680,6 +680,7 @@
           <Plus>3</Plus>
         </AttackDice>
       </NaturalAttack>
+		<Intro>Your friend and financier Harry Osborn just arrived. "There's my favorite mad scientist!" he says with a grin. "We're gonna make you famous today, doc. And make both of us rich in the process!" He sets a heavy, metal case on the table and unlocks it. "You don't wanna know what this cost me, doc. It's all yours - go on and make us proud!"</Intro>
       <Description>Harry Osborn is the otherwise unremarkable college-aged owner of the billion-dollar Oscorp company, which he inherited after his father, Norman Osborn, tragically died last year.</Description>
       <Disposition>Friendly</Disposition>
       <Friendliness>100</Friendliness>
@@ -936,6 +937,11 @@
             <name>WakeHarryConst</name>
             <value>False</value>
           </action>
+			<action i:type="revealItemAction">
+				<text />
+				<itemId>13</itemId>
+				<roomId>BackStage</roomId>
+			</action>
         </action>
         <action i:type="setConstantAction">
           <text />
@@ -998,9 +1004,11 @@
       <storage>
         <isOpen>false</isOpen>
         <closable>true</closable>
+        <openable>true</openable>
         <maxWeight>25</maxWeight>
         <Contents>14</Contents>
       </storage>
+      <revealed>false</revealed>
     </Item>
     <Item>
       <id>14</id>

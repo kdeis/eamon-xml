@@ -23,7 +23,7 @@ public partial class playerHoldingItemCondition
         // If this instance was deserialized, we need to get the Creature object from the deserialized id.
         if (Item == null)
         {
-            Item = dungeonData.ItemList[itemId];
+            Item = dungeonData.ItemList.First((i) => i.id == itemId);
         }
     }
     public override bool TestCondition()

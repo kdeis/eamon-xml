@@ -350,6 +350,10 @@ namespace Adventure.Dungeon
                                     {
                                         found = GetItemFromContainer(command, i, totWeight, true);
                                     }
+                                    if (found)
+                                    {
+                                        break;
+                                    }
                                 }
                             }
 
@@ -751,6 +755,7 @@ namespace Adventure.Dungeon
                             {
                                 if (theContainer != null)
                                 {
+                                    Logger.WriteLn(String.Format(" {0}\n", theContainer.name));
                                     if (theContainer.storage == null)
                                     {
                                         Logger.WriteLn("You can't open that.");
