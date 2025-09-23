@@ -9,12 +9,17 @@ namespace Adventure.Dungeon.Triggers
     public class TriggeredActionsHandler
     {
         List<actionType> Actions = new List<actionType>();
-        string Arg = "";
+        string StringArg = "";
+        int? IntArg;
 
         public TriggeredActionsHandler() { }
         public TriggeredActionsHandler(string arg)
         {
-            Arg = arg;
+            StringArg = arg;
+        }
+        public TriggeredActionsHandler(int arg)
+        {
+            IntArg = arg;
         }
         private void ExecuteActions()
         {
@@ -34,7 +39,15 @@ namespace Adventure.Dungeon.Triggers
 
         public void HandleStringArgsEvent(object sender, StringEventArgs args)
         {
-            if (Arg == null || args.Arg.ToUpper().Contains(Arg.ToUpper()))
+            if (String.IsNullOrEmpty(StringArg) || args.Arg.ToUpper().Contains(StringArg.ToUpper()))
+            {
+                ExecuteActions();
+            }
+        }
+
+        public void HandleIntegerArgsEvent(object sender, IntegerEventArgs args)
+        {
+            if (IntArg == null || args.Arg == IntArg)
             {
                 ExecuteActions();
             }

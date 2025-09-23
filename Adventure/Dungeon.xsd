@@ -427,6 +427,18 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="cancelTimerAction">
+		<xs:annotation>
+			<xs:documentation>The cancelTimerAction checks for an active timer with a matching name. If found, in cancels the timer, preventing it from executing any actions.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Adv:actionType">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="toggleAction">
 		<xs:annotation>
 			<xs:documentation>The toggleAction contains one or more actions. It executes one at a time, beginning with the first. Each time it is triggerred, it will execute the next action in sequence, wrapping around to the first after executing the last action in the list.</xs:documentation>
@@ -627,6 +639,7 @@
 			<xs:enumeration value="OnGet" />
 			<xs:enumeration value="OnDrop" />
 			<xs:enumeration value="OnMagicWord" />
+			<xs:enumeration value="OnPut" />
 			<xs:enumeration value="OnPower" />
 			<xs:enumeration value="OnRead" />
 			<xs:enumeration value="OnUse" />

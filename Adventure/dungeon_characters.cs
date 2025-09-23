@@ -182,6 +182,9 @@ public enum itemTriggerNameType {
     OnMagicWord,
     
     /// <remarks/>
+    OnPut,
+    
+    /// <remarks/>
     OnPower,
     
     /// <remarks/>
@@ -240,6 +243,7 @@ public partial class itemTriggerType {
 /// <remarks/>
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(wakeCreatureAction))]
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(toggleAction))]
+[System.Xml.Serialization.XmlIncludeAttribute(typeof(cancelTimerAction))]
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(setTimerAction))]
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(setConstantAction))]
 [System.Xml.Serialization.XmlIncludeAttribute(typeof(showTextAction))]
@@ -326,6 +330,27 @@ public partial class toggleAction : actionType {
         }
         set {
             this.actionField = value;
+        }
+    }
+}
+
+/// <remarks/>
+[System.CodeDom.Compiler.GeneratedCodeAttribute("xsd", "4.8.3928.0")]
+[System.SerializableAttribute()]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+[System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Adventure")]
+public partial class cancelTimerAction : actionType {
+    
+    private string nameField;
+    
+    /// <remarks/>
+    public string name {
+        get {
+            return this.nameField;
+        }
+        set {
+            this.nameField = value;
         }
     }
 }

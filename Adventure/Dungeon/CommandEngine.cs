@@ -868,6 +868,7 @@ namespace Adventure.Dungeon
                     {
                         if (command.Length < 2)
                         {
+                            Logger.WriteLn("\n");
                             Logger.WriteLn("Put what?");
                         }
                         else
@@ -875,6 +876,7 @@ namespace Adventure.Dungeon
                             itemType toPut = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (toPut == null)
                             {
+                                Logger.WriteLn(String.Format(" {0}\n", toPut.name));
                                 Logger.WriteLn(String.Format("You don't have a {0}.", command[1]));
                             }
                             else if (command.Length < 3)
@@ -904,23 +906,28 @@ namespace Adventure.Dungeon
 
                                     if (theContainer == null)
                                     {
-                                        Logger.WriteLn(String.Format("You don't see a {0} here.", command[1]));
+                                        Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, command[3]));
+                                        Logger.WriteLn(String.Format("You don't see a {0} here.", command[3]));
                                     }
                                     else
                                     {
                                         if (theContainer.storage == null)
                                         {
+                                            Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, theContainer.name));
                                             Logger.WriteLn("You can't put anything in that.");
                                         }
                                         else if (!theContainer.storage.isOpen)
                                         {
+                                            Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, theContainer.name));
                                             Logger.WriteLn("You'll have to open it first.");
                                         }
                                         else
                                         {
                                             if (theContainer.storage.Add(toPut))
                                             {
+                                                Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, theContainer.name));
                                                 player.Items.Remove(toPut);
+                                                toPut.DoPut(theContainer.id);
                                             }
                                             else
                                             {
@@ -1516,8 +1523,9 @@ namespace Adventure.Dungeon
                 }
             }
 
-            foreach (TurnTimer t in TurnTimer.Timers.Values)
+            for (int i=0; i < TurnTimer.Timers.Count; i++)
             {
+                TurnTimer t = TurnTimer.Timers.Values.ElementAt(i);
                 if (t.Tick())
                 {
                     timersToRemove.Add(t.Name);

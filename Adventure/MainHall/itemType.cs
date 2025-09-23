@@ -21,6 +21,8 @@ public partial class itemType
 
     public event EventHandler<StringEventArgs> onMagicWord;
 
+    public event EventHandler<IntegerEventArgs> onPut;
+
     public event EventHandler onRead;
 
     public event EventHandler onUse;
@@ -83,6 +85,11 @@ public partial class itemType
     public void DoMagicWord(string word)
     {
         onMagicWord?.Invoke(this, new StringEventArgs(word));
+    }
+
+    public void DoPut(int containerId)
+    {
+        onPut?.Invoke(this, new IntegerEventArgs(containerId));
     }
 
     public bool DoPower()

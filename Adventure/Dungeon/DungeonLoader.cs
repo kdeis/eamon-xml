@@ -290,6 +290,9 @@ namespace Adventure.Dungeon
                             case itemTriggerNameType.OnMagicWord:
                                 item.onMagicWord += handler.HandleStringArgsEvent;
                                 break;
+                            case itemTriggerNameType.OnPut:
+                                item.onPut += handler.HandleIntegerArgsEvent;
+                                break;
                             case itemTriggerNameType.OnDrink:
                                 item.onDrink += handler.HandleEvent;
                                 break;
