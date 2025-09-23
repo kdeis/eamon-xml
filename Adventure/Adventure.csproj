@@ -67,6 +67,7 @@
     <Compile Include="DungeonExtensions\Actions\RevealExitAction.cs" />
     <Compile Include="DungeonExtensions\Actions\RevealItemAction.cs" />
     <Compile Include="DungeonExtensions\Actions\setConstantAction.cs" />
+    <Compile Include="DungeonExtensions\Actions\cancelTimerAction.cs" />
     <Compile Include="DungeonExtensions\Actions\setTimerAction.cs" />
     <Compile Include="DungeonExtensions\Actions\ShowTextAction.cs" />
     <Compile Include="DungeonExtensions\Actions\toggleAction.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RichTextBoxExtensions.cs" />
     <Compile Include="SerializableDictionary.cs" />
+    <Compile Include="IntegerEventArgs.cs" />
     <Compile Include="StringEventArgs.cs" />
     <Compile Include="TextInputForm.cs">
       <SubType>Form</SubType>
