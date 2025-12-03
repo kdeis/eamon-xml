@@ -107,6 +107,11 @@ namespace Adventure.Dungeon
             tempMonstersInRoom.AddRange(currentContext.CurrentRoom.Creatures.Select<Monster, int>((m, i) => i = m.ID));
 
             String[] command = commandStr.Split(new char[] { ' ' });
+            if (String.IsNullOrWhiteSpace(command[0]))
+            {
+                 return;
+            }
+
             String resolvedCommand = ALL_COMMANDS.Find((s) => { return CompareNames(command[0], s); });
 
             //Logger.WriteLn(String.Format("YOUR COMMAND: {0}", commandStr));
