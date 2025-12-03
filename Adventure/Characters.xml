@@ -18,7 +18,7 @@
     <Blast>0</Blast>
     <Power>72</Power>
     <Speed>0</Speed>
-    <Gold>786</Gold>
+    <Gold>756</Gold>
     <GoldInBank>0</GoldInBank>
     <WeaponList>
       <Weapon>
@@ -96,6 +96,23 @@ Trollsfire is glowing!</description>
           </AttackPhrases>
           <Type>Axe</Type>
           <Complexity>0</Complexity>
+        </Attack>
+      </Weapon>
+      <Weapon>
+        <id>0</id>
+        <name>Sword</name>
+        <description>This is a basic, decent quality Sword.</description>
+        <baseValue>15</baseValue>
+        <weight>1</weight>
+        <isLit>false</isLit>
+        <Attack>
+          <AttackDice>
+            <Sides>8</Sides>
+            <Count>1</Count>
+            <Plus>0</Plus>
+          </AttackDice>
+          <Type>Sword</Type>
+          <Complexity>10</Complexity>
         </Attack>
       </Weapon>
     </WeaponList>

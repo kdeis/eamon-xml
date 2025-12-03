@@ -14,7 +14,7 @@ public partial class andCondition
 
     public andCondition(List<conditionType> conditions)
     {
-        this.condition = conditions.ToArray();
+        condition = conditions.ToArray();
     }
 
     public override void Initialize(DungeonData dungeonData, Dictionary<int, Monster> MonsterList)

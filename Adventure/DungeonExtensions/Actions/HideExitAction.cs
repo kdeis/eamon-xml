@@ -12,7 +12,7 @@ public partial class hideExitAction
     {
     }
 
-    public hideExitAction(directionType exitDirection, String theText, String toRoomId)
+    public hideExitAction(directionType exitDirection, string theText, string toRoomId)
     {
         text = text;
         direction = exitDirection;

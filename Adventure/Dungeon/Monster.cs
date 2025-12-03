@@ -79,9 +79,9 @@ namespace Adventure.Dungeon
             return retval;
         }
 
-        public Boolean PickupWeapon(List<itemType> itemsInRoom)
+        public bool PickupWeapon(List<itemType> itemsInRoom)
         {
-            Boolean pickedOneUp = false;
+            bool pickedOneUp = false;
             if (CanUseWeapons)
             {
                 // if not currently using the favored weapon, look for it
@@ -91,13 +91,13 @@ namespace Adventure.Dungeon
                     weaponData fav = (weaponData)itemsInRoom.Find((i) => i.id == FavoredWeaponId);
                     if (fav == null)
                     {
-                        fav = (weaponData)this.Items.Find((i) => i.id == FavoredWeaponId);
+                        fav = (weaponData)Items.Find((i) => i.id == FavoredWeaponId);
                     }
                     else
                     {
                         // Favored weapon in the room?
                         itemsInRoom.Remove(fav);
-                        this.Items.Add(fav);
+                        Items.Add(fav);
                         Logger.WriteLn("\n" + Name + " picks up " + fav.name + ".");
                         pickedOneUp = true;
                     }
@@ -129,7 +129,7 @@ namespace Adventure.Dungeon
                             int idx = rand.Next(useable.Count);
                             Weapon = (weaponData)useable.ElementAt(idx);
                             itemsInRoom.Remove(Weapon);
-                            this.Items.Add(Weapon);
+                            Items.Add(Weapon);
                             Logger.WriteLn(ID + " picks up " + Weapon.name + ".");
                             pickedOneUp = true;
                         }

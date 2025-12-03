@@ -14,7 +14,7 @@ public partial class cancelTimerAction
 
     public override void Execute()
     {
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

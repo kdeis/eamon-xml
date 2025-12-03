@@ -12,7 +12,7 @@ public partial class constantEqualsCondition
     {
     }
 
-    public constantEqualsCondition(String theName, String theValue)
+    public constantEqualsCondition(string theName, string theValue)
     {
         name = theName;
         value = theValue;

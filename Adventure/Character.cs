@@ -92,7 +92,7 @@ namespace Adventure
             }
         }
 
-        public Character(int id, String name, int ag, int hd, int ch)
+        public Character(int id, string name, int ag, int hd, int ch)
             : base()
         {
             ID = id;

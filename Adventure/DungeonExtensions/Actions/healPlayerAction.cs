@@ -11,7 +11,7 @@ public partial class healPlayerAction
     public healPlayerAction()
     {
     }
-    public healPlayerAction(String theText, int min, int max = 0)
+    public healPlayerAction(string theText, int min, int max = 0)
     {
         text = theText;
         rangeLow = min;
@@ -27,7 +27,7 @@ public partial class healPlayerAction
             heal += r.Next(rangeHigh - rangeLow + 1);
         }
 
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

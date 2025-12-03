@@ -8,13 +8,13 @@ namespace Adventure.Dungeon
 {
     public class Context
     {
-        public const String CURRENT_ROOM_ID = "Current";
+        public const string CURRENT_ROOM_ID = "Current";
 
         private static Context instance;
 
-        public String CharFile { get; set; }
+        public string CharFile { get; set; }
 
-        public String DungeonFile { get; set; }
+        public string DungeonFile { get; set; }
 
         public Character Player { get; set; }
 
@@ -41,7 +41,7 @@ namespace Adventure.Dungeon
             }
         }
 
-        public IRoom GetRoom(String name)
+        public IRoom GetRoom(string name)
         {
             if (name == CURRENT_ROOM_ID)
             {

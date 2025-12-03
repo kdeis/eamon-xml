@@ -13,7 +13,7 @@ public partial class readyWeaponAction
     {
     }
 
-    public readyWeaponAction(weaponData w, String theText)
+    public readyWeaponAction(weaponData w, string theText)
     {
         Weapon = w;
         text = text;
@@ -32,7 +32,7 @@ public partial class readyWeaponAction
 
     public override void Execute()
     {
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

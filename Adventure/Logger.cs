@@ -15,17 +15,17 @@ namespace Adventure
             output = new StringBuilder();
         }
 
-        public static void WriteLn(String text = "")
+        public static void WriteLn(string text = "")
         {
             output.AppendLine(text);
         }
 
-        public static void Write(String text)
+        public static void Write(string text)
         {
             output.Append(text);
         }
 
-        public static String GetBuffer()
+        public static string GetBuffer()
         {
             return output.ToString();
         }
@@ -40,7 +40,7 @@ namespace Adventure
             return output;
         }
 
-        public static String GetNextChar()
+        public static string GetNextChar()
         {
             if (output.Length == 0)
             {

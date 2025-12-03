@@ -84,7 +84,7 @@ namespace Adventure
 
         private void LogStatus()
         {
-            Logger.WriteLn(String.Format(" {0} is {1}", Name, GetStatus()));
+            Logger.WriteLn(string.Format(" {0} is {1}", Name, GetStatus()));
         }
 
         public string GetStatus()

@@ -37,7 +37,7 @@ namespace Adventure.Dungeon
             int hitChance = 50;
             hitChance += 2 * (attacker.Agility - defender.Agility - attacker.ArmorClass + defender.ArmorClass);
 
-            Logger.Write(String.Format("\n{0} {1} {2}", attacker.Name, GetAttackPhrase(weap), defender.Name));
+            Logger.Write(string.Format("\n{0} {1} {2}", attacker.Name, GetAttackPhrase(weap), defender.Name));
 
             // If attacker is the player character, add armor encumbrance
             Character attackerAsPlayer = attacker as Character;
@@ -92,7 +92,7 @@ namespace Adventure.Dungeon
 
                     attacker.TakeDamage(damage);
 
-                    Logger.Write(String.Format("\n{0} is {1}", attacker.Name, attacker.GetStatus()));
+                    Logger.Write(string.Format("\n{0} is {1}", attacker.Name, attacker.GetStatus()));
                 }
             }
             else if (hitRoll < 5 || hitRoll < hitChance)

@@ -13,7 +13,7 @@ public partial class itemInRoomCondition
     {
     }
 
-    public itemInRoomCondition(itemType item, String inRoomId)
+    public itemInRoomCondition(itemType item, string inRoomId)
     {
         Item = item;
         roomId = inRoomId;

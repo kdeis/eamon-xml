@@ -12,7 +12,7 @@ public partial class playerInRoomCondition
     {
     }
 
-    public playerInRoomCondition(String inRoomId)
+    public playerInRoomCondition(string inRoomId)
     {
         roomId = inRoomId;
     }

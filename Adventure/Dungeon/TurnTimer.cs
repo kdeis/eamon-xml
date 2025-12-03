@@ -8,8 +8,8 @@ namespace Adventure.Dungeon
 {
     public class TurnTimer
     {
-        public static Dictionary<String, TurnTimer> Timers = new Dictionary<String, TurnTimer>();
-        public String Name { get; set; }
+        public static Dictionary<string, TurnTimer> Timers = new Dictionary<string, TurnTimer>();
+        public string Name { get; set; }
         public int Duration { get; set; }
         public int Current { get; set; }
         private bool Paused { get; set; }
@@ -17,7 +17,7 @@ namespace Adventure.Dungeon
 
         public List<actionType> Actions { get; set; }
         bool repeat = false;
-        public TurnTimer(String name, int duration, bool repeat = false)
+        public TurnTimer(string name, int duration, bool repeat = false)
         {
             Name = name;
             Duration = duration;

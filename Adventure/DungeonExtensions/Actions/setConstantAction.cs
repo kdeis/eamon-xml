@@ -12,7 +12,7 @@ public partial class setConstantAction
     {
     }
 
-    public setConstantAction(String theText, String theName, String theValue)
+    public setConstantAction(string theText, string theName, string theValue)
     {
         text = theText;
         name = theName;
@@ -21,7 +21,7 @@ public partial class setConstantAction
 
     public override void Execute()
     {
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

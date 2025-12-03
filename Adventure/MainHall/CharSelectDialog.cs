@@ -43,15 +43,15 @@ namespace Adventure.MainHall
             else
             {
                 CurrentChar = new Character(Selected);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
 
         private void mBtnCreateChar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void mBtnDelete_Click(object sender, EventArgs e)
@@ -69,16 +69,16 @@ namespace Adventure.MainHall
 
                 cLoader.SaveCharacters();
 
-                this.Invalidate();
+                Invalidate();
             }
 
         }
 
         private void MLbxChooseChar_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            this.mLbxChooseChar.SelectedIndex = this.mLbxChooseChar.IndexFromPoint(e.Location);
+            mLbxChooseChar.SelectedIndex = mLbxChooseChar.IndexFromPoint(e.Location);
 
-            if (this.mLbxChooseChar.SelectedIndex != System.Windows.Forms.ListBox.NoMatches)
+            if (mLbxChooseChar.SelectedIndex != System.Windows.Forms.ListBox.NoMatches)
 
             {
                 LoadCharacter();

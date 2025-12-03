@@ -12,9 +12,9 @@ namespace Adventure.Dungeon
 
         private IRoom Room;
 
-        public Boolean ToMainHall;
+        public bool ToMainHall;
 
-        public Boolean Visible;
+        public bool Visible;
 
         public BaseExit(doorType door, Dictionary<string, IRoom> rooms)
         {

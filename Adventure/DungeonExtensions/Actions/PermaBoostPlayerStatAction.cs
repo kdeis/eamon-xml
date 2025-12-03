@@ -12,7 +12,7 @@ public partial class permaBoostPlayerStatAction
     {
     }
 
-    public permaBoostPlayerStatAction(String theText, String statToBoost, int addValue)
+    public permaBoostPlayerStatAction(string theText, string statToBoost, int addValue)
     {
         text = theText;
         stat = statToBoost;

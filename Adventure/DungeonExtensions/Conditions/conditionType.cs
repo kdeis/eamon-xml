@@ -7,7 +7,7 @@ using Adventure.Dungeon;
 
 public partial class conditionType
 {
-    public abstract Boolean TestCondition();
+    public abstract bool TestCondition();
 
     public virtual void Initialize(DungeonData dungeonData, Dictionary<int, Monster> MonsterList)
     { }

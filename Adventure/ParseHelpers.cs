@@ -34,7 +34,7 @@ namespace Helpers
         public static string SerializeObject<T>(this T toSerialize)
         {
             var xmlSerializer = new XmlSerializer(toSerialize.GetType());
-            String serialized = null;
+            string serialized = null;
             using (var ms = new MemoryStream())
             {
                 using (var xw = XmlWriter.Create(ms,

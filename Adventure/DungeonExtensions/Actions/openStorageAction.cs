@@ -13,7 +13,7 @@ public partial class openStorageAction
     {
     }
 
-    public openStorageAction(itemType i, String theText)
+    public openStorageAction(itemType i, string theText)
     {
         Item = i;
         text = text;
@@ -27,7 +27,7 @@ public partial class openStorageAction
             Item = dungeonData.ItemList.First(i => { return i.id == storageItemId; });
             if (Item.storage == null)
             {
-                throw new NullReferenceException(String.Format("Item id {0} storage is null", storageItemId));
+                throw new NullReferenceException(string.Format("Item id {0} storage is null", storageItemId));
             }
         }
     }

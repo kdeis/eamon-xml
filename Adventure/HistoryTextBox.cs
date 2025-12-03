@@ -12,9 +12,9 @@ namespace Adventure
 {
     public partial class HistoryTextBox : System.Windows.Forms.TextBox
     {
-        protected LinkedList<String> InputHistory { get; set; }
+        protected LinkedList<string> InputHistory { get; set; }
 
-        protected LinkedListNode<String> CurrentHistoryNode { get; set; }
+        protected LinkedListNode<string> CurrentHistoryNode { get; set; }
 
         public HistoryTextBox()
         {

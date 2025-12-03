@@ -7,20 +7,20 @@ namespace Adventure.Dungeon
 {
     internal class CommandEngine
     {
-        private readonly List<String> COMMAND_LIST = new List<string>() { "north", "northeast", "northwest","east",
+        private readonly List<string> COMMAND_LIST = new List<string>() { "north", "northeast", "northwest","east",
                                                                        "south", "southeast", "southwest", "west", "up", "down", "flee",
                                                                        "look", "attack", "get", "use", "drop", "inventory", "read", "ready", "smile",
                                                                        "wave", "help", "blast", "heal", "power", "speed", "light", "unlight",
                                                                        "extinguish", "examine", "drink", "open", "close", "put", "say", "wait",
                                                                        "wear", "remove" };
-        private readonly List<String> ABBREV_LIST = new List<string>() { "ne", "nw", "se", "sw" };
+        private readonly List<string> ABBREV_LIST = new List<string>() { "ne", "nw", "se", "sw" };
 
-        private readonly List<String> FLEE_PHRASES = new List<string>() { "You bolt to the nearest exit, to escape to more tactically advantageous ground!",
+        private readonly List<string> FLEE_PHRASES = new List<string>() { "You bolt to the nearest exit, to escape to more tactically advantageous ground!",
                                                                           "You bravely turn your tail and run!",
                                                                           "Again? And people are hard on the French!" };
         private int fleePhraseIndex = 0;
 
-        private List<String> ALL_COMMANDS;
+        private List<string> ALL_COMMANDS;
 
         private event EventHandler OnKilled;
 
@@ -62,7 +62,7 @@ namespace Adventure.Dungeon
 
                 roomFileName = dungeonFileDial.FileName;
             }
-            if (String.IsNullOrEmpty(roomFileName))
+            if (string.IsNullOrEmpty(roomFileName))
             {
                 retVal = false;
             }
@@ -71,7 +71,7 @@ namespace Adventure.Dungeon
                 currentContext.DungeonFile = roomFileName;
                 LoadDungeon(loader, roomFileName);
                 combatEngine = new CombatEngine();
-                this.SubscribeMainHallEvent(onReturnToMainHall);
+                SubscribeMainHallEvent(onReturnToMainHall);
             }
 
             return retVal;
@@ -106,26 +106,25 @@ namespace Adventure.Dungeon
             tempMonstersInRoom.Clear();
             tempMonstersInRoom.AddRange(currentContext.CurrentRoom.Creatures.Select<Monster, int>((m, i) => i = m.ID));
 
-            String[] command = commandStr.Split(new char[] { ' ' });
-            if (String.IsNullOrWhiteSpace(command[0]))
+            string[] command = commandStr.Split(new char[] { ' ' });
+            if (string.IsNullOrWhiteSpace(command[0]))
             {
                  return;
             }
 
-            String resolvedCommand = ALL_COMMANDS.Find((s) => { return CompareNames(command[0], s); });
+            string resolvedCommand = ALL_COMMANDS.Find((s) => { return CompareNames(command[0], s); });
 
-            //Logger.WriteLn(String.Format("YOUR COMMAND: {0}", commandStr));
-            //Logger.WriteLn("");
-            Logger.Write(String.Format("YOUR COMMAND: {0}", resolvedCommand));
+            Logger.WriteLn();
+            Logger.Write(string.Format("YOUR COMMAND: {0}", resolvedCommand));
             switch (resolvedCommand)
             {
                 case "help":
                     Logger.WriteLn("\n");
                     Logger.WriteLn("You can use any of the following commands:");
-                    Logger.WriteLn(String.Join(", ", COMMAND_LIST));
+                    Logger.WriteLn(string.Join(", ", COMMAND_LIST));
                     Logger.WriteLn();
                     Logger.WriteLn("You can also abbreviate the direction commands, such as:");
-                    Logger.WriteLn(String.Join(", ", ABBREV_LIST));
+                    Logger.WriteLn(string.Join(", ", ABBREV_LIST));
                     Logger.WriteLn();
                     Logger.WriteLn("For most commands, you can just type the first one or two letters.");
                     break;
@@ -248,12 +247,12 @@ namespace Adventure.Dungeon
 
                             if (target == null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
-                                Logger.Write(String.Format("{0} is not here.", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
+                                Logger.Write(string.Format("{0} is not here.", command[1]));
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", target.Name));
+                                Logger.WriteLn(string.Format(" {0}\n", target.Name));
                                 if (player.ReadyWeap == null)
                                 {
                                     Logger.WriteLn("\n");
@@ -295,23 +294,23 @@ namespace Adventure.Dungeon
                                     totWeight += i.weight;
                                     player.Items.Add(i);
                                     currentContext.CurrentRoom.Items.Remove(i);
-                                    Logger.Write(String.Format("{0} taken\n", i.name));
+                                    Logger.Write(string.Format("{0} taken\n", i.name));
                                     i.DoGet();
                                 }
                                 else
                                 {
-                                    Logger.Write(String.Format("{0} is too heavy!\n", i.name));
+                                    Logger.Write(string.Format("{0} is too heavy!\n", i.name));
                                 }
                             }
                         }
                         else
                         {
-                            Boolean found = false;
+                            bool found = false;
                             foreach (itemType i in currentContext.CurrentRoom.Items)
                             {
                                 if (CompareNames(command[1], i.name))
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", i.name));
+                                    Logger.WriteLn(string.Format(" {0}\n", i.name));
                                     if (i.Weight == -999)
                                     {
                                         Logger.WriteLn("You can't get that.");
@@ -322,13 +321,13 @@ namespace Adventure.Dungeon
                                     }
                                     else if (totWeight + i.Weight > player.MaxWeight)
                                     {
-                                        Logger.Write(String.Format("{0} is too heavy!\n", i.name));
+                                        Logger.Write(string.Format("{0} is too heavy!\n", i.name));
                                     }
                                     else
                                     {
                                         player.Items.Add(i);
                                         currentContext.CurrentRoom.Items.Remove(i);
-                                        Logger.Write(String.Format("{0} taken", i.name));
+                                        Logger.Write(string.Format("{0} taken", i.name));
                                         i.DoGet();
                                     }
                                     found = true;
@@ -348,7 +347,7 @@ namespace Adventure.Dungeon
                                     if (CompareNames(command[1], i.name))
                                     {
                                         found = true;
-                                        Logger.WriteLn(String.Format(" {0}\n", i.name));
+                                        Logger.WriteLn(string.Format(" {0}\n", i.name));
                                         Logger.WriteLn("You are already holding it.");
                                     }
                                     else if (i.storage != null)
@@ -364,7 +363,7 @@ namespace Adventure.Dungeon
 
                             if (!found)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
                                 Logger.Write("You don't see that here.");
                             }
                         }
@@ -383,7 +382,7 @@ namespace Adventure.Dungeon
                             itemType item = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (item != null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                Logger.WriteLn(string.Format(" {0}\n", item.name));
                                 if (item.HasUseEvent())
                                 {
                                     item.DoUse();
@@ -395,8 +394,8 @@ namespace Adventure.Dungeon
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
-                                Logger.Write(String.Format("You don't have a {0}.", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
+                                Logger.Write(string.Format("You don't have a {0}.", command[1]));
                             }
                         }
                         PostAction();
@@ -420,7 +419,7 @@ namespace Adventure.Dungeon
                             itemType item = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (item != null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                Logger.WriteLn(string.Format(" {0}\n", item.name));
                                 if (item.HasDrinkEvent())
                                 {
                                     item.DoDrink();
@@ -432,8 +431,8 @@ namespace Adventure.Dungeon
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
-                                Logger.Write(String.Format("You don't have a {0}.", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
+                                Logger.Write(string.Format("You don't have a {0}.", command[1]));
                             }
                         }
                         PostAction();
@@ -482,13 +481,13 @@ namespace Adventure.Dungeon
                             if (item != null)
                             {
                                 unlockExits(resolvedCommand, item);
-                                Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                Logger.WriteLn(string.Format(" {0}\n", item.name));
                                 player.ReadyWeap = (weaponData)item;
-                                Logger.Write(String.Format("{0} Readied.", player.ReadyWeap.name));
+                                Logger.Write(string.Format("{0} Readied.", player.ReadyWeap.name));
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
                                 Logger.WriteLn("Don't be ridiculous.");
                             }
                             PostAction();
@@ -508,7 +507,7 @@ namespace Adventure.Dungeon
                             if (item != null)
                             {
                                 // Found the item. Complete the command echo and read it.
-                                Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                Logger.WriteLn(string.Format(" {0}\n", item.name));
                                 ReadItem(item);
                             }
                             else
@@ -517,7 +516,7 @@ namespace Adventure.Dungeon
                                 if (item != null)
                                 {
                                     // Found the item. Complete the command echo.
-                                    Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                    Logger.WriteLn(string.Format(" {0}\n", item.name));
                                     // If it is something you can not hold (furniture, a sign on
                                     // the wall, etc., read it.
                                     // Otherwise, you need to pick it up first.
@@ -532,8 +531,8 @@ namespace Adventure.Dungeon
                                 }
                                 else
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", command[1]));
-                                    Logger.Write(String.Format("You don't have a {0}.", command[1]));
+                                    Logger.WriteLn(string.Format(" {0}\n", command[1]));
+                                    Logger.Write(string.Format("You don't have a {0}.", command[1]));
                                 }
                             }
                         }
@@ -546,7 +545,7 @@ namespace Adventure.Dungeon
                         Logger.WriteLn("\n");
                         foreach (Monster m in currentContext.CurrentRoom.Creatures)
                         {
-                            String response = "";
+                            string response = "";
 
                             UpdateDisposition(m);
 
@@ -562,7 +561,7 @@ namespace Adventure.Dungeon
                                     response = "ignores you.";
                                     break;
                             }
-                            Logger.WriteLn(String.Format("{0} {1}", m.Name, response));
+                            Logger.WriteLn(string.Format("{0} {1}", m.Name, response));
                         }
                         break;
                     }
@@ -576,7 +575,7 @@ namespace Adventure.Dungeon
                         else
                         {
                             Creature targetCreature = currentContext.CurrentRoom.Creatures.Find(m => { return CompareNames(command[1], m.Name); });
-                            Logger.WriteLn(String.Format(" {0}\n", targetCreature.Name));
+                            Logger.WriteLn(string.Format(" {0}\n", targetCreature.Name));
 
                             if (targetCreature != null)
                             {
@@ -594,7 +593,7 @@ namespace Adventure.Dungeon
                                 }
                                 if (targetItem != null)
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", targetItem.name));
+                                    Logger.WriteLn(string.Format(" {0}\n", targetItem.name));
                                     if (tryCast(spellType.Blast))
                                     {
                                         targetItem.DoBlast();
@@ -602,7 +601,7 @@ namespace Adventure.Dungeon
                                 }
                                 else
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", command[1]));
+                                    Logger.WriteLn(string.Format(" {0}\n", command[1]));
                                     Logger.Write("You don't see that here.");
                                 }
                             }
@@ -652,7 +651,7 @@ namespace Adventure.Dungeon
                             itemType item = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (item != null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                Logger.WriteLn(string.Format(" {0}\n", item.name));
                                 if (item.isLit)
                                 {
                                     Logger.WriteLn("It's already lit.");
@@ -670,7 +669,7 @@ namespace Adventure.Dungeon
                             }
                             else
                             {
-                                Logger.Write(String.Format("You don't have a {0}.", command[1]));
+                                Logger.Write(string.Format("You don't have a {0}.", command[1]));
                             }
                         }
                         PostAction();
@@ -689,7 +688,7 @@ namespace Adventure.Dungeon
                             itemType item = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (item != null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", item.name));
+                                Logger.WriteLn(string.Format(" {0}\n", item.name));
                                 if (item.isLit)
                                 {
                                     Logger.WriteLn("It ceases to give its light.");
@@ -706,7 +705,7 @@ namespace Adventure.Dungeon
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format("You don't have a {0}.", command[1]));
+                                Logger.WriteLn(string.Format("You don't have a {0}.", command[1]));
                             }
                         }
                         PostAction();
@@ -721,13 +720,13 @@ namespace Adventure.Dungeon
                         }
                         else
                         {
-                            Boolean found = false;
+                            bool found = false;
                             itemType theContainer = null;
                             foreach (itemType i in currentContext.CurrentRoom.Items)
                             {
                                 if (CompareNames(command[1], i.name))
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", i.name));
+                                    Logger.WriteLn(string.Format(" {0}\n", i.name));
                                     // If it's something that cannot be carried (i.e. a large chest), try to open it in place
                                     if (i.weight == -999)
                                     {
@@ -740,7 +739,7 @@ namespace Adventure.Dungeon
                                     else
                                     {
                                         // If it's a portable container (a small chest or sack), you need to be holding it to open it.
-                                        Logger.WriteLn(String.Format("Try picking it up first."));
+                                        Logger.WriteLn(string.Format("Try picking it up first."));
                                     }
                                     found = true;
                                     break;
@@ -760,7 +759,7 @@ namespace Adventure.Dungeon
                             {
                                 if (theContainer != null)
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", theContainer.name));
+                                    Logger.WriteLn(string.Format(" {0}\n", theContainer.name));
                                     if (theContainer.storage == null)
                                     {
                                         Logger.WriteLn("You can't open that.");
@@ -788,13 +787,13 @@ namespace Adventure.Dungeon
                                     else
                                     {
                                         theContainer.storage.isOpen = true;
-                                        Logger.WriteLn(String.Format("You open the {0}.", theContainer.name));
+                                        Logger.WriteLn(string.Format("You open the {0}.", theContainer.name));
                                     }
                                 }
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
                                 Logger.Write("You don't see that here.");
                             }
                         }
@@ -810,13 +809,13 @@ namespace Adventure.Dungeon
                         }
                         else
                         {
-                            Boolean found = false;
+                            bool found = false;
                             itemType theContainer = null;
                             foreach (itemType i in currentContext.CurrentRoom.Items)
                             {
                                 if (CompareNames(command[1], i.name))
                                 {
-                                    Logger.WriteLn(String.Format(" {0}\n", i.name));
+                                    Logger.WriteLn(string.Format(" {0}\n", i.name));
                                     // If it's something that cannot be carried (a large chest or cabinet), try to close it in place
                                     if (i.weight == -999)
                                     {
@@ -829,7 +828,7 @@ namespace Adventure.Dungeon
                                     else
                                     {
                                         // If it's a portable container (a small chest or sack), you need to be holding it to close it.
-                                        Logger.WriteLn(String.Format("Try picking it up first."));
+                                        Logger.WriteLn(string.Format("Try picking it up first."));
                                     }
                                     found = true;
                                     break;
@@ -842,11 +841,11 @@ namespace Adventure.Dungeon
                                 {
                                     if (theContainer.storage == null || !theContainer.storage.closable)
                                     {
-                                        Logger.WriteLn(String.Format("You can't close that."));
+                                        Logger.WriteLn(string.Format("You can't close that."));
                                     }
                                     else if (!theContainer.storage.isOpen)
                                     {
-                                        Logger.WriteLn(String.Format("It's already closed."));
+                                        Logger.WriteLn(string.Format("It's already closed."));
                                     }
                                     else if (theContainer.HasCloseEvent())
                                     {
@@ -856,13 +855,13 @@ namespace Adventure.Dungeon
                                     else
                                     {
                                         theContainer.storage.isOpen = false;
-                                        Logger.WriteLn(String.Format("You close the {0}.", theContainer.name));
+                                        Logger.WriteLn(string.Format("You close the {0}.", theContainer.name));
                                     }
                                 }
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
                                 Logger.Write("You don't see that here.");
                             }
                         }
@@ -881,24 +880,24 @@ namespace Adventure.Dungeon
                             itemType toPut = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (toPut == null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toPut.name));
-                                Logger.WriteLn(String.Format("You don't have a {0}.", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", toPut.name));
+                                Logger.WriteLn(string.Format("You don't have a {0}.", command[1]));
                             }
                             else if (command.Length < 3)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toPut.name));
+                                Logger.WriteLn(string.Format(" {0}\n", toPut.name));
                                 Logger.WriteLn("Where do you want to put it?");
                             }
                             else if ("down".Equals(command[2], StringComparison.CurrentCultureIgnoreCase))
                             {
-                                Logger.WriteLn(String.Format(" {0} down\n", toPut.name));
+                                Logger.WriteLn(string.Format(" {0} down\n", toPut.name));
                                 DoDrop(command);
                             }
                             else if ("in".Equals(command[2], StringComparison.CurrentCultureIgnoreCase))
                             {
                                 if (command.Length < 4)
                                 {
-                                    Logger.WriteLn(String.Format(" {0} in\n", toPut.name));
+                                    Logger.WriteLn(string.Format(" {0} in\n", toPut.name));
                                     Logger.WriteLn("What do you want to put it in?");
                                 }
                                 else
@@ -911,26 +910,26 @@ namespace Adventure.Dungeon
 
                                     if (theContainer == null)
                                     {
-                                        Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, command[3]));
-                                        Logger.WriteLn(String.Format("You don't see a {0} here.", command[3]));
+                                        Logger.WriteLn(string.Format(" {0} in {1}\n", toPut.name, command[3]));
+                                        Logger.WriteLn(string.Format("You don't see a {0} here.", command[3]));
                                     }
                                     else
                                     {
                                         if (theContainer.storage == null)
                                         {
-                                            Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, theContainer.name));
+                                            Logger.WriteLn(string.Format(" {0} in {1}\n", toPut.name, theContainer.name));
                                             Logger.WriteLn("You can't put anything in that.");
                                         }
                                         else if (!theContainer.storage.isOpen)
                                         {
-                                            Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, theContainer.name));
+                                            Logger.WriteLn(string.Format(" {0} in {1}\n", toPut.name, theContainer.name));
                                             Logger.WriteLn("You'll have to open it first.");
                                         }
                                         else
                                         {
                                             if (theContainer.storage.Add(toPut))
                                             {
-                                                Logger.WriteLn(String.Format(" {0} in {1}\n", toPut.name, theContainer.name));
+                                                Logger.WriteLn(string.Format(" {0} in {1}\n", toPut.name, theContainer.name));
                                                 player.Items.Remove(toPut);
                                                 toPut.DoPut(theContainer.id);
                                             }
@@ -965,28 +964,28 @@ namespace Adventure.Dungeon
                             itemType toWear = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                             if (toWear == null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
-                                Logger.WriteLn(String.Format("You don't have a {0}.", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
+                                Logger.WriteLn(string.Format("You don't have a {0}.", command[1]));
                             }
                             else if (!toWear.isWearable)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toWear.name));
-                                Logger.WriteLn(String.Format("You can't wear that."));
+                                Logger.WriteLn(string.Format(" {0}\n", toWear.name));
+                                Logger.WriteLn(string.Format("You can't wear that."));
                             }
                             else if (player.WornItems.Contains(toWear))
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toWear.name));
-                                Logger.WriteLn(String.Format("You are already wearing that."));
+                                Logger.WriteLn(string.Format(" {0}\n", toWear.name));
+                                Logger.WriteLn(string.Format("You are already wearing that."));
                             }
                             else if (toWear.isArmor && player.ArmorClass > 1)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toWear.name));
-                                Logger.WriteLn(String.Format("You are already wearing armor."));
+                                Logger.WriteLn(string.Format(" {0}\n", toWear.name));
+                                Logger.WriteLn(string.Format("You are already wearing armor."));
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toWear.name));
-                                Logger.WriteLn(String.Format("You put it on."));
+                                Logger.WriteLn(string.Format(" {0}\n", toWear.name));
+                                Logger.WriteLn(string.Format("You put it on."));
                                 player.WearItem(toWear);
                                 unlockExits(resolvedCommand, toWear);
 
@@ -1007,12 +1006,12 @@ namespace Adventure.Dungeon
                             itemType toRemove = player.WornItems.Find(i => { return CompareNames(command[1], i.name); });
                             if (toRemove == null)
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", command[1]));
+                                Logger.WriteLn(string.Format(" {0}\n", command[1]));
                                 Logger.WriteLn("You aren't wearing that.");
                             }
                             else
                             {
-                                Logger.WriteLn(String.Format(" {0}\n", toRemove.name));
+                                Logger.WriteLn(string.Format(" {0}\n", toRemove.name));
                                 Logger.WriteLn("You take it off.");
                                 player.RemoveItem(toRemove);
                                 unlockExits(resolvedCommand, toRemove);
@@ -1030,7 +1029,7 @@ namespace Adventure.Dungeon
                         }
                         else
                         {
-                            String words = String.Join(" ", command.Skip(1));
+                            string words = string.Join(" ", command.Skip(1));
                             Logger.WriteLn(" " + words);
                             Logger.WriteLn("\nOk. \"" + words + "\"\n");
                             currentContext.CurrentRoom.DoMagicWord(words);
@@ -1134,12 +1133,12 @@ namespace Adventure.Dungeon
                     {
                         i.storage.Remove(storedItem);
                         player.Items.Add(storedItem);
-                        Logger.WriteLn(String.Format(" {0}\n", storedItem.name));
+                        Logger.WriteLn(string.Format(" {0}\n", storedItem.name));
                         Logger.WriteLn("Taken.");
                     }
                     else
                     {
-                        Logger.Write(String.Format("{0} is too heavy!\n", storedItem.name));
+                        Logger.Write(string.Format("{0} is too heavy!\n", storedItem.name));
                     }
                 }
                 else if (storedItem.storage != null)
@@ -1166,7 +1165,7 @@ namespace Adventure.Dungeon
                     itemType i = player.Items.First();
                     currentContext.CurrentRoom.Items.Add(i);
                     player.Items.Remove(i);
-                    Logger.Write(String.Format("{0} dropped\n", i.name));
+                    Logger.Write(string.Format("{0} dropped\n", i.name));
                     i.DoDrop();
                 }
             }
@@ -1175,7 +1174,7 @@ namespace Adventure.Dungeon
                 itemType item = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                 if (item != null)
                 {
-                    Logger.WriteLn(String.Format(" {0}\n", item.name));
+                    Logger.WriteLn(string.Format(" {0}\n", item.name));
                     player.Items.Remove(item);
                     currentContext.CurrentRoom.Items.Add(item);
                     Logger.Write("Dropped.");
@@ -1183,8 +1182,8 @@ namespace Adventure.Dungeon
                 }
                 else
                 {
-                    Logger.WriteLn(String.Format(" {0}\n", command[1]));
-                    Logger.Write(String.Format("You don't have a {0}.", command[1]));
+                    Logger.WriteLn(string.Format(" {0}\n", command[1]));
+                    Logger.Write(string.Format("You don't have a {0}.", command[1]));
                 }
             }
         }
@@ -1193,7 +1192,7 @@ namespace Adventure.Dungeon
         {
             if (m.Disposition == DispositionType.Neutral)
             {
-                if (this.rand.Next(100) < (player.Charisma - 10) * 2 + m.Friendliness)
+                if (rand.Next(100) < (player.Charisma - 10) * 2 + m.Friendliness)
                 {
                     m.Disposition = DispositionType.Friendly;
                 }
@@ -1206,12 +1205,12 @@ namespace Adventure.Dungeon
 
         private void DoLook(string[] command, bool examine)
         {
-            if (command.Length > 1 && !String.IsNullOrEmpty(command[1]))
+            if (command.Length > 1 && !string.IsNullOrEmpty(command[1]))
             {
                 itemType item = currentContext.CurrentRoom.Items.Find(i => { return CompareNames(command[1], i.name); });
                 if (item != null)
                 {
-                    Logger.WriteLn(String.Format(" {0}\n", item.name));
+                    Logger.WriteLn(string.Format(" {0}\n", item.name));
                     ItemLookCommand(item);
                     if (examine)
                     {
@@ -1224,7 +1223,7 @@ namespace Adventure.Dungeon
                     item = player.Items.Find(i => { return CompareNames(command[1], i.name); });
                     if (item != null)
                     {
-                        Logger.WriteLn(String.Format(" {0}\n", item.name));
+                        Logger.WriteLn(string.Format(" {0}\n", item.name));
                         ItemLookCommand(item);
                         if (examine)
                         {
@@ -1237,7 +1236,7 @@ namespace Adventure.Dungeon
                         Monster monster = currentContext.CurrentRoom.Creatures.Find(c => { return CompareNames(command[1], c.Name); });
                         if (monster != null)
                         {
-                            Logger.WriteLn(String.Format(" {0}\n", monster.Name));
+                            Logger.WriteLn(string.Format(" {0}\n", monster.Name));
                             MonsterLookCommand(monster);
                         }
                         else
@@ -1275,12 +1274,12 @@ namespace Adventure.Dungeon
             }
         }
 
-        private void castBlast(String[] command, Creature target)
+        private void castBlast(string[] command, Creature target)
         {
             if (target == null)
             {
                 Logger.WriteLn("\n");
-                Logger.Write(String.Format("{0} is not here.", command[1]));
+                Logger.Write(string.Format("{0} is not here.", command[1]));
             }
             else
             {
@@ -1298,10 +1297,10 @@ namespace Adventure.Dungeon
             }
         }
 
-        private void castHeal(String[] command)
+        private void castHeal(string[] command)
         {
             Creature target = null;
-            if (String.IsNullOrEmpty(command[1]))
+            if (string.IsNullOrEmpty(command[1]))
             {
                 target = player;
             }
@@ -1313,7 +1312,7 @@ namespace Adventure.Dungeon
             if (target == null)
             {
                 Logger.WriteLn("\n");
-                Logger.Write(String.Format("{0} is not here.", command[1]));
+                Logger.Write(string.Format("{0} is not here.", command[1]));
             }
             else
             {
@@ -1431,18 +1430,18 @@ namespace Adventure.Dungeon
             if (target.Disposition == DispositionType.Neutral)
             {
                 target.Disposition = DispositionType.Angry;
-                Logger.WriteLn(String.Format("\n{0} joins the fray against you!", target.Name));
+                Logger.WriteLn(string.Format("\n{0} joins the fray against you!", target.Name));
             }
             else if (target.Disposition == DispositionType.Friendly)
             {
                 target.Disposition = DispositionType.Neutral;
-                Logger.WriteLn(String.Format("\n{0} is suddenly less enamoured with you.", target.Name));
+                Logger.WriteLn(string.Format("\n{0} is suddenly less enamoured with you.", target.Name));
             }
         }
 
         private void PostAction()
         {
-            List<String> timersToRemove = new List<string>();
+            List<string> timersToRemove = new List<string>();
 
             // Monsters take their actions
             foreach (int i in tempMonstersInRoom)
@@ -1500,7 +1499,7 @@ namespace Adventure.Dungeon
                         IRoom fleeExit = exits[exitIndex].Go(currentContext.CurrentRoom);
                         fleeExit.Creatures.Add(monster);
                         currentContext.CurrentRoom.Creatures.Remove(monster);
-                        Logger.WriteLn(String.Format("\n{0} flees!", monster.Name));
+                        Logger.WriteLn(string.Format("\n{0} flees!", monster.Name));
                     }
                 }
             }
@@ -1536,7 +1535,7 @@ namespace Adventure.Dungeon
                     timersToRemove.Add(t.Name);
                 }
             }
-            foreach (String tname in timersToRemove)
+            foreach (string tname in timersToRemove)
                 TurnTimer.Timers.Remove(tname);
             timersToRemove.Clear();
         }
@@ -1640,7 +1639,7 @@ namespace Adventure.Dungeon
         {
             if (checkLight())
             {
-                Logger.Write(String.Format("{0}", item.description));
+                Logger.Write(string.Format("{0}", item.description));
                 if (item.storage == null)
                 {
                     Logger.WriteLn("");
@@ -1704,18 +1703,18 @@ namespace Adventure.Dungeon
             {
                 if (monster.Intro != null)
                 {
-                    Logger.WriteLn(String.Format("\n{0}", monster.Intro));
+                    Logger.WriteLn(string.Format("\n{0}", monster.Intro));
                 }
                 else
                 {
-                    Logger.WriteLn(String.Format("\n{0}", monster.Description));
+                    Logger.WriteLn(string.Format("\n{0}", monster.Description));
                 }
             }
 
             // List previously encountered creatures that are still here
             foreach (Monster monster in currentContext.CurrentRoom.Creatures.FindAll(c => repeatEncounters.Contains(c.ID)))
             {
-                Logger.WriteLn(String.Format("\n{0} is here.", monster.Name));
+                Logger.WriteLn(string.Format("\n{0} is here.", monster.Name));
             }
 
             // Add first encounters to the repeat encounters list for future references
@@ -1750,7 +1749,7 @@ namespace Adventure.Dungeon
             }
             else if (visibleExits.Count > 1)
             {
-                Logger.WriteLn("\nYou see exits " + String.Join(", ", visibleExits.Keys) + ".");
+                Logger.WriteLn("\nYou see exits " + string.Join(", ", visibleExits.Keys) + ".");
             }
             else
             {
@@ -1764,15 +1763,15 @@ namespace Adventure.Dungeon
                         Logger.WriteLn("\nYou can see a way up.");
                         break;
                     default:
-                        Logger.WriteLn(String.Format("\nYou see an exit to the {0}.", dir));
+                        Logger.WriteLn(string.Format("\nYou see an exit to the {0}.", dir));
                         break;
                 }
             }
         }
 
-        bool CompareNames(String valToFind, String name)
+        bool CompareNames(string valToFind, string name)
         {
-            foreach (String n in name.Split(new char[] { ' ' }))
+            foreach (string n in name.Split(new char[] { ' ' }))
             {
                 if (n.ToLower().StartsWith(valToFind.ToLower()))
                 {
@@ -1794,7 +1793,7 @@ namespace Adventure.Dungeon
             {
                 player.Agility /= 2;
             }
-            loader.EmptyLocker(this.player);
+            loader.EmptyLocker(player);
         }
 
         /// <summary>

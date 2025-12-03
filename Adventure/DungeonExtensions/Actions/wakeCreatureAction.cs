@@ -13,7 +13,7 @@ public partial class wakeCreatureAction
     {
     }
 
-    public wakeCreatureAction(Monster creature, String theText, String inRoomId)
+    public wakeCreatureAction(Monster creature, string theText, string inRoomId)
     {
         Creature = creature;
         text = theText;

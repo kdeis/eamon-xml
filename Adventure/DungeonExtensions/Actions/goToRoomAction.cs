@@ -11,7 +11,7 @@ public partial class goToRoomAction
     public goToRoomAction()
     {
     }
-    public goToRoomAction(String theText, String theRoom)
+    public goToRoomAction(string theText, string theRoom)
     {
         text = theText;
         roomId = theRoom;
@@ -19,7 +19,7 @@ public partial class goToRoomAction
 
     public override void Execute()
     {
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

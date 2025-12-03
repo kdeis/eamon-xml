@@ -75,7 +75,7 @@ namespace Adventure.MainHall
             weap.weapon.Attack.AttackDice.Plus = 0;
             weap.weapon.Attack.Type = w;
             weap.weapon.baseValue = 15;
-            weap.weapon.description = String.Format("This is a basic, decent quality {0}.", w);
+            weap.weapon.description = string.Format("This is a basic, decent quality {0}.", w);
             weap.weapon.name = w.ToString();
             weap.weapon.weight = 1;
             return weap;

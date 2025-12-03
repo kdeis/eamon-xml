@@ -39,7 +39,7 @@ namespace Adventure.Dungeon.Triggers
 
         public void HandleStringArgsEvent(object sender, StringEventArgs args)
         {
-            if (String.IsNullOrEmpty(StringArg) || args.Arg.ToUpper().Contains(StringArg.ToUpper()))
+            if (string.IsNullOrEmpty(StringArg) || args.Arg.ToUpper().Contains(StringArg.ToUpper()))
             {
                 ExecuteActions();
             }

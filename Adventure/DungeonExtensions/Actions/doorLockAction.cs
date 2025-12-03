@@ -12,7 +12,7 @@ public partial class doorLockAction
     {
     }
 
-    public doorLockAction(directionType exitDirection, String theText, String theRoomId, bool lockFlag)
+    public doorLockAction(directionType exitDirection, string theText, string theRoomId, bool lockFlag)
     {
         direction = exitDirection;
         text = theText;

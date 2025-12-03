@@ -14,7 +14,7 @@ public partial class toggleAction
     {
     }
 
-    public toggleAction(String theText, List<actionType> theActions)
+    public toggleAction(string theText, List<actionType> theActions)
     {
         text = text;
         action = theActions.ToArray();
@@ -31,7 +31,7 @@ public partial class toggleAction
 
     public override void Execute()
     {
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

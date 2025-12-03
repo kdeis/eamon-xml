@@ -13,7 +13,7 @@ public partial class destroyItemAction
     {
     }
 
-    public destroyItemAction(int theItem, String theText)
+    public destroyItemAction(int theItem, string theText)
     {
         text = theText;
         id = theItem;

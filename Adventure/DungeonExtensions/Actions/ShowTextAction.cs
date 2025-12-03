@@ -11,7 +11,7 @@ public partial class showTextAction
     {
     }
 
-    public showTextAction(String theText)
+    public showTextAction(string theText)
     {
         text = text;
     }

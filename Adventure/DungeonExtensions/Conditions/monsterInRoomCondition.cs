@@ -13,7 +13,7 @@ public partial class monsterInRoomCondition
     {
     }
 
-    public monsterInRoomCondition(Monster creature, String inRoomId)
+    public monsterInRoomCondition(Monster creature, string inRoomId)
     {
         Creature = creature;
         roomId = inRoomId;

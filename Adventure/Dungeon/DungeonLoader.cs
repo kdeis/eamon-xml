@@ -50,7 +50,7 @@ namespace Adventure.Dungeon
             }
         }
 
-        public String Intro()
+        public string Intro()
         {
             return dungeonData.Intro;
         }
@@ -360,8 +360,8 @@ namespace Adventure.Dungeon
         {
             if (dungeonData.CantTakeItWithYou != null)
             {
-                this.PlayerItemLocker = player.Items;
-                this.PlayerArmorLocker = player.ArmorClass;
+                PlayerItemLocker = player.Items;
+                PlayerArmorLocker = player.ArmorClass;
                 player.Items = new List<itemType>();
 
                 if (dungeonData.CantTakeItWithYou.StartingItem != null)

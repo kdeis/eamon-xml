@@ -12,7 +12,7 @@ public partial class executeIfAction
     {
     }
 
-    public executeIfAction(String theText, conditionType theCondition, List<actionType> theActions)
+    public executeIfAction(string theText, conditionType theCondition, List<actionType> theActions)
     {
         text = theText;
         condition = theCondition;
@@ -29,7 +29,7 @@ public partial class executeIfAction
     }
     public override void Execute()
     {
-        if (!String.IsNullOrEmpty(text))
+        if (!string.IsNullOrEmpty(text))
         {
             Logger.WriteLn(text);
             Logger.WriteLn();

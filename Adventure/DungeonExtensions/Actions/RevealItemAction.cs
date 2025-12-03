@@ -13,7 +13,7 @@ public partial class revealItemAction
     {
     }
 
-    public revealItemAction(itemType i, String theText, String inRoomId)
+    public revealItemAction(itemType i, string theText, string inRoomId)
     {
         Item = i;
         text = text;

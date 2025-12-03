@@ -12,7 +12,7 @@ public partial class modifyWeaponAction
     {
     }
 
-    public modifyWeaponAction(int theWeapon, String theText)
+    public modifyWeaponAction(int theWeapon, string theText)
     {
         text = theText;
         id = theWeapon;
@@ -59,7 +59,7 @@ public partial class modifyWeaponAction
             if (w != null)
             {
                 w.Attack.AttackDice = damage;
-                if (!String.IsNullOrEmpty(description))
+                if (!string.IsNullOrEmpty(description))
                 {
                     w.description = description;
                 }
