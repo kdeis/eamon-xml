@@ -19,20 +19,35 @@ namespace Adventure.MainHall
         {
             InitializeComponent();
             character = currentChar;
-            InitializeOkButton();
+            InitializeButtons();
         }
 
-        private void InitializeOkButton()
+        private void InitializeButtons()
         {
             mBtnOk = new Button();
+
             mBtnOk.Text = "OK";
-            mBtnOk.Size = new Size(80, 30);
-            mBtnOk.Location = new Point(this.ClientSize.Width - mBtnOk.Width - 20, this.ClientSize.Height - mBtnOk.Height - 20);
+
+            Size btnSize = new Size(80, 30);
+            mBtnOk.Size = btnSize;
+
+            int margin = 20;
+            int y = ClientSize.Height - btnSize.Height - margin;
+
+            // Position buttons relative to right edge so anchoring keeps spacing on resize
+            int okX = ClientSize.Width - margin - btnSize.Width;
+
+            mBtnOk.Location = new Point(okX, y);
+
             mBtnOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
             mBtnOk.DialogResult = DialogResult.OK;
-            mBtnOk.Click += (s, e) => this.Close();
-            this.Controls.Add(mBtnOk);
-            this.AcceptButton = mBtnOk;
+
+            mBtnOk.Click += (s, e) => Close();
+
+            Controls.Add(mBtnOk);
+
+            AcceptButton = mBtnOk;
         }
 
         private void ViewCharacterForm_Load(object sender, EventArgs e)
@@ -54,7 +69,7 @@ namespace Adventure.MainHall
             mTbxPower.Text = character.SpellSkills[spellType.Power].ToString();
             mTbxSpeed.Text = character.SpellSkills[spellType.Speed].ToString();
 
-            this.mDgvWeaponsGrid.ColumnCount = 4;
+            mDgvWeaponsGrid.ColumnCount = 4;
             mDgvWeaponsGrid.Columns[0].Name = "Name";
             mDgvWeaponsGrid.Columns[1].Name = "Type";
             mDgvWeaponsGrid.Columns[2].Name = "Complexity";
@@ -62,7 +77,7 @@ namespace Adventure.MainHall
 
             foreach (var item in character.Items.OfType<weaponData>().ToArray())
             {
-                String damage = item.Attack.AttackDice.Count.ToString() + "D" + item.Attack.AttackDice.Sides;
+                string damage = item.Attack.AttackDice.Count.ToString() + "D" + item.Attack.AttackDice.Sides;
                 if (item.Attack.AttackDice.Plus != 0)
                 {
                     damage += "+" + item.Attack.AttackDice.Plus.ToString();

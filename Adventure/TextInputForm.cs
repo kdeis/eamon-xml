@@ -27,7 +27,7 @@ namespace Adventure
             Logger.ClearBuffer();
             mRtxtWhatYouSee.TextChanged += mRtxtWhatYouSee_TextChanged;
             //mLblRoom.Text = context.CurrentRoom.Title;
-            g = this.CreateGraphics();
+            g = CreateGraphics();
         }
 
         // Source - https://stackoverflow.com/a
@@ -55,8 +55,8 @@ namespace Adventure
             // Retrieved 2025-11-08, License - CC BY-SA 3.0
 
             var rect = new RECT();
-            SendMessage(this.mRtxtWhatYouSee.Handle, EM_GETRECT, IntPtr.Zero, ref rect);
-            maxLinesDisplayed = (rect.Bottom - rect.Top) / this.mRtxtWhatYouSee.Font.Height - 1;
+            SendMessage(mRtxtWhatYouSee.Handle, EM_GETRECT, IntPtr.Zero, ref rect);
+            maxLinesDisplayed = (rect.Bottom - rect.Top) / mRtxtWhatYouSee.Font.Height - 1;
             width = rect.Right - rect.Left;
             //var lastLine = mRtxtWhatYouSee.GetLineFromCharIndex(mRtxtWhatYouSee.Text.Length - 1);
             //mRtxtWhatYouSee.Text += $"Max Visible Lines={maxLinesDisplayed}; Last line number={lastLine}\n";
@@ -82,12 +82,12 @@ namespace Adventure
                 while (output.Length > 0)
                 {
                     int lastSpaceIndex = -1;
-                    String nextLine = "";
+                    string nextLine = "";
                     // Build the next line to fit within the width
                     for (int i = 0; i < output.Length; i++)
                     {
                         char c = output[i];
-                        if(Char.IsWhiteSpace(c))
+                        if(char.IsWhiteSpace(c))
                         {
                             lastSpaceIndex = i;
                         }

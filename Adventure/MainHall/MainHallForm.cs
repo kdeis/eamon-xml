@@ -14,7 +14,7 @@ namespace Adventure.MainHall
 {
     public partial class MainHallForm : Form
     {
-        private const String path = @"../../Characters.xml";
+        private const string path = @"../../Characters.xml";
         CharacterLoader cLoader = new CharacterLoader();
 
         Character currentChar;
@@ -139,9 +139,10 @@ namespace Adventure.MainHall
             {
                 mRtbGreeting.Clear();
                 mRtbGreeting.AppendText("He starts looking through his book, while muttering something about \"strange Saxon names.\"" + Environment.NewLine + Environment.NewLine + "Finally he looks up and says, \"Ah, here ye be. Well, go and have fun in the hall.\"", Color.Black, HorizontalAlignment.Left);
+                mPnlIntro.Visible = false;
                 mPnlMain.Visible = true;
             }
-            this.Invalidate();
+            Invalidate();
         }
 
         private void MainHallForm_KeyDown(object sender, KeyEventArgs e)
@@ -207,7 +208,7 @@ namespace Adventure.MainHall
                     cLoader.Characters.Character = cList.ToArray();
 
                     cLoader.SaveCharacters();
-                    this.Close();
+                    Close();
                 }
                 else if (dlgResult == System.Windows.Forms.DialogResult.Cancel)
                 {
@@ -224,7 +225,7 @@ namespace Adventure.MainHall
 
         private void mBtnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void mBtnLeave_Click(object sender, EventArgs e)

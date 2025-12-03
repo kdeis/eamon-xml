@@ -12,9 +12,8 @@ namespace Adventure.MainHall
     {
         Character buyer = null;
         private Random rand;
-        public WizardForm(Character character)
+        public WizardForm(Character character):base()
         {
-            InitializeComponent();
             buyer = character ?? throw new NullReferenceException();
             mLblRoom.Text = "Wizard's Spell Shop";
             Logger.ClearBuffer();
@@ -27,24 +26,26 @@ namespace Adventure.MainHall
         private void MainMenu()
         {
             Logger.WriteLn("After a few minutes diligent searching, you find Hokas Tokas, the old Mage. He looks at you and says, \"So you want old Hokey to teach you some magic, eh? Well, it'll cost you. My fees are:\"");
-            Logger.WriteLn(String.Format("  Blast\t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Blast]));
-            Logger.WriteLn(String.Format("  Heal \t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Heal]));
-            Logger.WriteLn(String.Format("  Speed\t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Speed]));
-            Logger.WriteLn(String.Format("  Power\t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Power]));
+            Logger.WriteLn(string.Format("  Blast\t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Blast]));
+            Logger.WriteLn(string.Format("  Heal \t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Heal]));
+            Logger.WriteLn(string.Format("  Speed\t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Speed]));
+            Logger.WriteLn(string.Format("  Power\t{0,4} GP", MainHallConfig.Instance.SpellCost[spellType.Power]));
             Logger.WriteLn();
             Logger.WriteLn("\"Well, which will it be?\"");
-            Logger.WriteLn("Hit a key, B, H, S, P, or (N)one:");
+            Logger.Write("Hit a key, B, H, S, P, or (N)one: ");
         }
 
         protected override
         void mBtnOk_Click(object sender, EventArgs e)
         {
+            Logger.WriteLn(historyTextBox1.Text);
+            Logger.WriteLn();
             spellType? spell = null;
             switch (historyTextBox1.Text.ToUpper())
             {
                 case "N":
                     DialogResult = System.Windows.Forms.DialogResult.Cancel;
-                    this.Close();
+                    Close();
                     break;
                 case "B":
                     spell = spellType.Blast;
@@ -88,18 +89,12 @@ namespace Adventure.MainHall
         private void Goodbye(string Message)
         {
             Logger.WriteLn(Message);
-            this.mBtnOk.Visible = false;
-            this.mLblCommand.Visible = false;
-            this.historyTextBox1.Visible = false;
-            this.mBtnClose.Enabled = true;
-            this.mBtnClose.Visible = true;
-            this.mBtnClose.Focus();
-        }
-
-        private void MBtnClose_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
-            Close();
+            mBtnOk.Visible = false;
+            mLblCommand.Visible = false;
+            historyTextBox1.Visible = false;
+            mBtnLeave.Enabled = true;
+            mBtnLeave.Visible = true;
+            mBtnLeave.Focus();
         }
     }
 }

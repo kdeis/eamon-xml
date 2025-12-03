@@ -28,7 +28,7 @@ namespace Adventure.MainHall
 
         private void mTbxName_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(mTbxName.Text))
+            if (string.IsNullOrEmpty(mTbxName.Text))
             {
                 mBtnSave.Enabled = false;
             }

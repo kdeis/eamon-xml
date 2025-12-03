@@ -46,7 +46,7 @@
             // mBtnDesk
             // 
             this.mBtnDesk.Location = new System.Drawing.Point(15, 15);
-            this.mBtnDesk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnDesk.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnDesk.Name = "mBtnDesk";
             this.mBtnDesk.Size = new System.Drawing.Size(100, 28);
             this.mBtnDesk.TabIndex = 1;
@@ -56,10 +56,8 @@
             // 
             // mBtnAdventure
             // 
-            this.mBtnAdventure.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.mBtnAdventure.Location = new System.Drawing.Point(13, 4);
-            this.mBtnAdventure.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnAdventure.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnAdventure.Name = "mBtnAdventure";
             this.mBtnAdventure.Size = new System.Drawing.Size(255, 28);
             this.mBtnAdventure.TabIndex = 3;
@@ -69,20 +67,21 @@
             // 
             // mRtbGreeting
             // 
-            this.mRtbGreeting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.mRtbGreeting.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mRtbGreeting.Location = new System.Drawing.Point(25, 15);
-            this.mRtbGreeting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mRtbGreeting.Margin = new System.Windows.Forms.Padding(4);
             this.mRtbGreeting.Name = "mRtbGreeting";
             this.mRtbGreeting.ReadOnly = true;
-            this.mRtbGreeting.Size = new System.Drawing.Size(513, 207);
+            this.mRtbGreeting.Size = new System.Drawing.Size(511, 207);
             this.mRtbGreeting.TabIndex = 5;
             this.mRtbGreeting.Text = "";
             // 
             // mBtnMen
             // 
             this.mBtnMen.Location = new System.Drawing.Point(123, 15);
-            this.mBtnMen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnMen.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnMen.Name = "mBtnMen";
             this.mBtnMen.Size = new System.Drawing.Size(100, 28);
             this.mBtnMen.TabIndex = 2;
@@ -92,12 +91,12 @@
             // 
             // mBtnLeave
             // 
-            this.mBtnLeave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.mBtnLeave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mBtnLeave.Location = new System.Drawing.Point(26, 306);
-            this.mBtnLeave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnLeave.Location = new System.Drawing.Point(14, 77);
+            this.mBtnLeave.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnLeave.Name = "mBtnLeave";
-            this.mBtnLeave.Size = new System.Drawing.Size(255, 28);
+            this.mBtnLeave.Size = new System.Drawing.Size(517, 28);
             this.mBtnLeave.TabIndex = 6;
             this.mBtnLeave.Text = "Temporarily &Leave the Universe";
             this.mBtnLeave.UseVisualStyleBackColor = true;
@@ -106,7 +105,7 @@
             // mBtnQuit
             // 
             this.mBtnQuit.Location = new System.Drawing.Point(231, 15);
-            this.mBtnQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnQuit.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnQuit.Name = "mBtnQuit";
             this.mBtnQuit.Size = new System.Drawing.Size(100, 28);
             this.mBtnQuit.TabIndex = 7;
@@ -116,10 +115,8 @@
             // 
             // mBtnWizard
             // 
-            this.mBtnWizard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.mBtnWizard.Location = new System.Drawing.Point(13, 39);
-            this.mBtnWizard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnWizard.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnWizard.Name = "mBtnWizard";
             this.mBtnWizard.Size = new System.Drawing.Size(255, 28);
             this.mBtnWizard.TabIndex = 9;
@@ -129,10 +126,9 @@
             // 
             // mBtnShop
             // 
-            this.mBtnShop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mBtnShop.Location = new System.Drawing.Point(273, 4);
-            this.mBtnShop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mBtnShop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mBtnShop.Location = new System.Drawing.Point(276, 4);
+            this.mBtnShop.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnShop.Name = "mBtnShop";
             this.mBtnShop.Size = new System.Drawing.Size(255, 28);
             this.mBtnShop.TabIndex = 8;
@@ -142,34 +138,37 @@
             // 
             // mPnlIntro
             // 
-            this.mPnlIntro.Controls.Add(this.mPnlMain);
+            this.mPnlIntro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mPnlIntro.Controls.Add(this.mBtnDesk);
             this.mPnlIntro.Controls.Add(this.mBtnMen);
             this.mPnlIntro.Controls.Add(this.mBtnQuit);
             this.mPnlIntro.Location = new System.Drawing.Point(11, 230);
-            this.mPnlIntro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mPnlIntro.Margin = new System.Windows.Forms.Padding(4);
             this.mPnlIntro.Name = "mPnlIntro";
-            this.mPnlIntro.Size = new System.Drawing.Size(544, 85);
+            this.mPnlIntro.Size = new System.Drawing.Size(542, 117);
             this.mPnlIntro.TabIndex = 10;
             // 
             // mPnlMain
             // 
+            this.mPnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.mPnlMain.Controls.Add(this.mBtnView);
             this.mPnlMain.Controls.Add(this.mBtnAdventure);
+            this.mPnlMain.Controls.Add(this.mBtnLeave);
             this.mPnlMain.Controls.Add(this.mBtnShop);
             this.mPnlMain.Controls.Add(this.mBtnWizard);
-            this.mPnlMain.Location = new System.Drawing.Point(1, 1);
-            this.mPnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mPnlMain.Location = new System.Drawing.Point(11, 230);
+            this.mPnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.mPnlMain.Name = "mPnlMain";
-            this.mPnlMain.Size = new System.Drawing.Size(543, 122);
+            this.mPnlMain.Size = new System.Drawing.Size(542, 117);
             this.mPnlMain.TabIndex = 11;
             this.mPnlMain.Visible = false;
             // 
             // mBtnView
             // 
-            this.mBtnView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mBtnView.Location = new System.Drawing.Point(273, 39);
+            this.mBtnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mBtnView.Location = new System.Drawing.Point(276, 39);
             this.mBtnView.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnView.Name = "mBtnView";
             this.mBtnView.Size = new System.Drawing.Size(255, 28);
@@ -182,12 +181,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 366);
+            this.ClientSize = new System.Drawing.Size(561, 363);
             this.Controls.Add(this.mPnlIntro);
+            this.Controls.Add(this.mPnlMain);
             this.Controls.Add(this.mRtbGreeting);
-            this.Controls.Add(this.mBtnLeave);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainHallForm";
             this.Text = "Main Hall";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainHallForm_KeyDown);

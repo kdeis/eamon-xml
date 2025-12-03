@@ -21,8 +21,8 @@ namespace Adventure.Dungeon
         {
             context = Context.Instance;
             mCommandEngine = new CommandEngine();
-            mCommandEngine.SubscribeOnKilledEvent(this.mCommandEngine_OnKilled);
-            mCommandEngine.SubscribeMainHallEvent(this.mCommandEngine_OnReturnToMainHall);
+            mCommandEngine.SubscribeOnKilledEvent(mCommandEngine_OnKilled);
+            mCommandEngine.SubscribeMainHallEvent(mCommandEngine_OnReturnToMainHall);
         }
         public DialogResult Initialize(Character character)
         {
@@ -67,9 +67,9 @@ namespace Adventure.Dungeon
             DisplayText();
             Logger.ClearBuffer();
 
-            this.DialogResult = MessageBox.Show("You have died. Would you like to try again, or leave your corpse to be looted and defiled by the foul denizens of this wretched place?",
+            DialogResult = MessageBox.Show("You have died. Would you like to try again, or leave your corpse to be looted and defiled by the foul denizens of this wretched place?",
                 "You are dead", MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Adventure.Dungeon
         private void mCommandEngine_OnReturnToMainHall(object sender, EventArgs e)
         {
             MessageBox.Show("You successfully ride off into the sunset.", "Congratulations!");
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
             Close();
         }
 
@@ -91,43 +91,44 @@ namespace Adventure.Dungeon
         /// </summary>
         new public void Close()
         {
-            mCommandEngine.UnsubscribeOnKilledEvent(this.mCommandEngine_OnKilled);
-            mCommandEngine.UnsubscribeMainHallEvent(this.mCommandEngine_OnReturnToMainHall);
+            mCommandEngine.UnsubscribeOnKilledEvent(mCommandEngine_OnKilled);
+            mCommandEngine.UnsubscribeMainHallEvent(mCommandEngine_OnReturnToMainHall);
             base.Close();
         }
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // mRtxtWhatYouSee
             // 
-            this.mRtxtWhatYouSee.Size = new System.Drawing.Size(1305, 446);
+            mRtxtWhatYouSee.Location = new System.Drawing.Point(57, 76);
+            mRtxtWhatYouSee.Size = new System.Drawing.Size(1262, 416);
             // 
             // mLblCommand
             // 
-            this.mLblCommand.Location = new System.Drawing.Point(53, 552);
+            mLblCommand.Location = new System.Drawing.Point(53, 524);
             // 
             // mLblRoom
             // 
-            this.mLblRoom.Size = new System.Drawing.Size(1305, 28);
+            mLblRoom.Size = new System.Drawing.Size(1262, 28);
             // 
             // historyTextBox1
             // 
-            this.historyTextBox1.Location = new System.Drawing.Point(129, 548);
-            this.historyTextBox1.Size = new System.Drawing.Size(1592, 26);
+            historyTextBox1.Location = new System.Drawing.Point(129, 520);
+            historyTextBox1.Size = new System.Drawing.Size(1190, 26);
             // 
             // mBtnOk
             // 
-            this.mBtnOk.Location = new System.Drawing.Point(1730, 545);
+            mBtnOk.Location = new System.Drawing.Point(1680, 545);
             // 
             // DungeonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(1424, 559);
-            this.Name = "DungeonForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            ClientSize = new System.Drawing.Size(1374, 559);
+            Name = "DungeonForm";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

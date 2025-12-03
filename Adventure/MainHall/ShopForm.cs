@@ -31,11 +31,9 @@ namespace Adventure.MainHall
         ulong offerPrice = 0;
         weaponType offerType;
         itemType offerItem = null;
-        private System.Windows.Forms.Button mBtnClose;
         Character buyer = null;
         public ShopForm(Character character) : base()
         {
-            InitializeComponent();
             buyer = character ?? throw new NullReferenceException();
             mLblRoom.Text = "Weapons and Armor Shop";
             Logger.ClearBuffer();
@@ -74,7 +72,7 @@ namespace Adventure.MainHall
             Logger.WriteLn("2. Sell a weapon");
             Logger.WriteLn("3. Get some better armor");
             Logger.WriteLn();
-            Logger.WriteLn("Enter 1-3 (or 0 to exit)");
+            Logger.Write("Enter 1-3 (or 0 to exit) ");
             shopAction = ShopActionType.None;
         }
 
@@ -87,7 +85,7 @@ namespace Adventure.MainHall
                 {
                     case "0":
                         DialogResult = System.Windows.Forms.DialogResult.Cancel;
-                        this.Close();
+                        Close();
                         break;
                     case "1":
                         BuyWeaponMenu();
@@ -165,18 +163,18 @@ namespace Adventure.MainHall
         private void Goodbye(string Message)
         {
             Logger.WriteLn(Message);
-            this.mBtnOk.Visible = false;
-            this.mLblCommand.Visible = false;
-            this.historyTextBox1.Visible = false;
-            this.mBtnClose.Enabled = true;
-            this.mBtnClose.Visible = true;
-            this.mBtnClose.Focus();
+            mBtnOk.Visible = false;
+            mLblCommand.Visible = false;
+            historyTextBox1.Visible = false;
+            mBtnLeave.Enabled = true;
+            mBtnLeave.Visible = true;
+            mBtnLeave.Focus();
         }
 
         private void SellWeaponSelect()
         {
             int s;
-            bool success = Int32.TryParse(historyTextBox1.Text, out s);
+            bool success = int.TryParse(historyTextBox1.Text, out s);
             if (!success || s <= 0 || s > buyer.Items.Count)
             {
                 MainMenu();
@@ -187,7 +185,7 @@ namespace Adventure.MainHall
                 offerItem = buyer.Items[s - 1];
                 offerPrice = (ulong)offerItem.baseValue;
                 Logger.WriteLn("\"Well, I can give you " + offerPrice + " gold pieces for it.\"\n");
-                Logger.WriteLn("Do you want to sell? (Y/N)");
+                Logger.Write("Do you want to sell? (Y/N) ");
                 state = ShopStateType.Confirm;
             }
         }
@@ -195,7 +193,7 @@ namespace Adventure.MainHall
         private void BuyArmorSelect()
         {
             int s;
-            bool success = Int32.TryParse(historyTextBox1.Text, out s);
+            bool success = int.TryParse(historyTextBox1.Text, out s);
             if (!success || s <= 0 || s > MainHallConfig.Instance.ShopArmor.Length)
             {
                 MainMenu();
@@ -222,7 +220,7 @@ namespace Adventure.MainHall
                         Logger.WriteLn("Marcos smiles and says, \"Now how about a shield? I can let you have one for only " + MainHallConfig.Instance.ShieldValue + " gold pieces.\"\n");
                         if (buyer.Gold >= (ulong)MainHallConfig.Instance.ShieldValue)
                         {
-                            Logger.WriteLn("Do you want a shield? (Y/N):");
+                            Logger.Write("Do you want a shield? (Y/N): ");
                             state = ShopStateType.Confirm;
                         }
                         else
@@ -264,9 +262,9 @@ namespace Adventure.MainHall
             Logger.WriteLn("\"Well, what will it be?\"");
             for (int i = 0; i < MainHallConfig.Instance.ShopArmor.Length; i++)
             {
-                Logger.WriteLn(String.Format("{0}. {1,-8} \t{2,3}", (i + 1), MainHallConfig.Instance.ShopArmor[i].name, MainHallConfig.Instance.ShopArmor[i].buyValue));
+                Logger.WriteLn(string.Format("{0}. {1,-8} \t{2,3}", (i + 1), MainHallConfig.Instance.ShopArmor[i].name, MainHallConfig.Instance.ShopArmor[i].buyValue));
             }
-            Logger.WriteLn("Enter 1-3 (or 0 to exit):");
+            Logger.Write("Enter 1-"+ MainHallConfig.Instance.ShopArmor.Length+" (or 0 to exit): ");
 
             shopAction = ShopActionType.Armor;
             state = ShopStateType.ItemSelect;
@@ -279,7 +277,7 @@ namespace Adventure.MainHall
             {
                 Logger.WriteLn((i + 1) + ". " + buyer.Items[i].name);
             }
-            Logger.WriteLn("Enter no. of weapon (0 exits):");
+            Logger.Write("Enter no. of weapon (0 exits): ");
             shopAction = ShopActionType.SellWeap;
             state = ShopStateType.ItemSelect;
         }
@@ -298,7 +296,7 @@ namespace Adventure.MainHall
                 {
                     Logger.WriteLn((int)w + 1 + ". " + w);
                 }
-                Logger.WriteLn("Enter 1-" + (Enum.GetValues(typeof(weaponType)).Length) + " (or 0 to exit):");
+                Logger.Write("Enter 1-" + (Enum.GetValues(typeof(weaponType)).Length) + " (or 0 to exit): ");
 
                 shopAction = ShopActionType.BuyWeap;
                 state = ShopStateType.ItemSelect;
@@ -307,7 +305,7 @@ namespace Adventure.MainHall
         private void BuyWeaponSelect()
         {
             int s;
-            bool success = Int32.TryParse(historyTextBox1.Text, out s);
+            bool success = int.TryParse(historyTextBox1.Text, out s);
             if (!success || s <= 0 || s > Enum.GetValues(typeof(weaponType)).Length)
             {
                 MainMenu();
@@ -320,7 +318,7 @@ namespace Adventure.MainHall
                 Logger.WriteLn("\"Well, I just happen to have a " + offerType + " of decent quality. I can let you have it for " + offerPrice + " gold pieces.\"\n");
                 if (buyer.Gold >= offerPrice)
                 {
-                    Logger.WriteLn("Do you want to buy? (Y/N)");
+                    Logger.Write("Do you want to buy? (Y/N) ");
                     state = ShopStateType.Confirm;
                 }
                 else
@@ -328,46 +326,6 @@ namespace Adventure.MainHall
                     Goodbye(CANT_AFFORD_IT);
                 }
             }
-        }
-
-        private void InitializeComponent()
-        {
-            this.mBtnClose = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // mBtnClose
-            // 
-            this.mBtnClose.Enabled = false;
-            this.mBtnClose.Location = new System.Drawing.Point(251, 314);
-            this.mBtnClose.Name = "mBtnClose";
-            this.mBtnClose.Size = new System.Drawing.Size(75, 23);
-            this.mBtnClose.TabIndex = 4;
-            this.mBtnClose.Text = "Close";
-            this.mBtnClose.UseVisualStyleBackColor = true;
-            this.mBtnClose.Visible = false;
-            this.mBtnClose.Click += new System.EventHandler(this.mBtnClose_Click);
-            // 
-            // ShopForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(564, 370);
-            this.Controls.Add(this.mBtnClose);
-            this.Name = "ShopForm";
-            this.Controls.SetChildIndex(this.mRtxtWhatYouSee, 0);
-            this.Controls.SetChildIndex(this.mLblCommand, 0);
-            this.Controls.SetChildIndex(this.mLblRoom, 0);
-            this.Controls.SetChildIndex(this.historyTextBox1, 0);
-            this.Controls.SetChildIndex(this.mBtnOk, 0);
-            this.Controls.SetChildIndex(this.mBtnClose, 0);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
-        }
-
-        private void mBtnClose_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
-            Close();
         }
     }
 }
