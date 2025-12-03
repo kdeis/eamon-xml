@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DungeonData xmlns="http://schemas.datacontract.org/2004/07/Adventure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 	<Intro>
-		Well, she's done it again. Your dinner date, the beautiful Cynthia Luxom, has stood you up.
-		She probably didn't mean too; you recall she was quite excited that her nephew, Peter, was
-		expected to arrive this morning for a long visit. He's a nice young man, eager to prove
-		himself, and quite intelligent. Unlike his delightful but not-to-bright aunt.&#xA;&#xA;
-		Still, you can't help feel bitter about it. You finish off your meal and a second mug of ale,
-		then exit the tavern to contemplate whether you ought to call on her at the castle or go
-		about your business until she realizes her mistake.&#xA;
-		You are just passing the fountain in the village square when your stomach takes issue with
-		the Calimari-for-two you ate. You sit on the edge of the pool as you feel your face flush,
-		and a different kind of bitterness rises in your throat. Soon you are so occupied with the
-		tasks of breathing and keeping your insides from becoming your outsides, that you barely
-		notice the movement in the water.&#xA;
-		Suddenly, a tentacle lashes round your forehead and pulls you in! While the cool water is
-		soothing to your face and abdomen, it is decidedly unhelpful in the area of breathing.
-		Frantically, you feel for your weapons, but find nothing but... a ballpoint pen.
+Well, she's done it again. Your dinner date, the beautiful Cynthia Luxom, has stood you up.
+She probably didn't mean too; you recall she was quite excited that her nephew, Peter, was
+expected to arrive this morning for a long visit. He's a nice young man, eager to prove
+himself, and quite intelligent. Unlike his delightful but not-to-bright aunt.&#xA;&#xA;
+Still, you can't help feel bitter about it. You finish off your meal and a second mug of ale,
+then exit the tavern to contemplate whether you ought to call on her at the castle or go
+about your business until she realizes her mistake.&#xA;
+You are just passing the fountain in the village square when your stomach takes issue with
+the Calimari-for-two you ate. You sit on the edge of the pool as you feel your face flush,
+and a different kind of bitterness rises in your throat. Soon you are so occupied with the
+tasks of breathing and keeping your insides from becoming your outsides, that you barely
+notice the movement in the water.&#xA;
+Suddenly, a tentacle lashes round your forehead and pulls you in! While the cool water is
+soothing to your face and abdomen, it is decidedly unhelpful in the area of breathing.
+Frantically, you feel for your weapons, but find nothing but... a ballpoint pen.
 
-		You descend helplessly into darkness...&#xA;
-		You awaken to the sound of your alarm clock. Today is the day. You've been working towards
-		this for your entire career. Today you justify all the research grants, silence all the
-		skeptics, and most importantly, introduce the world to a cleaner, brighter, safer future than
-		anyone else can imagine. So you'd better get to the convention center to finish preparations!
+You descend helplessly into darkness...&#xA;
+You awaken to the sound of your alarm clock. Today is the day. You've been working towards
+this for your entire career. Today you justify all the research grants, silence all the
+skeptics, and most importantly, introduce the world to a cleaner, brighter, safer future than
+anyone else can imagine. So you'd better get to the convention center to finish preparations!
 
-		You quickly clean up, put on your favorite lab coat, and slip your pen into the pocket.
+You quickly clean up, put on your favorite lab coat, and slip your pen into the pocket.
 	</Intro>
 	<CantTakeItWithYou>
 		<StartingArmorClass>0</StartingArmorClass>
@@ -34,9 +34,7 @@
 		<Room>
 			<Name>Entrance</Name>
 			<Title>Apartment</Title>
-			<Description>
-				This is your home. It's a small, but comfortable ground-level apartment, filled with nick-knacks and pictures of you and Rosie. After this week's excitement, you've promised to take her on a short vacation to celebrate. The front door is to the east.
-			</Description>
+			<Description>This is your home. It's a small, but comfortable ground-level apartment, filled with nick-knacks and pictures of you and Rosie. After this week's excitement, you've promised to take her on a short vacation to celebrate. The front door is to the east.</Description>
 			<ShortDescription>You are in your apartment.</ShortDescription>
 			<Exits>
 				<Exit>
@@ -106,9 +104,9 @@
 			<Name>CoffeeStreet</Name>
 			<Title>In front of Coffee Shop</Title>
 			<Description>
-				The coffee shop street corner is bustling with activity. Cars stream past, people cross in
-				the crosswalk by the dozen. It's a picture of everyday life in the city.&#xA;
-				The coffee shop entrance is to the west You live down the street to the south.
+The coffee shop street corner is bustling with activity. Cars stream past, people cross in
+the crosswalk by the dozen. It's a picture of everyday life in the city.&#xA;
+The coffee shop entrance is to the west You live down the street to the south.
 			</Description>
 			<ShortDescription>You are on a busy street corner outside the coffee shop.</ShortDescription>
 			<Exits>
@@ -128,8 +126,8 @@
 			<Name>CoffeeShop</Name>
 			<Title>Choc'n'Awe</Title>
 			<Description>
-				This is Rosie's favorite coffee shop, reknown for their mochas. You've spend many mornings here together, sitting on stools over a counter-height table discussing poetry. No time for that this morning, however! You have to prepare for the demonstration at the convention center.&#xA;
-				The line here is unusually long, anyway. The exit is to the east.
+This is Rosie's favorite coffee shop, reknown for their mochas. You've spend many mornings here together, sitting on stools over a counter-height table discussing poetry. No time for that this morning, however! You have to prepare for the demonstration at the convention center.&#xA;
+The line here is unusually long, anyway. The exit is to the east.
 			</Description>
 			<ShortDescription>You are in the Choc'n'Awe.</ShortDescription>
 			<Exits>
@@ -563,9 +561,9 @@
 				</AttackPhrases>
 			</NaturalAttack>
 			<Description>
-				Your wife, Rosalie Octavius, is here. She is a lovely, practical woman whose face brightens the room. Her long dark hair falls lightly
-				over her white lab coat the same way it did the first time you laid eyes on her, all those years ago.&#xA;
-				When she sees you there, looking at her, she gently scolds you. "Otto, didn't you get my note? You go on and get ready! I'll be along soon with your coffee.
+Your wife, Rosalie Octavius, is here. She is a lovely, practical woman whose face brightens the room. Her long dark hair falls lightly
+over her white lab coat the same way it did the first time you laid eyes on her, all those years ago.&#xA;
+When she sees you there, looking at her, she gently scolds you. "Otto, didn't you get my note? You go on and get ready! I'll be along soon with your coffee.
 			</Description>
 			<Disposition>Friendly</Disposition>
 			<Friendliness>95</Friendliness>
@@ -778,8 +776,7 @@
 		<Item>
 			<id>4</id>
 			<name>directory</name>
-			<description>
-				The directory lists the day's events. It lists a pottery workshop and a quilting show in smaller areas to the east. Restrooms to the south, and just beyond them:&#xA;&#xA;        Eastern University Energy Labs presents:&#xA;        The Future of Energy&#xA;        Safe, Secure, Sustainable&#xA;        Featuring Dr. Otto Octavius, Phd.&#xA;&#xA;        It even has a picture of your smiling face - the same one Rosie picked out for the brochures.
+			<description>The directory lists the day's events. It lists a pottery workshop and a quilting show in smaller areas to the east. Restrooms to the south, and just beyond them:&#xA;&#xA;        Eastern University Energy Labs presents:&#xA;        The Future of Energy&#xA;        Safe, Secure, Sustainable&#xA;        Featuring Dr. Otto Octavius, Phd.&#xA;&#xA;        It even has a picture of your smiling face - the same one Rosie picked out for the brochures.
 			</description>
 			<baseValue>0</baseValue>
 			<!-- You can't "get" this -->
