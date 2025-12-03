@@ -34,9 +34,6 @@ namespace Adventure.Dungeon
             else
             {
                 DialogResult = DialogResult.OK;
-                mLblRoom.Text = context.CurrentRoom.Title;
-                mRtxtWhatYouSee.Text = Logger.GetBuffer();
-                Logger.ClearBuffer();
             }
             return DialogResult;
         }
@@ -44,18 +41,20 @@ namespace Adventure.Dungeon
         protected override
         void mBtnOk_Click(object sender, EventArgs e)
         {
-            historyTextBox1.captureNode();
+            if (!historyTextBox1.Text.StartsWith(PRESS_ANY_KEY))
+            {
+                historyTextBox1.captureNode();
 
-            mRtxtWhatYouSee.Text = "";
+                //mRtxtWhatYouSee.Text = "";
 
-            mCommandEngine.ParseCommand(historyTextBox1.Text);
+                mCommandEngine.ParseCommand(historyTextBox1.Text);
 
-            mLblRoom.Text = context.CurrentRoom.Title;
-
-            mRtxtWhatYouSee.Text = Logger.GetBuffer();
-            Logger.ClearBuffer();
+                mLblRoom.Text = context.CurrentRoom.Title;
+            }
 
             historyTextBox1.Text = "";
+
+            DisplayText();
         }
 
         /// <summary>
@@ -65,7 +64,7 @@ namespace Adventure.Dungeon
         /// <param name="e"></param>
         private void mCommandEngine_OnKilled(object sender, EventArgs e)
         {
-            mRtxtWhatYouSee.Text = Logger.GetBuffer();
+            DisplayText();
             Logger.ClearBuffer();
 
             this.DialogResult = MessageBox.Show("You have died. Would you like to try again, or leave your corpse to be looted and defiled by the foul denizens of this wretched place?",
@@ -95,6 +94,48 @@ namespace Adventure.Dungeon
             mCommandEngine.UnsubscribeOnKilledEvent(this.mCommandEngine_OnKilled);
             mCommandEngine.UnsubscribeMainHallEvent(this.mCommandEngine_OnReturnToMainHall);
             base.Close();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // mRtxtWhatYouSee
+            // 
+            this.mRtxtWhatYouSee.Size = new System.Drawing.Size(1305, 446);
+            // 
+            // mLblCommand
+            // 
+            this.mLblCommand.Location = new System.Drawing.Point(53, 552);
+            // 
+            // mLblRoom
+            // 
+            this.mLblRoom.Size = new System.Drawing.Size(1305, 28);
+            // 
+            // historyTextBox1
+            // 
+            this.historyTextBox1.Location = new System.Drawing.Point(129, 548);
+            this.historyTextBox1.Size = new System.Drawing.Size(1592, 26);
+            // 
+            // mBtnOk
+            // 
+            this.mBtnOk.Location = new System.Drawing.Point(1730, 545);
+            // 
+            // DungeonForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.ClientSize = new System.Drawing.Size(1424, 559);
+            this.Name = "DungeonForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            mLblRoom.Text = context.CurrentRoom.Title;
+            DisplayText();
         }
     }
 }

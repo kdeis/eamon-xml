@@ -37,43 +37,50 @@
             // 
             // mRtxtWhatYouSee
             // 
-            this.mRtxtWhatYouSee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.mRtxtWhatYouSee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mRtxtWhatYouSee.Location = new System.Drawing.Point(43, 64);
+            this.mRtxtWhatYouSee.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mRtxtWhatYouSee.Location = new System.Drawing.Point(57, 79);
+            this.mRtxtWhatYouSee.Margin = new System.Windows.Forms.Padding(4);
             this.mRtxtWhatYouSee.Name = "mRtxtWhatYouSee";
             this.mRtxtWhatYouSee.ReadOnly = true;
-            this.mRtxtWhatYouSee.Size = new System.Drawing.Size(481, 234);
+            this.mRtxtWhatYouSee.Size = new System.Drawing.Size(1161, 342);
             this.mRtxtWhatYouSee.TabIndex = 0;
             this.mRtxtWhatYouSee.TabStop = false;
             this.mRtxtWhatYouSee.Text = "";
+            this.mRtxtWhatYouSee.SizeChanged += new System.EventHandler(this.mRtxtWhatYouSee_SizeChanged);
             // 
             // mLblCommand
             // 
             this.mLblCommand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.mLblCommand.AutoSize = true;
-            this.mLblCommand.Location = new System.Drawing.Point(40, 319);
+            this.mLblCommand.Location = new System.Drawing.Point(53, 448);
+            this.mLblCommand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mLblCommand.Name = "mLblCommand";
-            this.mLblCommand.Size = new System.Drawing.Size(57, 13);
+            this.mLblCommand.Size = new System.Drawing.Size(72, 16);
             this.mLblCommand.TabIndex = 3;
             this.mLblCommand.Text = "Command:";
             // 
             // mLblRoom
             // 
-            this.mLblRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.mLblRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mLblRoom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mLblRoom.Location = new System.Drawing.Point(43, 13);
+            this.mLblRoom.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mLblRoom.Location = new System.Drawing.Point(57, 16);
+            this.mLblRoom.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mLblRoom.Name = "mLblRoom";
-            this.mLblRoom.Size = new System.Drawing.Size(481, 23);
+            this.mLblRoom.Size = new System.Drawing.Size(1162, 28);
             this.mLblRoom.TabIndex = 0;
             // 
             // mBtnOk
             // 
             this.mBtnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.mBtnOk.Location = new System.Drawing.Point(403, 314);
+            this.mBtnOk.Location = new System.Drawing.Point(1058, 441);
+            this.mBtnOk.Margin = new System.Windows.Forms.Padding(4);
             this.mBtnOk.Name = "mBtnOk";
-            this.mBtnOk.Size = new System.Drawing.Size(75, 23);
+            this.mBtnOk.Size = new System.Drawing.Size(100, 28);
             this.mBtnOk.TabIndex = 2;
             this.mBtnOk.Text = "OK";
             this.mBtnOk.UseVisualStyleBackColor = true;
@@ -81,25 +88,29 @@
             // 
             // historyTextBox1
             // 
-            this.historyTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.historyTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.historyTextBox1.Location = new System.Drawing.Point(97, 316);
+            this.historyTextBox1.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.historyTextBox1.Location = new System.Drawing.Point(129, 444);
+            this.historyTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.historyTextBox1.Name = "historyTextBox1";
-            this.historyTextBox1.Size = new System.Drawing.Size(300, 20);
+            this.historyTextBox1.Size = new System.Drawing.Size(920, 26);
             this.historyTextBox1.TabIndex = 1;
+            this.historyTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.historyTextBox1_KeyPress);
             // 
-            // DungeonForm
+            // TextInputForm
             // 
             this.AcceptButton = this.mBtnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 370);
+            this.ClientSize = new System.Drawing.Size(1273, 510);
             this.Controls.Add(this.mBtnOk);
             this.Controls.Add(this.historyTextBox1);
             this.Controls.Add(this.mLblRoom);
             this.Controls.Add(this.mLblCommand);
             this.Controls.Add(this.mRtxtWhatYouSee);
-            this.Name = "DungeonForm";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "TextInputForm";
             this.Text = "Adventure";
             this.TopMost = true;
             this.ResumeLayout(false);

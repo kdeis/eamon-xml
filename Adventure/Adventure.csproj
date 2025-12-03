@@ -158,6 +158,9 @@
     <Compile Include="TextInputForm.Designer.cs">
       <DependentUpon>TextInputForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dungeon\DungeonForm.resx">
+      <DependentUpon>DungeonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HistoryTextBox.resx">
       <DependentUpon>HistoryTextBox.cs</DependentUpon>
     </EmbeddedResource>

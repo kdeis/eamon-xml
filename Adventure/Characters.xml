@@ -98,28 +98,6 @@ Trollsfire is glowing!</description>
           <Complexity>0</Complexity>
         </Attack>
       </Weapon>
-      <Weapon>
-        <id>1005</id>
-        <name>axe</name>
-        <description>You see a standard Marcos axe here.</description>
-        <baseValue>20</baseValue>
-        <weight>8</weight>
-        <isLit>false</isLit>
-        <Attack>
-          <AttackDice>
-            <Sides>6</Sides>
-            <Count>1</Count>
-            <Plus>0</Plus>
-          </AttackDice>
-          <AttackPhrases>
-            <Phrase>chops at</Phrase>
-            <Phrase>swings at</Phrase>
-            <Phrase>hacks at</Phrase>
-          </AttackPhrases>
-          <Type>Axe</Type>
-          <Complexity>0</Complexity>
-        </Attack>
-      </Weapon>
     </WeaponList>
   </Character>
   <Character>
