@@ -20,17 +20,12 @@ public partial class healPlayerAction
 
     public override void Execute()
     {
+        base.Execute();
         int heal = rangeLow;
         if (rangeHigh > 0)
         {
             Random r = new Random();
             heal += r.Next(rangeHigh - rangeLow + 1);
-        }
-
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
         }
         Context.Instance.Player.Heal(heal);
     }

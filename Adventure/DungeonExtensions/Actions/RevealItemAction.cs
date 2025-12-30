@@ -33,7 +33,10 @@ public partial class revealItemAction
     {
         if (!Item.revealed)
         {
-            Logger.WriteLn(text);
+            if (!string.IsNullOrEmpty(text))
+            {
+                Logger.WriteLn(text);
+            }
             Context.Instance.GetRoom(roomId).Items.Add(Item);
             Item.revealed = true;
         }

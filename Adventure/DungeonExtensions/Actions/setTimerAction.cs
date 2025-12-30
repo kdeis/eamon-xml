@@ -18,11 +18,7 @@ public partial class setTimerAction
 
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
         if (!TurnTimer.Timers.ContainsKey(name))
         {
             TurnTimer newTimer = new TurnTimer(name, duration, repeat);

@@ -29,11 +29,7 @@ public partial class executeIfAction
     }
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
         if (condition.TestCondition())
         {
             foreach (actionType a in action)

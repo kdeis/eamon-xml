@@ -21,11 +21,7 @@ public partial class setConstantAction
 
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
         if (Context.Instance.Constants.ContainsKey(name))
         {
             Context.Instance.Constants[name] = value;

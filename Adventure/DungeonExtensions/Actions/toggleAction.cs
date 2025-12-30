@@ -31,11 +31,7 @@ public partial class toggleAction
 
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
         action[nextAction].Execute();
         nextAction++;
         if (nextAction >= action.Length)

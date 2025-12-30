@@ -21,6 +21,7 @@ public partial class permaBoostPlayerStatAction
 
     public override void Execute()
     {
+        base.Execute();
         switch (stat)
         {
             case "Agility":
@@ -35,6 +36,5 @@ public partial class permaBoostPlayerStatAction
             default:
                 break;
         }
-        Logger.WriteLn(text);
     }
 }

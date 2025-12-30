@@ -30,7 +30,7 @@ public partial class wakeCreatureAction
     }
     public override void Execute()
     {
-        Logger.WriteLn(text);
+        base.Execute();
         Context.Instance.GetRoom(roomId).Creatures.Add(Creature);
     }
 }

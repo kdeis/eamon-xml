@@ -36,7 +36,10 @@ public partial class openStorageAction
     {
         if (!Item.storage.isOpen)
         {
-            Logger.WriteLn(text);
+            if (!string.IsNullOrEmpty(text))
+            {
+                Logger.WriteLn(text);
+            }
             Item.storage.isOpen = true;
         }
     }

@@ -21,7 +21,7 @@ public partial class destroyItemAction
 
     public override void Execute()
     {
-        Logger.WriteLn(text);
+        base.Execute();
 
         // If player has the item, remove it from inventory
         bool found = removeItemFromList(Context.Instance.Player.Items);

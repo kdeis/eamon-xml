@@ -18,6 +18,6 @@ public partial class showTextAction
 
     public override void Execute()
     {
-        Logger.WriteLn(text);
+        base.Execute();
     }
 }

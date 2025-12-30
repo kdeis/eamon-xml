@@ -32,11 +32,7 @@ public partial class readyWeaponAction
 
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
         Context.Instance.Player.ReadyWeap = Weapon;
     }
 }

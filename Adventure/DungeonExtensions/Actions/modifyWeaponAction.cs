@@ -20,7 +20,7 @@ public partial class modifyWeaponAction
 
     public override void Execute()
     {
-        Logger.WriteLn(text);
+        base.Execute();
 
         // If player has the item, remove it from inventory
         itemType item = Context.Instance.Player.Items.Find((i) => i.id == id);

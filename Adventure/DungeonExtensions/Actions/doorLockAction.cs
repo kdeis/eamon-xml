@@ -22,8 +22,9 @@ public partial class doorLockAction
 
     public override void Execute()
     {
+        base.Execute();
+
         ILockable door = (ILockable)(Context.Instance.GetRoom(roomId).Exits[direction]);
-        Logger.WriteLn(text);
         if (lockIt)
         {
             _ = door.Lock();

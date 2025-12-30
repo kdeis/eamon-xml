@@ -14,11 +14,7 @@ public partial class cancelTimerAction
 
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
 
         TurnTimer cancelledTimer;
         if (TurnTimer.Timers.TryGetValue(name, out cancelledTimer))
