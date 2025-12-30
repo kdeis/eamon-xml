@@ -19,11 +19,16 @@ public partial class goToRoomAction
 
     public override void Execute()
     {
-        if (!string.IsNullOrEmpty(text))
-        {
-            Logger.WriteLn(text);
-            Logger.WriteLn();
-        }
+        base.Execute();
         Context.Instance.CurrentRoom = Context.Instance.GetRoom(roomId);
+
+        if (description != null && description.Length > 0)
+        {
+            Context.Instance.CurrentRoom.Description = description;
+        }
+        if (shortDescription != null && shortDescription.Length > 0)
+        {
+            Context.Instance.CurrentRoom.ShortDescription = shortDescription;
+        }
     }
 }

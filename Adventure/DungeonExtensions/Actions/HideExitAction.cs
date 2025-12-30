@@ -21,7 +21,17 @@ public partial class hideExitAction
 
     public override void Execute()
     {
-        Logger.WriteLn(text);
-        Context.Instance.GetRoom(roomId).Exits.HideExit(direction);
+        base.Execute();
+        IRoom room = Context.Instance.GetRoom(roomId);
+        room.Exits.HideExit(direction);
+
+        if (description != null && description.Length > 0)
+        {
+            room.Description = description;
+        }
+        if (shortDescription != null && shortDescription.Length > 0)
+        {
+            room.ShortDescription = shortDescription;
+        }
     }
 }

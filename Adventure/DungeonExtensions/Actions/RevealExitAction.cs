@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Adventure;
 using Adventure.Dungeon;
+using Helpers;
 
 public partial class revealExitAction
 {
@@ -21,7 +22,17 @@ public partial class revealExitAction
 
     public override void Execute()
     {
-        Logger.WriteLn(text);
-        Context.Instance.GetRoom(roomId).Exits.RevealExit(direction);
+        base.Execute();
+        IRoom room = Context.Instance.GetRoom(roomId);
+        room.Exits.RevealExit(direction);
+
+        if (description != null && description.Length > 0)
+        {
+            room.Description = description;
+        }
+        if (shortDescription != null && shortDescription.Length > 0)
+        {
+            room.ShortDescription = shortDescription;
+        }
     }
 }
