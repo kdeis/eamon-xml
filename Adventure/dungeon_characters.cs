@@ -505,6 +505,10 @@ public partial class revealExitAction : actionType {
     
     private string roomIdField;
     
+    private string descriptionField;
+    
+    private string shortDescriptionField;
+    
     /// <remarks/>
     public directionType direction {
         get {
@@ -522,6 +526,26 @@ public partial class revealExitAction : actionType {
         }
         set {
             this.roomIdField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string description {
+        get {
+            return this.descriptionField;
+        }
+        set {
+            this.descriptionField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string shortDescription {
+        get {
+            return this.shortDescriptionField;
+        }
+        set {
+            this.shortDescriptionField = value;
         }
     }
 }
@@ -740,6 +764,10 @@ public partial class hideExitAction : actionType {
     
     private string roomIdField;
     
+    private string descriptionField;
+    
+    private string shortDescriptionField;
+    
     /// <remarks/>
     public directionType direction {
         get {
@@ -757,6 +785,26 @@ public partial class hideExitAction : actionType {
         }
         set {
             this.roomIdField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string description {
+        get {
+            return this.descriptionField;
+        }
+        set {
+            this.descriptionField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string shortDescription {
+        get {
+            return this.shortDescriptionField;
+        }
+        set {
+            this.shortDescriptionField = value;
         }
     }
 }
@@ -804,6 +852,10 @@ public partial class goToRoomAction : actionType {
     
     private string roomIdField;
     
+    private string descriptionField;
+    
+    private string shortDescriptionField;
+    
     /// <remarks/>
     public string roomId {
         get {
@@ -811,6 +863,26 @@ public partial class goToRoomAction : actionType {
         }
         set {
             this.roomIdField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string description {
+        get {
+            return this.descriptionField;
+        }
+        set {
+            this.descriptionField = value;
+        }
+    }
+    
+    /// <remarks/>
+    public string shortDescription {
+        get {
+            return this.shortDescriptionField;
+        }
+        set {
+            this.shortDescriptionField = value;
         }
     }
 }

@@ -233,7 +233,7 @@
 	</xs:complexType>
 	<xs:complexType name="actionType" abstract="true">
 		<xs:sequence>
-			<xs:element name="text" type="xs:string" />
+			<xs:element name="text" type="xs:string" minOccurs="0" />
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="destroyItemAction">
@@ -278,12 +278,14 @@
 	</xs:complexType>
 	<xs:complexType name="goToRoomAction">
 		<xs:annotation>
-			<xs:documentation>The goToRoomAction instantly moves the player to the specified room.</xs:documentation>
+			<xs:documentation>The goToRoomAction instantly moves the player to the specified room. Optionally replace the room's Description and/or ShortDescription.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="Adv:actionType">
 				<xs:sequence>
 					<xs:element name="roomId" type="xs:string" />
+					<xs:element name="description" type="xs:string" minOccurs="0" />
+					<xs:element name="shortDescription" type="xs:string" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -303,13 +305,15 @@
 	</xs:complexType>
 	<xs:complexType name="hideExitAction">
 		<xs:annotation>
-			<xs:documentation>The hideExitAction hides a room exit so the player cannot see it or move through it.</xs:documentation>
+			<xs:documentation>The hideExitAction hides a room exit so the player cannot see it or move through it. Optionally replace the room's Description and/or ShortDescription.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="Adv:actionType">
 				<xs:sequence>
 					<xs:element name="direction" type="Adv:directionType" />
 					<xs:element name="roomId" type="xs:string" />
+					<xs:element name="description" type="xs:string" minOccurs="0" />
+					<xs:element name="shortDescription" type="xs:string" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -367,13 +371,15 @@
 	</xs:complexType>
 	<xs:complexType name="revealExitAction">
 		<xs:annotation>
-			<xs:documentation>The revealExitAction makes a hidden exit visible (and usable).</xs:documentation>
+			<xs:documentation>The revealExitAction makes a hidden exit visible (and usable). Optionally replace the room's Description and/or ShortDescription.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="Adv:actionType">
 				<xs:sequence>
 					<xs:element name="direction" type="Adv:directionType" />
 					<xs:element name="roomId" type="xs:string" />
+					<xs:element name="description" type="xs:string" minOccurs="0" />
+					<xs:element name="shortDescription" type="xs:string" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
